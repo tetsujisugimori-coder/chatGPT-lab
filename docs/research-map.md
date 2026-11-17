@@ -25,3 +25,6 @@ flowchart LR
 ```
 
 相互参照は能力やデータが自動共有される証拠ではありません。上記リポジトリには書き込んでいません。
+
+## 002追補（2026-11-17、上表の初回時点と区別）
+[002 GitHub不存在path](../experiments/002-github-missing-path/RESULTS.md)を実測。固定公開commitの正常READMEと負pathを同じfetch_fileで取得し、認証なしContents APIと比較。正常本文一致、負は明示不存在・本文なしで限定PASS。これは同じGitHubの別経路照合であり別真実源ではない。モデル/速度・非公開権限・一般書込・MCP全般・引継ぎは未検証のまま。PR #2は後の再レビューを経てmerge済みで、001原記録は保持。

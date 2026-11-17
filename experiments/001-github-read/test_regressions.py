@@ -7,7 +7,7 @@ before, after, out = map(lambda x:pathlib.Path(x).resolve(), sys.argv[1:])
 out.mkdir(parents=True, exist_ok=False)
 E='experiments/001-github-read'; M=E+'/manifest.json'
 def manifest(p):
-    files={x.relative_to(p).as_posix():x for x in p.rglob('*') if x.is_file() and '.git' not in x.relative_to(p).parts and x.relative_to(p).as_posix()!=M}
+    files={x.relative_to(p).as_posix():x for x in p.rglob('*') if x.is_file() and '.git' not in x.relative_to(p).parts and x.relative_to(p).as_posix()!=M and not x.relative_to(p).as_posix().startswith('experiments/002-github-missing-path/')}
     (p/M).write_text(json.dumps({k:{'bytes':len(v.read_bytes()),'sha256':hashlib.sha256(v.read_bytes()).hexdigest()} for k,v in sorted(files.items())},indent=2)+'\n')
 def command(p,*args):
     return subprocess.run(args,cwd=p,text=True,capture_output=True)

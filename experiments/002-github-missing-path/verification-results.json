@@ -1,0 +1,227 @@
+[
+  {
+    "case": "normal",
+    "synthetic": true,
+    "expected_accept": true,
+    "exit_code": 0,
+    "matches_expectation": true,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"PASS\", \"attempts\": 4, \"manifest_files\": 17}\n",
+    "stderr": ""
+  },
+  {
+    "case": "empty",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: empty records\n",
+    "stderr": ""
+  },
+  {
+    "case": "missing_case",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: case set/order\n",
+    "stderr": ""
+  },
+  {
+    "case": "both_payload_missing",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: payload fields\n",
+    "stderr": ""
+  },
+  {
+    "case": "wrong_ref",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: fixed target\n",
+    "stderr": ""
+  },
+  {
+    "case": "wrong_path",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: fixed target\n",
+    "stderr": ""
+  },
+  {
+    "case": "size",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: payload digest/bytes\n",
+    "stderr": ""
+  },
+  {
+    "case": "sha",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: payload digest/bytes\n",
+    "stderr": ""
+  },
+  {
+    "case": "status_guessed",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: A transport status unprovided\n",
+    "stderr": ""
+  },
+  {
+    "case": "classification",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: classification evidence\n",
+    "stderr": ""
+  },
+  {
+    "case": "error_as_file",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: error is not file content\n",
+    "stderr": ""
+  },
+  {
+    "case": "bool_attempt",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: attempt type\n",
+    "stderr": ""
+  },
+  {
+    "case": "raw_body_changed",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: payload digest/bytes\n",
+    "stderr": ""
+  },
+  {
+    "case": "raw_missing",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: [Errno 2] No such file or directory: '/workspace/scratch/e622c1e9421e/work/chatgpt-lab-002-20261117/fixtures-002-r2/raw_missing/raw/A-M-1.json'\n",
+    "stderr": ""
+  },
+  {
+    "case": "unknown_valid",
+    "synthetic": true,
+    "expected_accept": true,
+    "exit_code": 0,
+    "matches_expectation": true,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"UNKNOWN\", \"attempts\": 4, \"manifest_files\": 17}\n",
+    "stderr": ""
+  },
+  {
+    "case": "unknown_false_pass",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: experiment result evidence\n",
+    "stderr": ""
+  },
+  {
+    "case": "missing_normal_valid_unknown",
+    "synthetic": true,
+    "expected_accept": true,
+    "exit_code": 0,
+    "matches_expectation": true,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"UNKNOWN\", \"attempts\": 4, \"manifest_files\": 17}\n",
+    "stderr": ""
+  },
+  {
+    "case": "both_normal_missing_false_pass",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: experiment result evidence\n",
+    "stderr": ""
+  },
+  {
+    "case": "plan_changed",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: plan changed\n",
+    "stderr": ""
+  },
+  {
+    "case": "manifest_missing_entry",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: manifest set\n",
+    "stderr": ""
+  },
+  {
+    "case": "hidden_extra",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: manifest set\n",
+    "stderr": ""
+  },
+  {
+    "case": "a_tool_missing",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: 'tool'\n",
+    "stderr": ""
+  },
+  {
+    "case": "a_tool_wrong",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: A tool\n",
+    "stderr": ""
+  },
+  {
+    "case": "b_method_wrong",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: B GET method\n",
+    "stderr": ""
+  },
+  {
+    "case": "b_source_wrong",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "matches_expectation": true,
+    "stdout": "FAIL: B raw source\n",
+    "stderr": ""
+  }
+]

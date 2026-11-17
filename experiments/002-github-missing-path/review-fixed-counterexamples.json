@@ -1,0 +1,30 @@
+[
+  {
+    "case": "A_raw_tool_missing",
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: 'tool'\n",
+    "stderr": ""
+  },
+  {
+    "case": "A_raw_wrong_tool",
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: A tool\n",
+    "stderr": ""
+  },
+  {
+    "case": "B_raw_source_wrong",
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: B raw source\n",
+    "stderr": ""
+  },
+  {
+    "case": "B_wrong_method",
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: B GET method\n",
+    "stderr": ""
+  }
+]
