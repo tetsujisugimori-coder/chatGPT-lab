@@ -31,3 +31,7 @@ ChatGPTを中心に、モデル、接続アプリ、MCP、外部AI・ソフト�
 ## 第2実験（2026-11-17）
 [002 不存在ファイル読取](experiments/002-github-missing-path/RESULTS.md)は固定公開commitのREADME正常対照と不存在path負対照に限りPASS。fetch_fileの明示NOT_FOUNDと認証なしHTTPSの404を区別し、正常本文2237 bytesを別経路照合した。総合PARTIAL、通常ChatGPT全般・モデル比較・非公開境界・MCP全般へ一般化しない。
 前工程PR #2は後の再レビューを経てmerge済み。上記旧P2修正追補のNO/NOT_TESTEDは当時の履歴であり、原記録を保持する。今回の提出/保全/独立レビューは002とPRの結果を参照。
+
+## Stage 0：ChatGPTの定義と比較区分（v0.1案）
+
+[研究対象・実行環境・能力帰属の定義](docs/chatgpt-research-definition.md)に、Chat/Work Cloud/Work Local/Codex Local/Codex Cloud/八兵衛（dot）の比較区分と、Web・デスクトップ・モバイルの起動面、実行場所、委任先を分ける規約案を記載しています。関連 [Issue #5](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/5)。このStage 0は文書設計段階（独立レビュー未実施）であり、各機能の動的検証PASSを主張しません。
