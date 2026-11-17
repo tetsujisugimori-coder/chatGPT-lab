@@ -48,3 +48,18 @@ G02比較の初回はcurl exit 28、25秒タイムアウト、0 bytesで照合BL
 モデル別性能、権限拒否の正確性、非公開境界、外部AI、書込一般、継続・引継ぎ、未公開内部処理はNOT_TESTED/UNKNOWN。既存研究のPASSは今回の実測へ流用していない。
 
 次は「固定commitの存在しないpathを読む負対照」を1件提案する。成功する読取だけでなく、不存在を誤って成功扱いしないか、toolのエラーと内容欠落を区別できるかを小規模・非破壊に確認できる。まだ実行していない。
+
+
+## 2026-11-17 P2 修正追補（オフライン自己検証）
+
+基準 HEAD `9f4a642ec4139b8f9ce93307a71fce793a502e5e`、tree `0f74e0760a0b016b37699d07cd446b07e71104d0`。
+[独立レビューのP2二件](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/2#pullrequestreview-5933827456)への修正。今回の担当は初回実装担当と同一であり、以下を独立再レビューとは呼ばない。
+
+- P2-01: repository root の `.git` ディレクトリ／worktree pointerだけを対象外にし、manifest自身の除外は正確な1 pathに限定。全提出ファイルの集合、必須6ファイル、サイズ、SHA検査を維持。他のhiddenファイルは除外しない。symlinkは暗黙追跡せず拒否。
+- P2-02: G01本文・byte長・SHA-256・Git blobを両snapshotで再計算。G02のnumber/title/state/body/updated_at、G03の追加base/headと各ref/shaの存在・型を検査。matchesの必要キー集合と厳密なbool trueを要求し、snapshotを再比較。空bodyは受理。
+- 同じ110対照を旧・新版へ適用。旧版66/110期待一致、新版110/110期待一致。44件は同じ入力のRED→GREEN、残り66件は既存の受理／拒否維持。これは110種類のネットワーク実測ではなく局所複製データの試験。
+- 通常展開、実git init＋commit checkout、実git worktree（.gitファイル）の正常対照、片側／両側必須項目欠落、型不正、空／不足／非bool matches、値不一致、空body、ファイル欠落・改変・size/SHA・余剰hidden・別pathのmanifestを検査。内容反例は毎回manifestを再計算してから実行。起動不能ではなく検査器の応答と終了codeで判定。
+- [反例コード](test_regressions.py)と[各caseの旧新出力・終了code](P2-regression-results.json)を参照。引数は旧版7ファイル展開、現版展開、新規の案件別出力先。作成したfixtureを保持し、原票は変更しない。
+- 原observations.json、PLAN.md、研究マップ、G02初回timeout履歴は全byte不変。G01〜G03をネットワーク再実測していない。不在path・モデル比較・MCP・ブラウザ実験は未実施。
+- 自己検証上P2二件は修正済み。独立再レビューはNOT_TESTED、総合PARTIAL、限定マージNO、Draft維持。旧読取限定PASSの証拠範囲は変えない。
+- 今回のCI、提出後照合、本人限定保全の結果はPR最終コメントに追補する。run/check 0をCI成功に扱わない。

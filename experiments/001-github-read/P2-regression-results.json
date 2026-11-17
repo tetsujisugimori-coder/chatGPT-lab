@@ -1,0 +1,2202 @@
+[
+  {
+    "version": "before",
+    "case": "normal",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "checkout",
+    "expected_accept": true,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": false,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/checkout/experiments/001-github-read/verify.py\", line 21, in <module>\n    assert set(m)==actual\n           ^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "worktree",
+    "expected_accept": true,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": false,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/linked-worktree/experiments/001-github-read/verify.py\", line 21, in <module>\n    assert set(m)==actual\n           ^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "missing_file",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/missing_file/experiments/001-github-read/verify.py\", line 18, in <module>\n    assert (path.parent/target.split('#')[0]).is_file(),(path,target)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (PosixPath('<fixture>/before/missing_file/README.md'), 'docs/research-map.md')\n"
+  },
+  {
+    "version": "before",
+    "case": "changed_file",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/changed_file/experiments/001-github-read/verify.py\", line 23, in <module>\n    b=(root/name).read_bytes();assert len(b)==row['bytes'];assert hashlib.sha256(b).hexdigest()==row['sha256']\n                                      ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "size",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/size/experiments/001-github-read/verify.py\", line 23, in <module>\n    b=(root/name).read_bytes();assert len(b)==row['bytes'];assert hashlib.sha256(b).hexdigest()==row['sha256']\n                                      ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "sha",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/sha/experiments/001-github-read/verify.py\", line 23, in <module>\n    b=(root/name).read_bytes();assert len(b)==row['bytes'];assert hashlib.sha256(b).hexdigest()==row['sha256']\n                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "hidden_extra",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/hidden_extra/experiments/001-github-read/verify.py\", line 21, in <module>\n    assert set(m)==actual\n           ^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "nested_manifest",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_bytes_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_bytes_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_bytes_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_bytes_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_bytes_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_bytes_both/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n                                                 ~^^^^^^^^^\nKeyError: 'bytes'\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_type_bytes",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_type_bytes/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n                                       ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_sha256_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_sha256_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_sha256_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_sha256_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_sha256_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_sha256_both/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n                                                                                                    ~^^^^^^^^^^\nKeyError: 'sha256'\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_type_sha256",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_type_sha256/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_git_blob_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_git_blob_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_git_blob_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_git_blob_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_git_blob_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_git_blob_both/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n                                                                                                                                                                                            ~^^^^^^^^^^^^\nKeyError: 'git_blob'\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_type_git_blob",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_type_git_blob/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_body_utf8_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_body_utf8_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_body_utf8_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_body_utf8_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_missing_body_utf8_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_missing_body_utf8_both/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n        ~^^^^^^^^^^^^^\nKeyError: 'body_utf8'\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_type_body_utf8",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_type_body_utf8/experiments/001-github-read/verify.py\", line 13, in <module>\n    raw=a['body_utf8'].encode();assert len(raw)==a['bytes'];assert hashlib.sha256(raw).hexdigest()==a['sha256'];assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==a['git_blob']\n        ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'list' object has no attribute 'encode'\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_matches_empty",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G01_matches_partial",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G01_matches_integer",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G01_matches_string",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G01_matches_false",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_matches_false/experiments/001-github-read/verify.py\", line 9, in <module>\n    assert r['result']=='PASS' and all(r['matches'].values())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G01_mismatch",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G01_mismatch/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G01', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_title_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_title_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_title_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_title_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_title_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_type_title",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_state_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_state_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_state_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_state_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_state_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_type_state",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_body_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_body_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_body_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_body_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_body_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_type_body",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_updated_at_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_updated_at_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_updated_at_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_updated_at_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_updated_at_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_type_updated_at",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_number_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_number_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_number_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_number_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_missing_number_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_missing_number_both/experiments/001-github-read/verify.py\", line 14, in <module>\n    else: assert a['number']==(45 if r['id']=='G02' else 46)\n                 ~^^^^^^^^^^\nKeyError: 'number'\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_type_number",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_type_number/experiments/001-github-read/verify.py\", line 14, in <module>\n    else: assert a['number']==(45 if r['id']=='G02' else 46)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_matches_empty",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_matches_partial",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_matches_integer",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_matches_string",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G02_matches_false",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_matches_false/experiments/001-github-read/verify.py\", line 9, in <module>\n    assert r['result']=='PASS' and all(r['matches'].values())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_mismatch",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G02_mismatch/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G02', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_title_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_title_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_title_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_title_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_title_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_title",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_state_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_state_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_state_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_state_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_state_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_state",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_body_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_body_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_body_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_body_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_body_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_body",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_updated_at_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_updated_at_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_updated_at_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_updated_at_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_updated_at_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_updated_at",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_number_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_number_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_number_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_number_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_number_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_number_both/experiments/001-github-read/verify.py\", line 14, in <module>\n    else: assert a['number']==(45 if r['id']=='G02' else 46)\n                 ~^^^^^^^^^^\nKeyError: 'number'\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_type_number",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_type_number/experiments/001-github-read/verify.py\", line 14, in <module>\n    else: assert a['number']==(45 if r['id']=='G02' else 46)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_base_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_base_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_base",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_head_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_head_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_head",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_ref_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_base_ref_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_ref_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_base_ref_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_ref_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_base_ref",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_sha_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_base_sha_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_sha_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_base_sha_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_base_sha_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_base_sha",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_ref_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_head_ref_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_ref_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_head_ref_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_ref_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_head_ref",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_sha_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_head_sha_connector/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_sha_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_missing_head_sha_comparison/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_missing_head_sha_both",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_type_head_sha",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_matches_empty",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_matches_partial",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_matches_integer",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_matches_string",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_matches_false",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_matches_false/experiments/001-github-read/verify.py\", line 9, in <module>\n    assert r['result']=='PASS' and all(r['matches'].values())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "version": "before",
+    "case": "G03_mismatch",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<fixture>/before/G03_mismatch/experiments/001-github-read/verify.py\", line 8, in <module>\n    assert a==b,(r['id'],'snapshot mismatch')\n           ^^^^\nAssertionError: ('G03', 'snapshot mismatch')\n"
+  },
+  {
+    "version": "before",
+    "case": "G02_empty_body",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "G03_empty_body",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "before",
+    "case": "review_number_only_empty_matches",
+    "expected_accept": false,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": false,
+    "stdout": "PASS: 3 operation records, README byte/hash/blob, Issue/PR fields, chronology, relative links, manifest 6 files\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "normal",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: offline schema/comparison, README bytes/SHA/blob, links, manifest 6 files; not network remeasurement\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "checkout",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: offline schema/comparison, README bytes/SHA/blob, links, manifest 6 files; not network remeasurement\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "worktree",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: offline schema/comparison, README bytes/SHA/blob, links, manifest 6 files; not network remeasurement\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "missing_file",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: scope: required file missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "changed_file",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: manifest: size docs/research-map.md\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "size",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: manifest: size README.md\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "sha",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: manifest: SHA README.md\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "hidden_extra",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: manifest: file set mismatch\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "nested_manifest",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: manifest: file set mismatch\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_bytes_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_bytes_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_bytes_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_type_bytes",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: bytes type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_sha256_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_sha256_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_sha256_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_type_sha256",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: sha256 type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_git_blob_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_git_blob_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_git_blob_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_type_git_blob",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: git_blob type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_body_utf8_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_body_utf8_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_missing_body_utf8_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_type_body_utf8",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: body type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_matches_empty",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: matches fields\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_matches_partial",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: matches fields\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_matches_integer",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_matches_string",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_matches_false",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G01_mismatch",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G01: byte count mismatch\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_title_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_title_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_title_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_type_title",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: title type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_state_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_state_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_state_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_type_state",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: state type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_body_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_body_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_body_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_type_body",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: body type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_updated_at_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_updated_at_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_updated_at_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_type_updated_at",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: updated_at type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_number_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_number_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_missing_number_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_type_number",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: number\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_matches_empty",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: matches fields\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_matches_partial",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: matches fields\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_matches_integer",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_matches_string",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_matches_false",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_mismatch",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot mismatch\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_title_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_title_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_title_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_title",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: title type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_state_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_state_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_state_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_state",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: state type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_body_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_body_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_body_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_body",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: body type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_updated_at_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_updated_at_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_updated_at_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_updated_at",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: updated_at type\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_number_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_number_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_number_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_number",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: number\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_base",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_head",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_ref_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_ref_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_ref_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_base_ref",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base ref\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_sha_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_sha_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_base_sha_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_base_sha",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: base sha\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_ref_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_ref_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_ref_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_head_ref",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head ref\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_sha_connector",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_sha_comparison",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_missing_head_sha_both",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head fields missing\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_type_head_sha",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: head sha\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_matches_empty",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: matches fields\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_matches_partial",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: matches fields\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_matches_integer",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_matches_string",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_matches_false",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: matches boolean true required\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_mismatch",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G03: snapshot mismatch\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G02_empty_body",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: offline schema/comparison, README bytes/SHA/blob, links, manifest 6 files; not network remeasurement\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "G03_empty_body",
+    "expected_accept": true,
+    "exit_code": 0,
+    "accepted": true,
+    "matches_expectation": true,
+    "stdout": "PASS: offline schema/comparison, README bytes/SHA/blob, links, manifest 6 files; not network remeasurement\n",
+    "stderr": ""
+  },
+  {
+    "version": "after",
+    "case": "review_number_only_empty_matches",
+    "expected_accept": false,
+    "exit_code": 1,
+    "accepted": false,
+    "matches_expectation": true,
+    "stdout": "FAIL: G02: snapshot fields missing\n",
+    "stderr": ""
+  }
+]
