@@ -1,9 +1,10 @@
-# ChatGPT研究対象・実行環境・比較基準（Stage 0 / v0.2 補訂案）
+# ChatGPT研究対象・実行環境・比較基準（Stage 0 / v0.2 文書限定受入版）
 
 - 作成日: 2026-11-18 JST（v0.1）
 - 更新日: 2026-11-18 JST（v0.2 補訂）
-- 状態: **補訂案 / v0.1独立レビュー実施済み / v0.2独立再審査未実施 / 文書限定受入前**
-- レビュー履歴: [v0.1独立レビュー](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6#pullrequestreview-5945761782)は総合PARTIAL、P2-01/P2-02・P3-01未閉鎖、文書受入NO。元の「独立レビュー未実施」は**v0.1作成時点**の状態であり、v0.2の現状態を表さない。
+- 状態: **v0.2独立再審査実施済み / 文書限定受入YES / 総合PARTIAL / Stage 1正式移行・実測開始HOLD**。限定マージ承認は文書範囲だけを対象とし、実測開始の承認を含まない。
+- レビュー履歴: [v0.1独立レビュー](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6#pullrequestreview-5945761782)は当時**総合PARTIAL・文書受入NO**でP2-01/P2-02・P3-01を指摘。[v0.2独立再審査](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6#pullrequestreview-5947211731)は元40分類・10変異を原入力で再判定し**40/40・10/10文書規則PASS**、旧P2 2件・P3 1件はCLOSED、追加13件は12 PASS・1 FAIL（新P3-02: C32/C39の入力説明逆転、非blocking）。本版でP3-02の説明を訂正する。元の「独立レビュー未実施」は**v0.1作成当時**の歴史的状態であり、現在を表さない。
+- 証拠保全: v0.2再審査証拠ZIPのLibrary保存と別担当による実物再取得・全byte/SHA-256/CRC/manifest照合は、独立再審査レビュー上**PASSと報告**。同一基盤・共有workspace・履歴継承の独立性の限界、Library ACL全体・長期保持保証のUNKNOWNは継続。レビュー投稿後の読戻し記録は当該ZIPには含まれない。
 - 対象: `chatGPT-lab` および横断実験の比較・報告
 - 議論の起点: このプロジェクトの2026-11-17〜18の会話
 - 関連: [Issue #5](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/5)、既存実験001/002
@@ -121,18 +122,19 @@
 4. `controlled-ranking` で順位に影響する権限・設定・ネットワーク等の必須条件が異なる場合は**比較不可**。`descriptive` で、その差を観測でき、目的が同じ課題の条件差の記述であり、必要な最低限の共通条件を満たす場合に限って**条件差あり**。この場合も「同一条件でAが優秀」とは結論しない。
 5. 比較未実施は判定3値のいずれかに擬装せず**NOT_TESTED**。分類IDがUNKNOWNなら、そのIDに依存する比較は**比較不可（理由：主体帰属未確定）**であって、IDが確定したことにしない。目的上IDが不要な記述比較でも、帰属未確定を明記し、ID別順位に転用しない。
 
-**固定反例の期待境界**（v0.1レビュー指摘を補訂するための規則上の予測であり、旧40ケース原票の再実行結果ではない）：
+**固定反例の原入力判定と、条件を補った説明用シナリオの区別**（原票は変更しない）：
 
-| ケース | 目的・観測条件 | v0.2での期待 |
+| 区分 / ケース | 入力条件 | v0.2の規則による判定 |
 |---|---|---|
-| C25 / C26 | 権限・AGENTS.md・ネットワークに差がある同一2run、目的が`descriptive`。共通課題と差の実体を立証 | `条件差あり`（差が不明/必要共通条件欠落なら`比較不可`） |
-| C25 / C26 | 同一2run、目的が`controlled-ranking`で差のある項目が必須同値条件 | `比較不可` |
-| C32 | 開始時の選択形態が未確認 | `comparison_id=UNKNOWN`、理由・候補・保留を記録 |
-| C39 | Workまでは確認、Cloud/Localは未確認 | `comparison_id=UNKNOWN`、候補と理由を記録。勝手にWORK-CLOUD等へ固定しない |
-| M10 | 比較目的が欠落した変異入力 | `protocol_validation=REJECTED`、比較判定を要求した場合は`comparison_decision=比較不可`（`MISSING_PREDECLARED_FIELD`）。既定目的の補完は禁止 |
-| C31 / M09 | 開始時IDは保持し、mixedの観測値をlocalに置換したら改竄として拒否 | 開始時IDの保持自体はPASS対象。mixedからlocalへの無根拠置換は不受理 |
+| **原入力 C25 / C26** | 元の40件に含まれる原入力には比較目的・指標・同値条件等の事前必須項目が欠落。異なる条件の2runという情報だけで目的を推定しない | `protocol_validation=REJECTED`、比較判定要求時は`comparison_decision=比較不可`、`decision_reason=MISSING_PREDECLARED_FIELD` |
+| **仮想シナリオA（元C25/C26とは別入力）** | 事前に完全な比較プロトコルを固定し、目的が`descriptive`。共通課題と観測した差、最低限の共通条件を立証 | 条件差を記述する目的に限り`条件差あり`。必要条件が欠落すれば`比較不可` |
+| **仮想シナリオB（元C25/C26とは別入力）** | 事前に完全な比較プロトコルを固定し、目的が`controlled-ranking`。順位に影響する必須同値条件（権限・AGENTS.md等）が不一致 | `比較不可` |
+| **原入力 C32** | 「Work」の選択だけ確認でき、Cloud/Localが不明 | `comparison_id=UNKNOWN`、`comparison_id_status=UNRESOLVED`。理由・根拠ある候補を記録し順位保留 |
+| **原入力 C39** | 開始時の利用形態そのものが不明 | `comparison_id=UNKNOWN`、`comparison_id_status=UNRESOLVED`。理由・候補またはUNKNOWNを記録し順位保留 |
+| **原入力 M10** | 比較目的が欠落した変異入力 | `protocol_validation=REJECTED`。比較判定要求時は`comparison_decision=比較不可`、`MISSING_PREDECLARED_FIELD`。既定目的の補完は禁止 |
+| **原入力 C31 / M09** | 開始時ID保持と観測したmixed、mixedを根拠なくlocalへ置換する変異を区別 | 開始時IDの保持自体は許容。mixed→localの無根拠置換は拒否 |
 
-上記は**文書上の期待規則**。同じC25/C26でも、事前に固定した目的が `descriptive` か `controlled-ranking` かによって判定が変わる。40分類ケースと10変異の元入力一式を取得して同条件で再採点するまで、v0.2で「40/40 PASS」「10/10拒否」等と報告しない。検査器の実動作は別試験とする。
+上の仮想シナリオA/Bは**説明用の別入力**であり、元C25/C26の40件に条件を追記した採点結果ではない。元50件の得点に算入せず、必要な場合は新規プロトコル・fixture・IDで別試験とする。v0.2独立再審査では、回収した元40分類・10変異を同一入力として評価し、**40/40・10/10の文書規則PASS**と報告された。これは製品実測・自動分類器のPASSではなく、記録検査器の成功だけで分類判断を機械的に立証したものでもない。
 
 ## 7. 研究の順序と既存記録
 
@@ -149,7 +151,7 @@
 - 実験IDの粒度（Windows/macOS、iOS/Android、CLI/IDE等の下位分類）は必要に応じて増やす。既存IDの意味は黙って変えない。
 - クライアントが実際に使用したモデルの厳密な同一性、dot委任内部の全経路、Cloud/Local混在の切り分けは観測できない場合UNKNOWNを保持する。
 - クライアント差と実行場所差を混同していないか、別repoの設定差を比較結果のバイアスとして記録しているかを独立レビューする。
-- Stage 0は**文書範囲のみ**。実装・実測・CI・独立レビュー・証拠保存のPASSはそれぞれ別記録とする。v0.1文書について独立レビューは実施済みだが**PARTIAL・文書受入NO**。v0.2の再審査・恒久保全は未実施であり、前回の証拠ZIP照合を新しい版の保全証明へ転用しない。
+- Stage 0は**文書範囲のみ**。実装・実測・CI・独立レビュー・証拠保全の判定は別々に記録する。v0.1レビューの**PARTIAL・文書受入NO**は当時の履歴として保持する。v0.2の[独立再審査](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6#pullrequestreview-5947211731)は文書規則に限り40分類/40 PASS・10変異/10 PASS、追加13件中12 PASS・1 FAIL（非blocking P3-02を本版で訂正）、旧P2 2件・P3 1件CLOSED、**文書限定受入YES・総合PARTIAL**。v0.2の証拠ZIPはLibraryから別担当が再取得し全byte・SHA-256・CRC・manifest一致と報告されたが、同一基盤・共有workspace・履歴継承の限界があり、ACL全体と長期保持保証はUNKNOWN。レビュー投稿後の読戻し記録は当該ZIP外。**新たな製品実測・自動分類器試験・Stage 1正式移行・実測開始・CI成功は成立していない**。
 
 ## 9. 公開参考資料（2026-11-18閲覧）
 
