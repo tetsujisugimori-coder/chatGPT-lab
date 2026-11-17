@@ -27,3 +27,7 @@ ChatGPTを中心に、モデル、接続アプリ、MCP、外部AI・ソフト�
 ## P2修正追補
 
 [検査器の修正と110のオフライン対照](experiments/001-github-read/RESULTS.md)を追記。原観測と事前計画は維持。修正担当による自己検証であり、独立再レビューはNOT_TESTED。総合PARTIAL・限定マージNO・Draft維持。
+
+## 第2実験（2026-11-17）
+[002 不存在ファイル読取](experiments/002-github-missing-path/RESULTS.md)は固定公開commitのREADME正常対照と不存在path負対照に限りPASS。fetch_fileの明示NOT_FOUNDと認証なしHTTPSの404を区別し、正常本文2237 bytesを別経路照合した。総合PARTIAL、通常ChatGPT全般・モデル比較・非公開境界・MCP全般へ一般化しない。
+前工程PR #2は後の再レビューを経てmerge済み。上記旧P2修正追補のNO/NOT_TESTEDは当時の履歴であり、原記録を保持する。今回の提出/保全/独立レビューは002とPRの結果を参照。

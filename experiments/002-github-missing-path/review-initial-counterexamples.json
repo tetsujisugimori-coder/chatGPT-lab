@@ -1,0 +1,30 @@
+[
+  {
+    "case": "A_raw_wrong_tool",
+    "expected_accept": false,
+    "exit_code": 0,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"PASS\", \"attempts\": 4, \"manifest_files\": 17}\n",
+    "stderr": ""
+  },
+  {
+    "case": "A_raw_tool_missing",
+    "expected_accept": false,
+    "exit_code": 0,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"PASS\", \"attempts\": 4, \"manifest_files\": 17}\n",
+    "stderr": ""
+  },
+  {
+    "case": "B_wrong_method",
+    "expected_accept": false,
+    "exit_code": 0,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"PASS\", \"attempts\": 4, \"manifest_files\": 17}\n",
+    "stderr": ""
+  },
+  {
+    "case": "B_raw_source_wrong",
+    "expected_accept": false,
+    "exit_code": 0,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"PASS\", \"attempts\": 4, \"manifest_files\": 17}\n",
+    "stderr": ""
+  }
+]

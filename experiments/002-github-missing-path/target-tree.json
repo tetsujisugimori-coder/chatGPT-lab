@@ -1,0 +1,100 @@
+{
+  "sha": "8fa307eb94c1bdfe98bb0afc34cc0cbf01473742",
+  "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/trees/8fa307eb94c1bdfe98bb0afc34cc0cbf01473742",
+  "tree": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1eb8a6e2871aea631191c2465a5be84eb1bd8a38",
+      "size": 2237,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/1eb8a6e2871aea631191c2465a5be84eb1bd8a38"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6e767c3cd720136316ae9eb4b365af4efde7816",
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/trees/c6e767c3cd720136316ae9eb4b365af4efde7816"
+    },
+    {
+      "path": "docs/research-map.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7663d736dd84159bc4b1c17b34276aa37c9cea66",
+      "size": 3424,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/7663d736dd84159bc4b1c17b34276aa37c9cea66"
+    },
+    {
+      "path": "experiments",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "18ad09458bd52f38c2303d125980cad578095aab",
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/trees/18ad09458bd52f38c2303d125980cad578095aab"
+    },
+    {
+      "path": "experiments/001-github-read",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0817887c24d4cd28d7c94174b77ae033a008a0e8",
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/trees/0817887c24d4cd28d7c94174b77ae033a008a0e8"
+    },
+    {
+      "path": "experiments/001-github-read/P2-regression-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23453fd72bda2eb6ba989ec5854d61c1fdc951a9",
+      "size": 74772,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/23453fd72bda2eb6ba989ec5854d61c1fdc951a9"
+    },
+    {
+      "path": "experiments/001-github-read/PLAN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ddea76e168ab9478c47a8e5599332b7083c7854",
+      "size": 2755,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/6ddea76e168ab9478c47a8e5599332b7083c7854"
+    },
+    {
+      "path": "experiments/001-github-read/RESULTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae26f8a4913042086bde1fb99e0b3c7e999b3f75",
+      "size": 8561,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/ae26f8a4913042086bde1fb99e0b3c7e999b3f75"
+    },
+    {
+      "path": "experiments/001-github-read/manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "608ccf95de332b9affa9ea0a227f4d2fa0b24c86",
+      "size": 1194,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/608ccf95de332b9affa9ea0a227f4d2fa0b24c86"
+    },
+    {
+      "path": "experiments/001-github-read/observations.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be65037f185fe17571b6688876119b1292946b6a",
+      "size": 25421,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/be65037f185fe17571b6688876119b1292946b6a"
+    },
+    {
+      "path": "experiments/001-github-read/test_regressions.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9a7d390fce13aa8e2a1c676dfd828dc116d645d",
+      "size": 5184,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/d9a7d390fce13aa8e2a1c676dfd828dc116d645d"
+    },
+    {
+      "path": "experiments/001-github-read/verify.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b0901bc363b3d773edc94ed12fd8cedf61c0ae4",
+      "size": 5341,
+      "url": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/git/blobs/9b0901bc363b3d773edc94ed12fd8cedf61c0ae4"
+    }
+  ],
+  "truncated": false
+}

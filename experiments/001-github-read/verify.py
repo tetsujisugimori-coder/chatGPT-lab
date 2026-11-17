@@ -1,5 +1,6 @@
 """Offline verification of recorded evidence, not a network remeasurement.
-Scope: every repository file except root .git (directory or worktree pointer)
+Scope: every repository file except root .git (directory or worktree pointer),
+the exact experiments/002-github-missing-path subtree (separate manifest),
 and this experiment's manifest itself. Other hidden files are NOT ignored.
 """
 import hashlib
@@ -22,6 +23,8 @@ def scoped_files(root):
     files = set()
     for base, dirs, names in os.walk(root, followlinks=False):
         base = pathlib.Path(base)
+        if base == root / 'experiments':
+            dirs[:] = [d for d in dirs if d != '002-github-missing-path']
         if base == root:
             dirs[:] = [d for d in dirs if d != '.git']
             names = [n for n in names if n != '.git']

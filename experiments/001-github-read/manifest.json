@@ -1,11 +1,11 @@
 {
   "README.md": {
-    "bytes": 2237,
-    "sha256": "fcc2ac0d4629d4b994f2bec8e80a815ee415d72dde7de4f8aa4073b099861ac5"
+    "bytes": 2889,
+    "sha256": "b75995c2b43cd9904abef6ebdb20ceeb08bc9c16fd6844deffb42dc448a5f119"
   },
   "docs/research-map.md": {
-    "bytes": 3424,
-    "sha256": "2189b7d69f50fa979333588792a84fb8be821bd4d49414a16ac270fd8ae9da44"
+    "bytes": 4013,
+    "sha256": "9bca674ebf827a179c3606b060e35dbcb85431f431b4f7c25d0bc2091cc96fef"
   },
   "experiments/001-github-read/P2-regression-results.json": {
     "bytes": 74772,
@@ -24,11 +24,11 @@
     "sha256": "1be02523e31a23913b803ec38f15823d22e767de0b7d7106f5a2c5a7475850e5"
   },
   "experiments/001-github-read/test_regressions.py": {
-    "bytes": 5184,
-    "sha256": "8ad1ca0b8b3008339d06e93b853903d0150b2a567f6d68d0ee4ef476f66fff7c"
+    "bytes": 5271,
+    "sha256": "f8844717d411b86b164ea16327ecaf26de4857973c7a4932c73c8360ee58cfde"
   },
   "experiments/001-github-read/verify.py": {
-    "bytes": 5341,
-    "sha256": "b4225d2ff8352e2ddc49d324a1a9eff3639099a63ac928a63bf80f9b1d64bf05"
+    "bytes": 5532,
+    "sha256": "cb1debc1bf0523290cacef10c9d2e919e4dcc1c4435de7446e2978f6840d439c"
   }
 }
