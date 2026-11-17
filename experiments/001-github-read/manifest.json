@@ -1,0 +1,26 @@
+{
+  "README.md": {
+    "bytes": 1946,
+    "sha256": "ce4ce3a0721cd21ba1ed23ff478f7883b6ad64be9b73a05c2f1b1846cb8f01dc"
+  },
+  "docs/research-map.md": {
+    "bytes": 3424,
+    "sha256": "2189b7d69f50fa979333588792a84fb8be821bd4d49414a16ac270fd8ae9da44"
+  },
+  "experiments/001-github-read/PLAN.md": {
+    "bytes": 2755,
+    "sha256": "15245071615c3af547d3eef50309208d25584044826763b153ec20a615098650"
+  },
+  "experiments/001-github-read/RESULTS.md": {
+    "bytes": 6016,
+    "sha256": "6c78157a6796637b7cdf312d8a62d9623711b27ea0f8fa5a2b39e4bc4f09ed74"
+  },
+  "experiments/001-github-read/observations.json": {
+    "bytes": 25421,
+    "sha256": "1be02523e31a23913b803ec38f15823d22e767de0b7d7106f5a2c5a7475850e5"
+  },
+  "experiments/001-github-read/verify.py": {
+    "bytes": 1559,
+    "sha256": "f799751b45b87db230eec89e290913680c2948007cb02e7524f92f4111c47d7e"
+  }
+}

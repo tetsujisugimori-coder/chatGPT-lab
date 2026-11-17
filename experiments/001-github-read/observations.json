@@ -1,0 +1,177 @@
+{
+  "plan_commit": "58413d39e20f0a8abc3fd1cac2ced5921d122c75",
+  "actor": "八兵衛の担当エージェント",
+  "app": "ChatGPT dot",
+  "environment": "cloud Linux x86_64; Python 3.12.14; git 2.52.0; curl 8.14.1",
+  "visible_model": "UNKNOWN",
+  "records": [
+    {
+      "id": "G01",
+      "connector": {
+        "tool": "github_fetch_file",
+        "started_at": "2026-11-17T03:42:45.858Z",
+        "ended_at": "2026-11-17T03:42:46.203Z",
+        "target": {
+          "repository_full_name": "tetsujisugimori-coder/Hachibei-Lab",
+          "path": "README.md",
+          "ref": "303ff502124681a519b6da8cb64a0232c9a73968",
+          "encoding": "base64"
+        },
+        "snapshot": {
+          "bytes": 2067,
+          "sha256": "8d6e847a6609e40e1a3e32317df7ad6d8c727d624361a1f10c0f60926438affc",
+          "git_blob": "769f35bf09bbe2d6236d59614d8a2419a2eaebf7",
+          "body_utf8": "# Hachibei-Lab\ndot 八兵衛の管理用のリポジトリ\n\n## 共通開発方針\n\n[工程分割・容量管理・証拠保全の共通方針](docs/common-development-policy.md)（2026-11-14版）。本人が管理する全リポジトリを対象とする。本人限定Spaceへの保存後、実ファイルを再取得し元データとのサイズ・SHA-256一致を独立照合できれば、マージ時の保全条件を満たす。Windowsへの追加移管はその必須前提としない。技術的受入とマージ実行の許可は別に確認する。\n\n作業の入口は [AGENTS.md](AGENTS.md)。各リポジトリへの導入手順・反映状態の扱いは共通方針の第7節を参照する。\n\n## dotの機能と制約の調査\n\n[会話調査 2026年11月15日](research/dot-capabilities/2026-11-15.md)に、並行作業・引継ぎ・停止・保存・設定参照・アプリ操作・余暇観察の報告と未解明事項を整理する。既存調査の公開用要約であり、原ログの独立再検証や総合能力の保証とは区別する。\n\n[C05/C06 引継ぎ・途中追加指示の限定確認](research/dot-capabilities/handoff-20261115/REPORT.md)：明示入力・受領申告・資料版・成果物反映を分けた1事例と記録テンプレート。\n\n\n[C05/C06 本人追加指示の通常作業追跡（H02）](research/dot-capabilities/natural-handoff-20261115/REPORT.md)：初期文書を固定した準備。本人追加指示待ち、実証は未実施。\n\n[Stage H03 別スレッド間の情報伝達境界](research/dot-capabilities/h03-20261115/REPORT.md)：明示提示前後の限定観測。自動共有と取得経路の排他性はUNKNOWN。\n\n[Stage H04-A/C 取得経路基盤・形式検証](research/dot-capabilities/h04-20261116/README.md)：合成検査のみ。実経路・自動共有はUNKNOWN、H04-B実験未実施。\n\n[H04-B 非通信の開始条件基盤](research/dot-capabilities/h04b-20261116/README.md)：準備と合成検査のみ。実験開始BLOCKED、共有・取得経路UNKNOWN。\n"
+        }
+      },
+      "comparison": {
+        "method": "separate curl HTTPS GET (same GitHub authority, not independent operator)",
+        "attempts": [
+          {
+            "id": "G01",
+            "url": "https://raw.githubusercontent.com/tetsujisugimori-coder/Hachibei-Lab/303ff502124681a519b6da8cb64a0232c9a73968/README.md",
+            "started_at": "2026-11-17T03:43:04.192898+00:00",
+            "ended_at": "2026-11-17T03:43:12.669421+00:00",
+            "exit_code": 0,
+            "bytes": 2067,
+            "error": null
+          }
+        ],
+        "snapshot": {
+          "bytes": 2067,
+          "sha256": "8d6e847a6609e40e1a3e32317df7ad6d8c727d624361a1f10c0f60926438affc",
+          "git_blob": "769f35bf09bbe2d6236d59614d8a2419a2eaebf7",
+          "body_utf8": "# Hachibei-Lab\ndot 八兵衛の管理用のリポジトリ\n\n## 共通開発方針\n\n[工程分割・容量管理・証拠保全の共通方針](docs/common-development-policy.md)（2026-11-14版）。本人が管理する全リポジトリを対象とする。本人限定Spaceへの保存後、実ファイルを再取得し元データとのサイズ・SHA-256一致を独立照合できれば、マージ時の保全条件を満たす。Windowsへの追加移管はその必須前提としない。技術的受入とマージ実行の許可は別に確認する。\n\n作業の入口は [AGENTS.md](AGENTS.md)。各リポジトリへの導入手順・反映状態の扱いは共通方針の第7節を参照する。\n\n## dotの機能と制約の調査\n\n[会話調査 2026年11月15日](research/dot-capabilities/2026-11-15.md)に、並行作業・引継ぎ・停止・保存・設定参照・アプリ操作・余暇観察の報告と未解明事項を整理する。既存調査の公開用要約であり、原ログの独立再検証や総合能力の保証とは区別する。\n\n[C05/C06 引継ぎ・途中追加指示の限定確認](research/dot-capabilities/handoff-20261115/REPORT.md)：明示入力・受領申告・資料版・成果物反映を分けた1事例と記録テンプレート。\n\n\n[C05/C06 本人追加指示の通常作業追跡（H02）](research/dot-capabilities/natural-handoff-20261115/REPORT.md)：初期文書を固定した準備。本人追加指示待ち、実証は未実施。\n\n[Stage H03 別スレッド間の情報伝達境界](research/dot-capabilities/h03-20261115/REPORT.md)：明示提示前後の限定観測。自動共有と取得経路の排他性はUNKNOWN。\n\n[Stage H04-A/C 取得経路基盤・形式検証](research/dot-capabilities/h04-20261116/README.md)：合成検査のみ。実経路・自動共有はUNKNOWN、H04-B実験未実施。\n\n[H04-B 非通信の開始条件基盤](research/dot-capabilities/h04b-20261116/README.md)：準備と合成検査のみ。実験開始BLOCKED、共有・取得経路UNKNOWN。\n"
+        }
+      },
+      "matches": {
+        "body_bytes": true,
+        "git_blob": true
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "G02",
+      "connector": {
+        "tool": "github_fetch_issue",
+        "started_at": "2026-11-17T03:42:46.203Z",
+        "ended_at": "2026-11-17T03:42:46.566Z",
+        "target": {
+          "repository_full_name": "tetsujisugimori-coder/Hachibei-Lab",
+          "issue_number": 45
+        },
+        "snapshot": {
+          "title": "Stage H04-B 実験開始ゲート審査：B0/B1独立性・7経路実適用（実験はBLOCKED）",
+          "state": "open",
+          "body": "## 背景・現在の判断\n研究基盤のみ先行受入。親 [PR #42](https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/42) は merge commit `49ad8f0852e02ce105c8759da880edac702f2bfc`、準備 [PR #44](https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/44) は merge commit `5976043a4968035f8a2a201ad0db73166f6ea8c0` でmain取込み済み。[Issue #43](https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/43) は準備基盤の完了で閉鎖。**実スレッドB0/B1実験を開始してよいという意味ではない。**\n\n**現在判定：準備基盤の限定技術PASS／研究全体PARTIAL／実験開始BLOCKED／実スレッド試行NOT_TESTED／取得経路・自動共有・排他性UNKNOWN。** mainの `research/dot-capabilities/h04b-20261116/READINESS.json` を再読し、owner_approval=BLOCKED、他の開始8条件=UNKNOWN、全7経路の要求/受付/適用/検査/実測/代替排除=UNKNOWNを確認。秘密文書・正解は未生成。正規ツールの存在を対象アクセスや技術遮断の成立証拠にしない。\n\n## このIssueの許可範囲\n非通信の開始審査、事前計画の改善案、権限・取得経路の可否整理、独立レビューと判定記録に限定。実A/B0/B1スレッドの新規作成・送信、秘密正解生成、Memory/Space/検索等の設定変更、検索/共有への漏出を生む操作、定期実行・自動監視を**別途明示承認まで行わない**。実原票を合成形式検査器へ誤投入しない。\n\n## 開始ゲート（すべて独立した根拠が必要）\n- [ ] 本人の**実験そのもの**の明示承認：対象・許可操作・停止条件・成果物保管を指定し、準備基盤マージ承認と区別\n- [ ] 認可された新規スレッドA/B0/B1の作成・履歴境界の受付・実適用を検証\n- [ ] 他資料から推測困難なA原文と秘密正解の本人限定隔離・版/作成時刻・UTF-8/LF・原byte/SHA-256の事前固定（作成は承認後）\n- [ ] 採点規則の事前固定（B0非提示、B1明示提示、全文再述、末尾1行改訂、送信受付、受信申告、経路特定を別評価）\n- [ ] B0への事前情報混入検査：回答・識別子・hash・所在を指示、履歴、Memory、検索、Space、共有ファイル、引継ぎ、公開PRへ露出させない\n- [ ] 7経路（history/transfer/memory/shared/search/handoff/unidentified）のavailable/authorized/requested/accepted/applied/checked/measured/evidence/alternative_excludedを個別に点検。自己申告・禁止依頼文は遮断証拠ではない\n- [ ] 停止・欠落・切捨て・監査・本人限定保全/再取得・独立照合の具体的方法が成立\n- [ ] B0/B1は互いに新規thread・異なる識別子で、順序交絡と共有条件を記録。別thread IDだけで独立試行2回と数えない\n- [ ] B0完了原票の先行固定後にのみ、B1へ別原文を明示提供する条件が成立\n- [ ] 開始前の独立レビューが証拠実物に対してPASS、本人の実験開始承認を別途確認\n\n## 不成立時の扱い\n一つでも未確認なら **BLOCKED/NOT_TESTED**。排他性の反証不能な「未特定経路」が残る限り、排他的取得経路の実証をPASSとしない。限定観測へ研究目的を変更する場合も、**別計画・別審査・別承認**が必要であり自動切替禁止。H04-Dの実原票監査はまだNOT_TESTED。\n\n## P3後続候補（非阻害）\n`authorized/applied/checked/measured/alternative_excluded` の各非PASS状態の個別合成反例を拡充する。実験承認の代用にはしない。\n\nこのIssue自体は研究実験の実行許可ではなく、審査条件の台帳である。",
+          "updated_at": "2026-11-16T12:47:43Z",
+          "number": 45
+        }
+      },
+      "comparison": {
+        "method": "separate curl HTTPS GET (same GitHub authority, not independent operator)",
+        "attempts": [
+          {
+            "id": "G02",
+            "url": "https://api.github.com/repos/tetsujisugimori-coder/Hachibei-Lab/issues/45",
+            "started_at": "2026-11-17T03:43:12.669606+00:00",
+            "ended_at": "2026-11-17T03:43:37.687273+00:00",
+            "exit_code": 28,
+            "bytes": 0,
+            "error": "curl: (28) Connection timed out after 25002 milliseconds"
+          },
+          {
+            "url": "https://api.github.com/repos/tetsujisugimori-coder/Hachibei-Lab/issues/45",
+            "started_at": "2026-11-17T03:43:52.854932+00:00",
+            "ended_at": "2026-11-17T03:43:58.228023+00:00",
+            "exit_code": 0,
+            "bytes": 8906,
+            "error": "",
+            "reason": "one bounded retry after timeout; original attempt retained"
+          }
+        ],
+        "snapshot": {
+          "title": "Stage H04-B 実験開始ゲート審査：B0/B1独立性・7経路実適用（実験はBLOCKED）",
+          "state": "open",
+          "body": "## 背景・現在の判断\n研究基盤のみ先行受入。親 [PR #42](https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/42) は merge commit `49ad8f0852e02ce105c8759da880edac702f2bfc`、準備 [PR #44](https://github.com/tetsujisugimori-coder/Hachibei-Lab/pull/44) は merge commit `5976043a4968035f8a2a201ad0db73166f6ea8c0` でmain取込み済み。[Issue #43](https://github.com/tetsujisugimori-coder/Hachibei-Lab/issues/43) は準備基盤の完了で閉鎖。**実スレッドB0/B1実験を開始してよいという意味ではない。**\n\n**現在判定：準備基盤の限定技術PASS／研究全体PARTIAL／実験開始BLOCKED／実スレッド試行NOT_TESTED／取得経路・自動共有・排他性UNKNOWN。** mainの `research/dot-capabilities/h04b-20261116/READINESS.json` を再読し、owner_approval=BLOCKED、他の開始8条件=UNKNOWN、全7経路の要求/受付/適用/検査/実測/代替排除=UNKNOWNを確認。秘密文書・正解は未生成。正規ツールの存在を対象アクセスや技術遮断の成立証拠にしない。\n\n## このIssueの許可範囲\n非通信の開始審査、事前計画の改善案、権限・取得経路の可否整理、独立レビューと判定記録に限定。実A/B0/B1スレッドの新規作成・送信、秘密正解生成、Memory/Space/検索等の設定変更、検索/共有への漏出を生む操作、定期実行・自動監視を**別途明示承認まで行わない**。実原票を合成形式検査器へ誤投入しない。\n\n## 開始ゲート（すべて独立した根拠が必要）\n- [ ] 本人の**実験そのもの**の明示承認：対象・許可操作・停止条件・成果物保管を指定し、準備基盤マージ承認と区別\n- [ ] 認可された新規スレッドA/B0/B1の作成・履歴境界の受付・実適用を検証\n- [ ] 他資料から推測困難なA原文と秘密正解の本人限定隔離・版/作成時刻・UTF-8/LF・原byte/SHA-256の事前固定（作成は承認後）\n- [ ] 採点規則の事前固定（B0非提示、B1明示提示、全文再述、末尾1行改訂、送信受付、受信申告、経路特定を別評価）\n- [ ] B0への事前情報混入検査：回答・識別子・hash・所在を指示、履歴、Memory、検索、Space、共有ファイル、引継ぎ、公開PRへ露出させない\n- [ ] 7経路（history/transfer/memory/shared/search/handoff/unidentified）のavailable/authorized/requested/accepted/applied/checked/measured/evidence/alternative_excludedを個別に点検。自己申告・禁止依頼文は遮断証拠ではない\n- [ ] 停止・欠落・切捨て・監査・本人限定保全/再取得・独立照合の具体的方法が成立\n- [ ] B0/B1は互いに新規thread・異なる識別子で、順序交絡と共有条件を記録。別thread IDだけで独立試行2回と数えない\n- [ ] B0完了原票の先行固定後にのみ、B1へ別原文を明示提供する条件が成立\n- [ ] 開始前の独立レビューが証拠実物に対してPASS、本人の実験開始承認を別途確認\n\n## 不成立時の扱い\n一つでも未確認なら **BLOCKED/NOT_TESTED**。排他性の反証不能な「未特定経路」が残る限り、排他的取得経路の実証をPASSとしない。限定観測へ研究目的を変更する場合も、**別計画・別審査・別承認**が必要であり自動切替禁止。H04-Dの実原票監査はまだNOT_TESTED。\n\n## P3後続候補（非阻害）\n`authorized/applied/checked/measured/alternative_excluded` の各非PASS状態の個別合成反例を拡充する。実験承認の代用にはしない。\n\nこのIssue自体は研究実験の実行許可ではなく、審査条件の台帳である。",
+          "updated_at": "2026-11-16T12:47:43Z",
+          "number": 45
+        }
+      },
+      "matches": {
+        "title": true,
+        "state": true,
+        "body": true,
+        "updated_at": true,
+        "number": true
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "G03",
+      "connector": {
+        "tool": "github_get_pr_info",
+        "started_at": "2026-11-17T03:42:46.566Z",
+        "ended_at": "2026-11-17T03:42:46.936Z",
+        "target": {
+          "repository_full_name": "tetsujisugimori-coder/Hachibei-Lab",
+          "pr_number": 46
+        },
+        "snapshot": {
+          "title": "research: H04 Issue45 読取専用アクセス観測・合成混入検証",
+          "state": "closed",
+          "body": "Relates #45. Does not close #45 or authorize real B0/B1 experiments.\n\n## Scope\n- 現接続での2 Space一覧・ルートPageメタデータ・共有状態の読取専用観測を記録。Space ID/名称/共有相手は公開しない。\n- 7経路の利用可能性と「B0取得遮断の実適用」を分離。Memory、検索内部索引、履歴、担当引継ぎ、未特定経路はUNKNOWN。\n- `preflight.py`は合成値限定の8 surfaceの原文/hash/所在露出検出器。未検出でも `isolation=UNKNOWN`、常時 `execution_allowed=false`。実秘密・実スレッドを受け付けない。\n- 7経路×8項目×4非PASS反例、9開始条件×4非PASS反例を追加。H04-Bの既存ゲート・READINESS.jsonは無変更。\n- 専用paths限定のsynthetic-only GitHub Actions workflowを追加。\n\n## 判定（提出時の履歴）\n**アクセス観測限定PASS／合成検査技術CI待ち／総合PARTIAL／実験開始BLOCKED**。実A/B0/B1作成、秘密生成、設定変更、実験用通信は実施していない。独立レビュー・正式CI・原artifact保存後再取得照合は別ゲートで、未確認をPASSとしない。\n\n## 受入条件\n1. 同一HEAD正式CIと原ログの範囲を検査。\n2. 独立レビューで合成限定・情報欠落時UNKNOWN・漏出検出・非PASS拒否の実装を確認。\n3. 必要な原証拠を本人限定保存後、実ファイル再取得・独立照合する。\n4. Issue #45をOPEN/実験開始BLOCKEDのまま維持。本人の実験開始は別承認。\n\n## 最新受入審査・本人限定Libraryの保存後照合（2026-11-16 JST）\n**合成・ゲート技術PASS／正式CI PASS／別担当独立レビューPASS（報告記録）／GitHub原ZIP照合PASS／本人限定Library保存後の再取得・独立プロセス照合PASS／準備成果の限定マージ推奨YES／総合PARTIAL／実験開始BLOCKED。** 上記「提出時の履歴」の「CI待ち」は旧状態であり、現在の判定ではない。\n\n- 固定HEAD `990e0dffc053dfd9cdf4cc312d009e87d09f65c3`、tree `43ee2a01d208f8e660a3712a3c23b2601f8ca2e1`、正式CI run [#43785178745](https://github.com/tetsujisugimori-coder/Hachibei-Lab/actions/runs/43785178745) success（専用10＋既存回帰42）。追加44独立プローブPASSとのレビュー報告あり。実アクセス非公開API原票の当時の独立再実行はなし。\n- 原artifact ID 14190072237、14,848 bytes、SHA-256 `17eebd8ff27303f862bb6ebc4a64add88f940d926cbc359e2fa13faaed3b4519`。GitHub元ZIPの保存前検査に加え、**本人用Libraryへ別保存後、そのLibraryファイルIDを再度列挙して原ZIP実バイトを別途取得**。別Pythonプロセスでアップロード元との全byte一致・size/SHA一致・CRC 13件・manifest 12件集合/size/SHA・Git SHA-1 blob 8/8・HEADと既存記録treeの一致を確認。すべてPASS。\n- Library保存先: `Hachibei-Lab/PR-46/h04-issue45-synthetic-43785178745.zip`。監査記録: 同フォルダ `PR46-LIBRARY-READBACK-RECEIPT.json`。本人限定Library内部IDや非公開Space IDは公開しない。元Space原本の移動・削除・上書きなし。Libraryで完了したためSpace手動再添付ルートは未実施（不要）。\n- GitHub Actions原artifactのAPI上の期限は `2027-02-14T01:15:26Z`。Library/Space自身の将来保持期限・将来ACLはUNKNOWN。\n- **限定マージの審査ゲート（準備基盤だけ）: YES**。ただしこの更新だけで実マージは行わず、Draftを維持する。Issue #45 OPEN、実A/B0/B1スレッド・秘密原文作成・実通信・Memory/検索/Space設定変更なし。B0への混入排除・取得経路排他性UNKNOWN、実験開始BLOCKEDを維持。研究実験への進行には別の本人承認・事前検証が必要。\n",
+          "updated_at": "2026-11-16T11:46:47Z",
+          "number": 46,
+          "base": {
+            "ref": "main",
+            "sha": "5976043a4968035f8a2a201ad0db73166f6ea8c0"
+          },
+          "head": {
+            "ref": "research/h04-issue45-access-contamination-20261116",
+            "sha": "990e0dffc053dfd9cdf4cc312d009e87d09f65c3"
+          }
+        }
+      },
+      "comparison": {
+        "method": "separate curl HTTPS GET (same GitHub authority, not independent operator)",
+        "attempts": [
+          {
+            "id": "G03",
+            "url": "https://api.github.com/repos/tetsujisugimori-coder/Hachibei-Lab/pulls/46",
+            "started_at": "2026-11-17T03:43:37.687464+00:00",
+            "ended_at": "2026-11-17T03:43:41.063632+00:00",
+            "exit_code": 0,
+            "bytes": 25463,
+            "error": null
+          }
+        ],
+        "snapshot": {
+          "title": "research: H04 Issue45 読取専用アクセス観測・合成混入検証",
+          "state": "closed",
+          "body": "Relates #45. Does not close #45 or authorize real B0/B1 experiments.\n\n## Scope\n- 現接続での2 Space一覧・ルートPageメタデータ・共有状態の読取専用観測を記録。Space ID/名称/共有相手は公開しない。\n- 7経路の利用可能性と「B0取得遮断の実適用」を分離。Memory、検索内部索引、履歴、担当引継ぎ、未特定経路はUNKNOWN。\n- `preflight.py`は合成値限定の8 surfaceの原文/hash/所在露出検出器。未検出でも `isolation=UNKNOWN`、常時 `execution_allowed=false`。実秘密・実スレッドを受け付けない。\n- 7経路×8項目×4非PASS反例、9開始条件×4非PASS反例を追加。H04-Bの既存ゲート・READINESS.jsonは無変更。\n- 専用paths限定のsynthetic-only GitHub Actions workflowを追加。\n\n## 判定（提出時の履歴）\n**アクセス観測限定PASS／合成検査技術CI待ち／総合PARTIAL／実験開始BLOCKED**。実A/B0/B1作成、秘密生成、設定変更、実験用通信は実施していない。独立レビュー・正式CI・原artifact保存後再取得照合は別ゲートで、未確認をPASSとしない。\n\n## 受入条件\n1. 同一HEAD正式CIと原ログの範囲を検査。\n2. 独立レビューで合成限定・情報欠落時UNKNOWN・漏出検出・非PASS拒否の実装を確認。\n3. 必要な原証拠を本人限定保存後、実ファイル再取得・独立照合する。\n4. Issue #45をOPEN/実験開始BLOCKEDのまま維持。本人の実験開始は別承認。\n\n## 最新受入審査・本人限定Libraryの保存後照合（2026-11-16 JST）\n**合成・ゲート技術PASS／正式CI PASS／別担当独立レビューPASS（報告記録）／GitHub原ZIP照合PASS／本人限定Library保存後の再取得・独立プロセス照合PASS／準備成果の限定マージ推奨YES／総合PARTIAL／実験開始BLOCKED。** 上記「提出時の履歴」の「CI待ち」は旧状態であり、現在の判定ではない。\n\n- 固定HEAD `990e0dffc053dfd9cdf4cc312d009e87d09f65c3`、tree `43ee2a01d208f8e660a3712a3c23b2601f8ca2e1`、正式CI run [#43785178745](https://github.com/tetsujisugimori-coder/Hachibei-Lab/actions/runs/43785178745) success（専用10＋既存回帰42）。追加44独立プローブPASSとのレビュー報告あり。実アクセス非公開API原票の当時の独立再実行はなし。\n- 原artifact ID 14190072237、14,848 bytes、SHA-256 `17eebd8ff27303f862bb6ebc4a64add88f940d926cbc359e2fa13faaed3b4519`。GitHub元ZIPの保存前検査に加え、**本人用Libraryへ別保存後、そのLibraryファイルIDを再度列挙して原ZIP実バイトを別途取得**。別Pythonプロセスでアップロード元との全byte一致・size/SHA一致・CRC 13件・manifest 12件集合/size/SHA・Git SHA-1 blob 8/8・HEADと既存記録treeの一致を確認。すべてPASS。\n- Library保存先: `Hachibei-Lab/PR-46/h04-issue45-synthetic-43785178745.zip`。監査記録: 同フォルダ `PR46-LIBRARY-READBACK-RECEIPT.json`。本人限定Library内部IDや非公開Space IDは公開しない。元Space原本の移動・削除・上書きなし。Libraryで完了したためSpace手動再添付ルートは未実施（不要）。\n- GitHub Actions原artifactのAPI上の期限は `2027-02-14T01:15:26Z`。Library/Space自身の将来保持期限・将来ACLはUNKNOWN。\n- **限定マージの審査ゲート（準備基盤だけ）: YES**。ただしこの更新だけで実マージは行わず、Draftを維持する。Issue #45 OPEN、実A/B0/B1スレッド・秘密原文作成・実通信・Memory/検索/Space設定変更なし。B0への混入排除・取得経路排他性UNKNOWN、実験開始BLOCKEDを維持。研究実験への進行には別の本人承認・事前検証が必要。\n",
+          "updated_at": "2026-11-16T11:46:47Z",
+          "number": 46,
+          "base": {
+            "ref": "main",
+            "sha": "5976043a4968035f8a2a201ad0db73166f6ea8c0"
+          },
+          "head": {
+            "ref": "research/h04-issue45-access-contamination-20261116",
+            "sha": "990e0dffc053dfd9cdf4cc312d009e87d09f65c3"
+          }
+        }
+      },
+      "matches": {
+        "title": true,
+        "state": true,
+        "body": true,
+        "updated_at": true,
+        "number": true,
+        "base": true,
+        "head": true
+      },
+      "result": "PASS"
+    }
+  ]
+}

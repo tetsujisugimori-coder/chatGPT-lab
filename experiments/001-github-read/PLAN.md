@@ -33,3 +33,4 @@ UNKNOWN: 比較不能、更新競合、証拠不足。
 ## 安全性・記録
 公開GitHubの必要フィールドのみ証拠に保存。認証値、個人メール、私有URLは転載しない。取得元・時刻・SHAを記録。
 今回のchatGPT-labは初期READMEのみ、tree列挙にAGENTS.md/workflowなし。main直接変更禁止、専用branchの文書のみ、Draft PR、マージなし。
+
