@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-11-18",
+  "repository": "tetsujisugimori-coder/chatGPT-lab",
+  "start_head": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+  "start_tree": "94a2c07ff178d5d692ffc54c816420c126eeb6a0",
+  "pr6_merged": true,
+  "sources": [
+    "GitHub connected fetch_pr(6)",
+    "GitHub REST pulls/6, issues/5, branches, issues (bounded 25s reads)",
+    "git clone and git object enumeration"
+  ],
+  "agents_md": [],
+  "workflow_paths": [],
+  "stage1a_duplicate_issue_or_branch": false,
+  "implementation_actor": "Hachibei assigned AI agent",
+  "environment": "cloud Linux shared workspace",
+  "model_verified": "UNKNOWN",
+  "independent_review": "NOT_TESTED",
+  "live_experiment": "NOT_TESTED"
+}

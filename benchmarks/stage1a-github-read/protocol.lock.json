@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "algorithm": "SHA-256 over exact file bytes; no self hash",
+  "files": {
+    "protocol.json": {
+      "size": 3706,
+      "sha256": "9e5699131ab3bb988b1bf142edcf114141f8a1b8ade41db62822afd495dfb6c8"
+    },
+    "input.schema.json": {
+      "size": 25645,
+      "sha256": "35284810186246523c8e0601d3ed85bf0bd73da0d5de3e7ef5cec720c9c521f9"
+    },
+    "verify.py": {
+      "size": 16170,
+      "sha256": "3dc9a5223a0e6a27b50dc75ca8b6c7779e5a6740e7b51dddbd904119fdd29ad1"
+    },
+    "expected-readme.txt": {
+      "size": 4831,
+      "sha256": "1842fc8a0db72608dab8942e4fef44d74b4588d11c3171e58dfeca4c2be61bd7"
+    },
+    "target-tree.txt": {
+      "size": 3149,
+      "sha256": "9851ca1dcf48527b66de053d17d5bfce1d7af650ccdbaa2628fac372091bd4d2"
+    },
+    "INSTRUCTIONS.txt": {
+      "size": 1400,
+      "sha256": "6bd6a0727540730721181a77e32c773ae4c20ffba9deb3d1bb9a7fe96312b416"
+    }
+  }
+}

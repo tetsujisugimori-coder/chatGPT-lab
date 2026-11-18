@@ -1,0 +1,135 @@
+{
+  "protocol_id": "stage1a-github-read",
+  "protocol_version": "0.1.0",
+  "status": "DRAFT_PLAN_ONLY",
+  "definition_commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+  "definition_path": "docs/chatgpt-research-definition.md",
+  "definition_sha256": "c682389c707a4aea812962e7c6f643b728326290726e99313613b4a44a5a538e",
+  "comparison_ids": [
+    "CHAT-WEB",
+    "CHAT-DESKTOP",
+    "CHAT-MOBILE",
+    "WORK-CLOUD-WEB",
+    "WORK-CLOUD-DESKTOP",
+    "WORK-CLOUD-MOBILE",
+    "WORK-LOCAL",
+    "CODEX-LOCAL",
+    "CODEX-CLOUD",
+    "DOT"
+  ],
+  "unknown_id": "UNKNOWN",
+  "target": {
+    "repository": "tetsujisugimori-coder/chatGPT-lab",
+    "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+    "tree": "94a2c07ff178d5d692ffc54c816420c126eeb6a0",
+    "normal_path": "README.md",
+    "missing_path": "__stage1a_intentionally_absent__/negative-control.txt",
+    "normal_size": 4831,
+    "normal_sha256": "1842fc8a0db72608dab8942e4fef44d74b4588d11c3171e58dfeca4c2be61bd7",
+    "normal_git_blob": "cf60f8abfaccd6b2afbfef1bae1fbd5aa4818642",
+    "tree_listing_sha256": "9851ca1dcf48527b66de053d17d5bfce1d7af650ccdbaa2628fac372091bd4d2"
+  },
+  "order": [
+    "A-N",
+    "A-M",
+    "B-N",
+    "B-M"
+  ],
+  "routes": {
+    "A": "predeclared product-supported read route",
+    "B": "separate unauthenticated HTTPS GET GitHub Contents API"
+  },
+  "limits": {
+    "max_attempts_per_operation": 2,
+    "retry_only": "communication_failure",
+    "connect_timeout_seconds": 10,
+    "total_timeout_seconds": 25,
+    "unsupported_deadline": "BLOCKED before live start until separately approved protocol variant",
+    "max_requests_per_run": 8
+  },
+  "permissions": [
+    "public-fixed-commit-read-only"
+  ],
+  "profiles": {
+    "descriptive": {
+      "metric": "correct-read-and-explicit-missing",
+      "condition_names": [
+        "fixture",
+        "permissions",
+        "agents",
+        "route",
+        "network",
+        "retry",
+        "timeout",
+        "measurement_boundary",
+        "model"
+      ],
+      "stop_conditions": [
+        "missing-evidence",
+        "unknown-impact",
+        "target-changed",
+        "protocol-changed"
+      ],
+      "id_required": true,
+      "comparison_purpose": "descriptive",
+      "required_equivalences": [
+        "fixture",
+        "permissions"
+      ],
+      "allowed_deviations": {
+        "timeout": {
+          "absolute_max_difference": 5
+        }
+      },
+      "descriptive_differences": [
+        "agents",
+        "route",
+        "network",
+        "retry",
+        "timeout",
+        "measurement_boundary",
+        "model"
+      ]
+    },
+    "controlled-ranking": {
+      "metric": "correct-read-and-explicit-missing",
+      "condition_names": [
+        "fixture",
+        "permissions",
+        "agents",
+        "route",
+        "network",
+        "retry",
+        "timeout",
+        "measurement_boundary",
+        "model"
+      ],
+      "stop_conditions": [
+        "missing-evidence",
+        "unknown-impact",
+        "target-changed",
+        "protocol-changed"
+      ],
+      "id_required": true,
+      "comparison_purpose": "controlled-ranking",
+      "required_equivalences": [
+        "fixture",
+        "permissions",
+        "agents",
+        "route",
+        "network",
+        "retry",
+        "timeout",
+        "measurement_boundary",
+        "model"
+      ],
+      "allowed_deviations": {},
+      "descriptive_differences": []
+    }
+  },
+  "expected": {
+    "normal": "exact bytes, size, sha256 and Git blob match",
+    "missing": "explicit target-specific missing response; file body null; timeout/empty alone insufficient"
+  },
+  "live_execution": "NOT_TESTED; owner start approval and independent review are separate gates"
+}

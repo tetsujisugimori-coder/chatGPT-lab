@@ -1,0 +1,47 @@
+[
+  {
+    "case": "normal",
+    "synthetic": true,
+    "expected_accept": true,
+    "exit_code": 0,
+    "stdout": "PASS artifact integrity; independent review and real experiment NOT_TESTED\n",
+    "stderr": "",
+    "matches_expectation": true
+  },
+  {
+    "case": "changed",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: ARTIFACT_CHANGED:INSTRUCTIONS.txt\n",
+    "stderr": "",
+    "matches_expectation": true
+  },
+  {
+    "case": "missing",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: ARTIFACT_SET_MISMATCH\n",
+    "stderr": "",
+    "matches_expectation": true
+  },
+  {
+    "case": "extra",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: ARTIFACT_SET_MISMATCH\n",
+    "stderr": "",
+    "matches_expectation": true
+  },
+  {
+    "case": "nested_manifest",
+    "synthetic": true,
+    "expected_accept": false,
+    "exit_code": 1,
+    "stdout": "FAIL: ARTIFACT_SET_MISMATCH\n",
+    "stderr": "",
+    "matches_expectation": true
+  }
+]

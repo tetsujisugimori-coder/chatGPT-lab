@@ -1,0 +1,9 @@
+DRAFT / NOT AUTHORIZED FOR LIVE EXECUTION
+固定プロトコル版・SHA、承認済み計画commit、実行主体・開始時ID・クライアント・実行場所・モデル表示/確認根拠・権限・委任の記録を先に固定する。
+同じ公開repositoryと完全commitのREADME.mdを経路Aで読み、その後に固定不存在pathを同じtool/refで読む。
+経路Bは別プロセスの認証なしHTTPS GET GitHub Contents APIで正常→不存在の順。比較経路も情報源はGitHubで、別の真実源ではない。
+通信失敗に限り各操作1回まで再試行。初回と再試行の原票を分ける。確定不存在・権限制約・一般errorの反復禁止。
+取得応答・開始終了時刻・tool/command・HTTP status直接提供有無・exit・復号方法を保存。errorをファイル本文としない。status未提供はnull。
+正常本文の全byte/size/SHA-256/Git blobと固定fixture・別経路を照合。不明を補完しない。不存在応答は当該固定対象について明示されたものだけ採用。
+各callの有限期限が強制できない環境では開始BLOCKED。期限なしtoolを黙って別toolに差し替えない。別プロトコルとして審査する。
+今回のStage 1-Aは合成入力とオフライン検査のみ。製品実測、API課金、ファイル書込能力試験を開始しない。
