@@ -4,16 +4,16 @@
     "sha256": "6bd6a0727540730721181a77e32c773ae4c20ffba9deb3d1bb9a7fe96312b416"
   },
   "PLAN.md": {
-    "size": 12169,
-    "sha256": "846be7f069b429311e79bf4d908132f976d03d1bb9cd6ecdc8c26c8e0ce6ac7e"
+    "size": 13117,
+    "sha256": "294ad00ae45278138660b540cdd9c3d62e7ba630a5ae3958e9be8f6bb8c7ab59"
   },
   "RESULTS.md": {
-    "size": 8371,
-    "sha256": "a0e4d29668a16a20a2c1b21aa81f0780c36ac4f788344912df9d3ecd71fc1490"
+    "size": 9798,
+    "sha256": "e732b028c7f0e195713eb55547ae2ce0144567b1682ae851ab85c40b7fa8dc5f"
   },
   "REVIEW-REQUEST.md": {
-    "size": 5977,
-    "sha256": "c38750310b4ff299a101bffe15cb4d70a200ad04ff5a4cceb58a507c803eaf86"
+    "size": 6902,
+    "sha256": "0b40cfc477520a9408e030c5f9934f9d6fc8ab405add38172b4134c02a4f55b9"
   },
   "check_artifacts.py": {
     "size": 943,
@@ -25,23 +25,23 @@
   },
   "fixtures/base.json": {
     "size": 41795,
-    "sha256": "b99ac48832100fccf90e6a7612bb87a1daa7b32f5caaa66534460c9160dc2dd5"
+    "sha256": "da146eea6c19f39b0cbcdfb746a59c7618ca6d2a6ac5c710da1492526cd2312f"
   },
   "fixtures/cases.json": {
     "size": 96132,
     "sha256": "b9e884e23970845eadd28d9e388c4887e92e514c9b592ec6436d952a943f6322"
   },
   "input.schema.json": {
-    "size": 26937,
-    "sha256": "186fa40278d58e7b9a021237eb2044664ba070db3030cd79316ac9245b205386"
+    "size": 27056,
+    "sha256": "b8eee63d4294ce7828b7c5908f235708a97d5753556678a9efc3674aec4fa210"
   },
   "protocol.json": {
-    "size": 4633,
-    "sha256": "4802bae4a87390e009fad83f3bee25f6ea24855d23667b17c8d374895b9908d7"
+    "size": 4875,
+    "sha256": "3447c6ec567dcb249fdd00111142be8ac2c807339e493e1e45826c0c58082d94"
   },
   "protocol.lock.json": {
     "size": 909,
-    "sha256": "e1a2f6bcd7edca86dc7f34d0b67e514e60f0c31ae85c2f3234475141d3ec7167"
+    "sha256": "7ec3deed4b72138372b826318c4a7d61f13726d7c1ba3c3f9ffc251ddf34889d"
   },
   "results/002-regression-results.json": {
     "size": 5420,
@@ -98,5 +98,9 @@
   "test_safety.py": {
     "size": 1083,
     "sha256": "ec0123aa060056a30ac611c7678f49f0f6318fde2992f99f24146df603e88cd8"
+  },
+  "test_schema_standard.py": {
+    "size": 2551,
+    "sha256": "c83a64a1efdc41e8e5d3db65701258b55ee677dbabd51e4561a954c114afb146"
   }
 }

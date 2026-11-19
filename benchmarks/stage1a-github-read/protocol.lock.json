@@ -3,12 +3,12 @@
   "algorithm": "SHA-256 over exact file bytes; no self hash",
   "files": {
     "protocol.json": {
-      "size": 4633,
-      "sha256": "4802bae4a87390e009fad83f3bee25f6ea24855d23667b17c8d374895b9908d7"
+      "size": 4875,
+      "sha256": "3447c6ec567dcb249fdd00111142be8ac2c807339e493e1e45826c0c58082d94"
     },
     "input.schema.json": {
-      "size": 26937,
-      "sha256": "186fa40278d58e7b9a021237eb2044664ba070db3030cd79316ac9245b205386"
+      "size": 27056,
+      "sha256": "b8eee63d4294ce7828b7c5908f235708a97d5753556678a9efc3674aec4fa210"
     },
     "verify.py": {
       "size": 18075,
