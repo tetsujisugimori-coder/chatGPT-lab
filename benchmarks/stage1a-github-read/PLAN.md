@@ -1,6 +1,6 @@
-# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.1
+# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.2
 
-状態: **計画・オフライン検査基盤のみ / Draft / 独立レビュー NOT_TESTED / 実測開始 HOLD**。
+状態: **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD**。v0.1.1独立再レビュー実施済み、v0.1.2独立再レビューNOT_TESTED。旧ZIP保存BLOCKED、再取得NOT_TESTED。
 関連 [Issue #7](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/7)、Stage 0 [Issue #5](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/5)、merged [PR #6](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6)。
 
 ## 正本と開始時確認（2026-11-18 UTC）
@@ -72,3 +72,11 @@ JSON Schemaの明示的な小規模subsetを標準ライブラリで検査し、
 ## v0.1.1 P2補訂（旧v0.1.0原結果は履歴保持）
 
 P2-01: `comparison_decision`は条件の比較可能性のみ。合成入力の`ranking_status`は常に`NOT_TESTED`。順位主張は両runがPASSでなければ拒否し、架空のPASSであっても実能力の順位としての主張は拒否する。P2-02: 操作時刻は重複しない実行区間のいずれか一つに完全包含される必要があり、対応不明・重複を拒否する。P2-03: `test_integrity.py`はコピー元とその配下を出力先に指定するとコピー前にexit 2で拒否する。これらは実測開始の承認ではなく、補訂後の別レビューが必要。
+
+## v0.1.2 局所補訂（2026-11-19）
+
+P2-02: 実操作（observation != not_tested）の所属区間が一意であることを求め、実操作を含む区間のexecutorとexecution_siteからrunの実行主体・siteの整合を判定する。操作なし末尾区間を実績の根拠にしない。単一executorに帰属できない場合はUNKNOWNを保持する。操作なしrunはNOT_TESTEDであり、観測環境情報を実績に格上げしない。
+
+P2-04: started_atとended_atの差をtimezone-aware timedeltaとして正確に計算し、操作自身が申告したtimeout_secondsを超えたらOP_DEADLINE_EXCEEDEDで拒否する。25秒ちょうどは境界内、25.000001秒や26秒は拒否。検査対象の時刻は同じ測定境界・十分な精度で記録すること。オフラインの時刻整合は、実際の期限強制・connect10秒・プロセス停止の証明にはならない。
+
+旧63件と新69件、旧HEADと新HEADは別版の記録として扱い、独立再レビュー完了までP2-02/P2-04 OPEN、計画限定受入HOLD、実測HOLD、マージNO。

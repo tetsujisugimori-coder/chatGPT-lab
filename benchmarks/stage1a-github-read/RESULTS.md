@@ -1,3 +1,13 @@
+# 現行判定（2026-11-19 / Stage 1-A v0.1.2補訂）
+
+- **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft未マージ**。Chat/Work/Codex/dot実製品実測NOT_TESTED、開始HOLD。
+- [v0.1.1独立再レビュー](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8#pullrequestreview-5967735453)は固定HEAD `96ff7ffeb70515b78d888d9fc566ae3c578c9141` について **P2-01・P2-03限定CLOSED／P2-02・P2-04 OPEN** と判定。合成63/63、manifest5/5、コピー先2/2、002回帰25/25、当時のCI PASSは旧HEADの履歴。
+- 今回はP2-02（操作区間の実行主体・site）とP2-04（厳密な25秒上限）を局所修正、合成6件を追加して69件とした。**新HEADの独立再レビューは未実施、両P2は正式CLOSED未認定**。新HEADの自己検査・CIは提出後の別証拠で判定する。
+- 旧ZIPの所在UNKNOWN、Archive保存BLOCKED、保存先からの独立再取得NOT_TESTED。新検証原票の永続保存も未成立。旧ZIPの再生成は保全の代替としない。
+- 下記「自己検証・提出前結果」以降はv0.1.0〜v0.1.1当時の歴史的記録であり、現行判定ではない。旧原票・旧結果は削除や上書きをしない。
+
+---
+
 # Stage 1-A 自己検証・提出前結果
 
 ## 判定の分離

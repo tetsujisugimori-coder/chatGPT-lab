@@ -117,7 +117,8 @@ def check_attribution(r):
         require(r['comparison_id_status'] == 'UNRESOLVED' and r['comparison_id_reason'].strip(), 'UNKNOWN_ID_NOT_PRESERVED')
     else:
         require(r['comparison_id_status'] == 'CONFIRMED', 'ID_STATUS')
-    sites = set()
+    active_sites = set()
+    active_executors = set()
     ids = set()
     segment_windows = []
     for s in r['segments']:
@@ -130,19 +131,25 @@ def check_attribution(r):
         segment_windows.append((begin, end))
         if s['execution_site'] != 'UNKNOWN':
             require(s['site_evidence_basis'] == 'execution-log', 'CLIENT_IS_NOT_EXECUTION_EVIDENCE')
-        sites.add(s['execution_site'])
     for o in r['operations']:
         begin, end = time(o['started_at']), time(o['ended_at'])
         require(begin <= end, 'OP_TIME')
-        require(sum(a <= begin and end <= b for a, b in segment_windows) == 1,
-                'OP_OUTSIDE_OR_AMBIGUOUS_SEGMENT')
+        containing = [i for i, (a, b) in enumerate(segment_windows) if a <= begin and end <= b]
+        require(len(containing) == 1, 'OP_OUTSIDE_OR_AMBIGUOUS_SEGMENT')
+        # Idle observation is not evidence of the operator of a performed call.
+        if o['observation'] != 'not_tested':
+            performed = r['segments'][containing[0]]
+            active_sites.add(performed['execution_site'])
+            active_executors.add(performed['executor'])
     site = r['execution_site']
     if site == 'mixed':
-        require({'local', 'cloud'} <= sites, 'MIXED_NOT_OBSERVED')
-    elif site in ('local', 'cloud'):
-        require(sites == {site}, 'SEGMENT_SITE_CONTRADICTION')
-    if r['executor'] != 'UNKNOWN':
-        require(r['segments'][-1]['executor'] == r['executor'], 'EXECUTOR_SEGMENT_CONTRADICTION')
+        require({'local', 'cloud'} <= active_sites, 'MIXED_NOT_OBSERVED')
+    elif site in ('local', 'cloud') and active_sites:
+        require(active_sites == {site}, 'SEGMENT_SITE_CONTRADICTION')
+    # The run executor must match every segment containing a performed operation.
+    # Idle segments cannot supply attribution; a no-operation run remains NOT_TESTED.
+    if r['executor'] != 'UNKNOWN' and active_executors:
+        require(active_executors == {r['executor']}, 'EXECUTOR_OPERATION_CONTRADICTION')
     # UNKNOWN site is allowed but never converted into local/cloud by ID or client.
     if r['model_verified'] != 'UNKNOWN':
         require(r['model_evidence_basis'] == 'execution-log', 'DISPLAY_IS_NOT_MODEL_EVIDENCE')
@@ -178,6 +185,9 @@ def run_outcome(r, p):
         require(o['tool'] == {'A':'synthetic:github.fetch_file','B':'synthetic:unauthenticated-https-get'}[o['route']], 'UNREGISTERED_SYNTHETIC_TOOL')
         require(o['timeout_seconds'] == r['conditions']['timeout']['value'], 'TIMEOUT_CONDITION_MISMATCH')
         require(o['timeout_enforced'], 'DEADLINE_UNENFORCED')
+        # Precise timedelta boundary; synthetic consistency is not process-stop proof.
+        require(time(o['ended_at']) - time(o['started_at']) <= dt.timedelta(seconds=o['timeout_seconds']),
+                'OP_DEADLINE_EXCEEDED')
         require(o['source'] == 'https://api.github.com/repos/' + target['repository'] + '/contents/' + o['path'] + '?ref=' + target['commit'], 'SOURCE_MISMATCH')
         require(o['path'] == target['normal_path' if case.endswith('N') else 'missing_path'], 'PATH_CHANGED')
         require(time(o['started_at']) <= time(o['ended_at']), 'OP_TIME')

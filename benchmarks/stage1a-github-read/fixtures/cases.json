@@ -1701,7 +1701,7 @@
     "expected": {
       "record_validation": "FAIL",
       "comparison_decision": "比較不可",
-      "reason_prefix": "EXECUTOR_SEGMENT_CONTRADICTION"
+      "reason_prefix": "EXECUTOR_OPERATION_CONTRADICTION"
     }
   },
   {
@@ -2046,6 +2046,292 @@
       "record_validation": "FAIL",
       "comparison_decision": "比較不可",
       "reason_prefix": "SEGMENT_OVERLAP_OR_OUT_OF_ORDER"
+    }
+  },
+  {
+    "id": "N17",
+    "title": "idle trailing observer cannot override actual executor/site",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments",
+        "value": [
+          {
+            "segment_id": "segment-1",
+            "started_at": "2000-01-01T00:00:00Z",
+            "ended_at": "2000-01-01T00:00:10Z",
+            "client_surface": "desktop",
+            "execution_site": "cloud",
+            "executor": "synthetic-cloud-executor",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:cloud-execution-log"
+            ]
+          },
+          {
+            "segment_id": "segment-2",
+            "started_at": "2000-01-01T00:00:10Z",
+            "ended_at": "2000-01-01T00:00:20Z",
+            "client_surface": "desktop",
+            "execution_site": "local",
+            "executor": "synthetic-idle-observer",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:idle-observation-only"
+            ]
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "record_validation": "PASS",
+      "comparison_decision": "比較可能",
+      "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+    }
+  },
+  {
+    "id": "N18",
+    "title": "25.000000-second successful operation is on deadline",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/ended_at",
+        "value": "2000-01-01T00:01:00Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T00:00:25Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/started_at",
+        "value": "2000-01-01T00:00:27Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/ended_at",
+        "value": "2000-01-01T00:00:28Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/started_at",
+        "value": "2000-01-01T00:00:29Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/ended_at",
+        "value": "2000-01-01T00:00:30Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/started_at",
+        "value": "2000-01-01T00:00:31Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/ended_at",
+        "value": "2000-01-01T00:00:32Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "PASS",
+      "comparison_decision": "比較可能",
+      "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+    }
+  },
+  {
+    "id": "F37",
+    "title": "idle tail executor falsely declared as run operator",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments",
+        "value": [
+          {
+            "segment_id": "segment-1",
+            "started_at": "2000-01-01T00:00:00Z",
+            "ended_at": "2000-01-01T00:00:10Z",
+            "client_surface": "desktop",
+            "execution_site": "cloud",
+            "executor": "synthetic-cloud-executor",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:cloud-execution-log"
+            ]
+          },
+          {
+            "segment_id": "segment-2",
+            "started_at": "2000-01-01T00:00:10Z",
+            "ended_at": "2000-01-01T00:00:20Z",
+            "client_surface": "desktop",
+            "execution_site": "local",
+            "executor": "synthetic-idle-observer",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:idle-observation-only"
+            ]
+          }
+        ]
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/executor",
+        "value": "synthetic-idle-observer"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "EXECUTOR_OPERATION_CONTRADICTION"
+    }
+  },
+  {
+    "id": "F38",
+    "title": "idle local segment falsely claims mixed execution",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments",
+        "value": [
+          {
+            "segment_id": "segment-1",
+            "started_at": "2000-01-01T00:00:00Z",
+            "ended_at": "2000-01-01T00:00:10Z",
+            "client_surface": "desktop",
+            "execution_site": "cloud",
+            "executor": "synthetic-cloud-executor",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:cloud-execution-log"
+            ]
+          },
+          {
+            "segment_id": "segment-2",
+            "started_at": "2000-01-01T00:00:10Z",
+            "ended_at": "2000-01-01T00:00:20Z",
+            "client_surface": "desktop",
+            "execution_site": "local",
+            "executor": "synthetic-idle-observer",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:idle-observation-only"
+            ]
+          }
+        ]
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/execution_site",
+        "value": "mixed"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "MIXED_NOT_OBSERVED"
+    }
+  },
+  {
+    "id": "F39",
+    "title": "25.000001-second success falsely claims 25-second enforcement",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/ended_at",
+        "value": "2000-01-01T00:01:00Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T00:00:25.000001Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/started_at",
+        "value": "2000-01-01T00:00:27Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/ended_at",
+        "value": "2000-01-01T00:00:28Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/started_at",
+        "value": "2000-01-01T00:00:29Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/ended_at",
+        "value": "2000-01-01T00:00:30Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/started_at",
+        "value": "2000-01-01T00:00:31Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/ended_at",
+        "value": "2000-01-01T00:00:32Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "OP_DEADLINE_EXCEEDED"
+    }
+  },
+  {
+    "id": "F40",
+    "title": "26-second success falsely claims 25-second enforcement",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/ended_at",
+        "value": "2000-01-01T00:01:00Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T00:00:26Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/started_at",
+        "value": "2000-01-01T00:00:27Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/ended_at",
+        "value": "2000-01-01T00:00:28Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/started_at",
+        "value": "2000-01-01T00:00:29Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/ended_at",
+        "value": "2000-01-01T00:00:30Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/started_at",
+        "value": "2000-01-01T00:00:31Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/ended_at",
+        "value": "2000-01-01T00:00:32Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "OP_DEADLINE_EXCEEDED"
     }
   }
 ]

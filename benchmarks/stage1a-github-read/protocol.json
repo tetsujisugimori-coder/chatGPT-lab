@@ -1,6 +1,6 @@
 {
   "protocol_id": "stage1a-github-read",
-  "protocol_version": "0.1.1",
+  "protocol_version": "0.1.2",
   "status": "DRAFT_PLAN_ONLY",
   "definition_commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
   "definition_path": "docs/chatgpt-research-definition.md",
@@ -132,5 +132,5 @@
     "missing": "explicit target-specific missing response; file body null; timeout/empty alone insufficient"
   },
   "live_execution": "NOT_TESTED; owner start approval and independent review are separate gates",
-  "revision_note": "P2-01 ranking guard; P2-02 operation/segment interval consistency; P2-03 runner destination guard"
+  "revision_note": "P2-01 ranking guard; P2-02 operation/segment interval consistency; P2-03 runner destination guard; P2-02 performed-operation executor/site attribution; P2-04 strict elapsed-time deadline (synthetic consistency only)"
 }

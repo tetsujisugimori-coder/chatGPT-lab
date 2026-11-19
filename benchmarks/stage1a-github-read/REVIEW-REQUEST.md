@@ -1,3 +1,13 @@
+# 現行独立再レビュー依頼（Stage 1-A v0.1.2 / 2026-11-19）
+
+**総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／実製品実測NOT_TESTED・開始HOLD**。旧HEAD `96ff7ffe` に対する[独立再レビュー](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8#pullrequestreview-5967735453)は実施済みで、P2-01・P2-03限定CLOSED、P2-02・P2-04 OPEN。以下の初版「独立レビュー依頼資料（未実施）」は当時の履歴であり、現行のレビュー状況を示さない。
+
+今回の修正版v0.1.2は**独立再レビューNOT_TESTED**。新しい固定HEADから別セッションが取得し、合成69件（旧63件＋N17/N18/F37〜F40）、manifest対照5件、コピー先対照2件、既存002回帰25件、001の既知FAIL、CI、全提出pathを確認する。P2-02は操作なし末尾区間のexecutor/site偽装、P2-04は25秒境界と25.000001秒・26秒の拒否を確認する。
+
+旧ZIPの保全・再取得は別ゲートでBLOCKED/NOT_TESTED。合成PASSを実測PASSへ昇格させず、Draft解除・マージ・有料API・実測を開始しない。
+
+---
+
 # 独立レビュー依頼資料（未実施）
 
 対象: このDraft PRの固定HEAD/treeとprotocol.lock.json。レビュー実施は今回の作業外で、状態NOT_TESTED。作成担当の自己検査を独立レビューPASSへ変換しない。
