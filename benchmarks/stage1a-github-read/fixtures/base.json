@@ -1,8 +1,8 @@
 {
   "record_kind": "SYNTHETIC",
   "protocol_id": "stage1a-github-read",
-  "protocol_version": "0.1.3",
-  "protocol_sha256": "4802bae4a87390e009fad83f3bee25f6ea24855d23667b17c8d374895b9908d7",
+  "protocol_version": "0.1.4",
+  "protocol_sha256": "3447c6ec567dcb249fdd00111142be8ac2c807339e493e1e45826c0c58082d94",
   "plan_commit": "0000000000000000000000000000000000000000",
   "preregistered_at": "1999-12-31T23:00:00Z",
   "results_available_at": "2000-01-01T01:00:00Z",

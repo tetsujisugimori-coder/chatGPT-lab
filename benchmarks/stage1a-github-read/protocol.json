@@ -1,6 +1,6 @@
 {
   "protocol_id": "stage1a-github-read",
-  "protocol_version": "0.1.3",
+  "protocol_version": "0.1.4",
   "status": "DRAFT_PLAN_ONLY",
   "definition_commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
   "definition_path": "docs/chatgpt-research-definition.md",
@@ -132,7 +132,7 @@
     "missing": "explicit target-specific missing response; file body null; timeout/empty alone insufficient"
   },
   "live_execution": "NOT_TESTED; owner start approval and independent review are separate gates",
-  "revision_note": "P2-01 ranking guard; P2-02 operation/segment interval consistency; P2-03 runner destination guard; P2-02 performed-operation executor/site attribution; P2-04 strict elapsed-time deadline (synthetic consistency only); v0.1.3 timestamp lexical validation rejects >6 fractional second digits across all fields before datetime parsing",
+  "revision_note": "P2-01 ranking guard; P2-02 operation/segment interval consistency; P2-03 runner destination guard; P2-02 performed-operation executor/site attribution; P2-04 strict elapsed-time deadline (synthetic consistency only); v0.1.3 timestamp lexical validation rejects >6 fractional second digits across all fields before datetime parsing; v0.1.4 Draft 2020-12 public schema pattern full-string matching across seven timestamps",
   "timestamp_contract": {
     "syntax": "YYYY-MM-DDTHH:MM:SS[.1-6 decimal digits](Z|+HH:MM|-HH:MM)",
     "max_fractional_digits": 6,
@@ -147,6 +147,8 @@
       "operations.ended_at",
       "corrections.at"
     ],
-    "scope": "SYNTHETIC record consistency only; not real-time deadline/process-stop guarantee"
+    "scope": "SYNTHETIC record consistency only; not real-time deadline/process-stop guarantee",
+    "schema_full_match": true,
+    "schema_match_rule": "start anchor and negative lookahead for any remaining character; no terminal newline accepted"
   }
 }

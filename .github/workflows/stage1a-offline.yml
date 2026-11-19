@@ -19,6 +19,10 @@ jobs:
       - name: Synthetic cases
         run: |
           python -B benchmarks/stage1a-github-read/test_verify.py "$RUNNER_TEMP/stage1a-synthetic-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+      - name: Draft 2020-12 public Schema regression
+        run: |
+          python -m pip install --disable-pip-version-check 'jsonschema==4.26.0'
+          python -B benchmarks/stage1a-github-read/test_schema_standard.py
       - name: Manifest mutation cases
         run: |
           python -B benchmarks/stage1a-github-read/test_integrity.py "$RUNNER_TEMP/stage1a-integrity-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
