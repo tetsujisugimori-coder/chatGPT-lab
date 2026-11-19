@@ -1,3 +1,15 @@
+# 現行判定（2026-11-19 / Stage 1-A v0.1.3 補訂）
+
+**総合PARTIAL／P2-02・P2-04 OPEN／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD。**
+
+- [v0.1.2固定HEADの独立再レビュー](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8#pullrequestreview-5969848402)（`1237709862c07ffa378d485e989cb77695723d09`）は実施済み。日時の7桁目以降を黙って切捨てることによる区間外・重複・25秒超過の偽PASSを再現し、**P2-02/P2-04 OPEN**と判定した。旧69/69、manifest5/5、コピー先2/2、002回帰25/25、旧CI PASSはv0.1.2時点の事実。
+- v0.1.3補訂では共通日時パーサーとschemaの日時7種を統一、最大6桁を超える小数秒をパース前に拒否する。F41～F53、N19～N21の合成16件を追加し、標準集合は**85件**。旧入力・旧結果は保存し、検査前にPASSを宣言しない。
+- **v0.1.3新HEADに対する独立再レビューはNOT_TESTED**。この版の正式CI、GitHub読戻し、実測結果は別途提出後に確認する。独立再レビューの判定が出るまでP2正式CLOSEDとしない。
+- 旧ZIP所在UNKNOWN、Archive保存BLOCKED、外部独立再取得NOT_TESTED。新規検証原票の永続保存も未成立。旧ZIPの再生成で代用しない。
+- 以下のv0.1.2・v0.1.1・v0.1.0記録は作成時の**履歴**であり現行判定を上書きしない。
+
+---
+
 # 現行判定（2026-11-19 / Stage 1-A v0.1.2補訂）
 
 - **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft未マージ**。Chat/Work/Codex/dot実製品実測NOT_TESTED、開始HOLD。

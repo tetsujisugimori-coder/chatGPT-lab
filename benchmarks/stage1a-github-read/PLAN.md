@@ -1,6 +1,6 @@
-# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.2
+# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.3
 
-状態: **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD**。v0.1.1独立再レビュー実施済み、v0.1.2独立再レビューNOT_TESTED。旧ZIP保存BLOCKED、再取得NOT_TESTED。
+状態: **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD**。v0.1.2独立再レビュー実施済み（P2-02/P2-04はOPEN）、v0.1.3独立再レビューNOT_TESTED。旧ZIP保存BLOCKED、再取得NOT_TESTED。
 関連 [Issue #7](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/7)、Stage 0 [Issue #5](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/5)、merged [PR #6](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6)。
 
 ## 正本と開始時確認（2026-11-18 UTC）
@@ -80,3 +80,12 @@ P2-02: 実操作（observation != not_tested）の所属区間が一意である
 P2-04: started_atとended_atの差をtimezone-aware timedeltaとして正確に計算し、操作自身が申告したtimeout_secondsを超えたらOP_DEADLINE_EXCEEDEDで拒否する。25秒ちょうどは境界内、25.000001秒や26秒は拒否。検査対象の時刻は同じ測定境界・十分な精度で記録すること。オフラインの時刻整合は、実際の期限強制・connect10秒・プロセス停止の証明にはならない。
 
 旧63件と新69件、旧HEADと新HEADは別版の記録として扱い、独立再レビュー完了までP2-02/P2-04 OPEN、計画限定受入HOLD、実測HOLD、マージNO。
+
+## v0.1.3 共通日時精度契約の局所修正（2026-11-19）
+
+- 対応日時は `YYYY-MM-DDTHH:MM:SS[.fraction](Z|±HH:MM)`、秒小数部は**0～6桁（存在する場合1～6桁）**に制限。時刻帯は明示必須。時・分・秒・UTCオフセットの字句範囲を制限し、実在しない暦日は`datetime.fromisoformat`が拒否する。
+- 7桁以上は末尾が0であっても拒否する。マイクロ秒への丸め・切捨て・黙示的な精度低下は禁止。schemaの7種類の日時フィールドと`verify.py:time()`の共通入口でチェックする。
+- 対象はpreregistered_at、results_available_at、segments/operationsのstarted_at・ended_at、corrections.at。実処理区間包含、重複、期限、登録先後比較で同一精度契約を使用。
+- 合成反例F41～F53（13件）、正常N19～N21（3件）を追加。旧69件を履歴として保持し、新総数85件。25.0000001秒、区間末尾+100ns、操作重複100nsはSCHEMA_PATTERNで拒否。25.000000秒正常、25.000001秒超過、UTC等値の別オフセットは維持。
+- これは**合成入力の記録整合性**のみで、OS上の期限強制・実プロセス停止・原票真正性・実製品実測を証明しない。
+- 新HEADでの自己試験・正式CI・別担当の独立再レビューは提出後の実績で判定する。P2-02/P2-04は独立再レビューまでOPEN、計画受入HOLD、マージNO。旧ZIP所在UNKNOWN・保存BLOCKED、外部再取得NOT_TESTEDは変わらない。
