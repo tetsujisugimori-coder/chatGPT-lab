@@ -55,6 +55,7 @@ def main():
               actual['comparison_decision'] == expected['comparison_decision'] and
               actual['reason'].startswith(expected['reason_prefix']) and
               actual['experiment_outcome'] == 'NOT_TESTED' and
+              (expected['record_validation'] != 'PASS' or actual.get('ranking_status') == 'NOT_TESTED') and
               run.returncode == {'PASS':0,'FAIL':1,'BLOCKED':2}[expected['record_validation']] and
               not run.stderr)
         if 'synthetic_run_outcomes' in expected:

@@ -1719,5 +1719,333 @@
       "comparison_decision": "比較不可",
       "reason_prefix": "OP_OUTSIDE_DECLARED_WINDOW"
     }
+  },
+  {
+    "id": "F30",
+    "title": "synthetic PASS cannot authorize real ranking",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/profile",
+        "value": {
+          "metric": "correct-read-and-explicit-missing",
+          "condition_names": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "stop_conditions": [
+            "missing-evidence",
+            "unknown-impact",
+            "target-changed",
+            "protocol-changed"
+          ],
+          "id_required": true,
+          "comparison_purpose": "controlled-ranking",
+          "required_equivalences": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "allowed_deviations": {},
+          "descriptive_differences": []
+        }
+      },
+      {
+        "op": "replace",
+        "path": "/comparison/ranking_claim",
+        "value": true
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SYNTHETIC_RANKING_NOT_AUTHORIZED"
+    }
+  },
+  {
+    "id": "F31",
+    "title": "unexecuted run cannot authorize ranking",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/profile",
+        "value": {
+          "metric": "correct-read-and-explicit-missing",
+          "condition_names": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "stop_conditions": [
+            "missing-evidence",
+            "unknown-impact",
+            "target-changed",
+            "protocol-changed"
+          ],
+          "id_required": true,
+          "comparison_purpose": "controlled-ranking",
+          "required_equivalences": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "allowed_deviations": {},
+          "descriptive_differences": []
+        }
+      },
+      {
+        "op": "replace",
+        "path": "/comparison/ranking_claim",
+        "value": true
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations",
+        "value": []
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/claimed_outcome",
+        "value": "NOT_TESTED"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "RANKING_REQUIRES_PASS_RUNS"
+    }
+  },
+  {
+    "id": "F32",
+    "title": "blocked run cannot authorize ranking",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/profile",
+        "value": {
+          "metric": "correct-read-and-explicit-missing",
+          "condition_names": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "stop_conditions": [
+            "missing-evidence",
+            "unknown-impact",
+            "target-changed",
+            "protocol-changed"
+          ],
+          "id_required": true,
+          "comparison_purpose": "controlled-ranking",
+          "required_equivalences": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "allowed_deviations": {},
+          "descriptive_differences": []
+        }
+      },
+      {
+        "op": "replace",
+        "path": "/comparison/ranking_claim",
+        "value": true
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/observation",
+        "value": "permission_constraint"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/file_body_base64",
+        "value": null
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/claimed_outcome",
+        "value": "BLOCKED"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "RANKING_REQUIRES_PASS_RUNS"
+    }
+  },
+  {
+    "id": "F33",
+    "title": "failed run cannot authorize ranking",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/profile",
+        "value": {
+          "metric": "correct-read-and-explicit-missing",
+          "condition_names": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "stop_conditions": [
+            "missing-evidence",
+            "unknown-impact",
+            "target-changed",
+            "protocol-changed"
+          ],
+          "id_required": true,
+          "comparison_purpose": "controlled-ranking",
+          "required_equivalences": [
+            "fixture",
+            "permissions",
+            "agents",
+            "route",
+            "network",
+            "retry",
+            "timeout",
+            "measurement_boundary",
+            "model"
+          ],
+          "allowed_deviations": {},
+          "descriptive_differences": []
+        }
+      },
+      {
+        "op": "replace",
+        "path": "/comparison/ranking_claim",
+        "value": true
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/observation",
+        "value": "success"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/claimed_outcome",
+        "value": "FAIL"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "RANKING_REQUIRES_PASS_RUNS"
+    }
+  },
+  {
+    "id": "F34",
+    "title": "operation begins before execution segment",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/started_at",
+        "value": "2000-01-01T00:00:08Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "OP_OUTSIDE_OR_AMBIGUOUS_SEGMENT"
+    }
+  },
+  {
+    "id": "F35",
+    "title": "operation finishes after execution segment",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/ended_at",
+        "value": "2000-01-01T00:00:03Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "OP_OUTSIDE_OR_AMBIGUOUS_SEGMENT"
+    }
+  },
+  {
+    "id": "F36",
+    "title": "overlapping segments",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments",
+        "value": [
+          {
+            "segment_id": "segment-1",
+            "started_at": "2000-01-01T00:00:00Z",
+            "ended_at": "2000-01-01T00:00:20Z",
+            "client_surface": "desktop",
+            "execution_site": "cloud",
+            "executor": "synthetic-cloud-executor",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:cloud-execution-log"
+            ]
+          },
+          {
+            "segment_id": "segment-2",
+            "started_at": "2000-01-01T00:00:00Z",
+            "ended_at": "2000-01-01T00:00:20Z",
+            "client_surface": "desktop",
+            "execution_site": "cloud",
+            "executor": "synthetic-cloud-executor",
+            "site_evidence_basis": "execution-log",
+            "evidence": [
+              "synthetic:cloud-execution-log"
+            ]
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SEGMENT_OVERLAP_OR_OUT_OF_ORDER"
+    }
   }
 ]

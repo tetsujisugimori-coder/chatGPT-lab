@@ -1,7 +1,11 @@
 """Exact-set/byte-lock counterexamples on new disposable copies; no network."""
 import pathlib,shutil,subprocess,sys,json
 D=pathlib.Path(__file__).resolve().parent
-out=pathlib.Path(sys.argv[1]).resolve();out.mkdir(parents=True,exist_ok=False)
+out=pathlib.Path(sys.argv[1]).resolve()
+if out == D or D in out.parents:
+    print('BLOCKED: output directory must be outside source tree', file=sys.stderr)
+    sys.exit(2)
+out.mkdir(parents=True,exist_ok=False)
 rows=[]
 for case in ['normal','changed','missing','extra','nested_manifest']:
     p=out/case;shutil.copytree(D,p)

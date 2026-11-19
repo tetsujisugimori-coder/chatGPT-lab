@@ -3,16 +3,16 @@
   "algorithm": "SHA-256 over exact file bytes; no self hash",
   "files": {
     "protocol.json": {
-      "size": 3706,
-      "sha256": "9e5699131ab3bb988b1bf142edcf114141f8a1b8ade41db62822afd495dfb6c8"
+      "size": 3826,
+      "sha256": "1c89de5143aadc859668d38a6187f7d0dc0a9c5088e4b235dda79a02e458741e"
     },
     "input.schema.json": {
       "size": 25645,
       "sha256": "35284810186246523c8e0601d3ed85bf0bd73da0d5de3e7ef5cec720c9c521f9"
     },
     "verify.py": {
-      "size": 16170,
-      "sha256": "3dc9a5223a0e6a27b50dc75ca8b6c7779e5a6740e7b51dddbd904119fdd29ad1"
+      "size": 16904,
+      "sha256": "d645bb8cad50f3c826395234800f43e1b2be1f9258225dc05171f44b51e28062"
     },
     "expected-readme.txt": {
       "size": 4831,

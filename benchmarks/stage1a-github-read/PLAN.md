@@ -1,4 +1,4 @@
-# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.0
+# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.1
 
 状態: **計画・オフライン検査基盤のみ / Draft / 独立レビュー NOT_TESTED / 実測開始 HOLD**。
 関連 [Issue #7](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/7)、Stage 0 [Issue #5](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/5)、merged [PR #6](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6)。
@@ -68,3 +68,7 @@ JSON Schemaの明示的な小規模subsetを標準ライブラリで検査し、
 今回はDraft提出と自己読戻しまで。独立レビューと独立保全監査を先取りせずNOT_TESTED。依頼資料はREVIEW-REQUEST.md。
 001検査器のrepo-wide manifestはStage 0追加時点ですでに集合不一致。今回それを書き換えて成功化しない。基準版からの001/002全byte不変、002回帰、今回の新manifestを別々に確認する。
 正式受入は独立レビュー後の別ゲート。計画限定受入の候補として提出するが、正式受入PENDING、実測開始HOLD、Stage 3/第3実験NOT_TESTED、マージNO。
+
+## v0.1.1 P2補訂（旧v0.1.0原結果は履歴保持）
+
+P2-01: `comparison_decision`は条件の比較可能性のみ。合成入力の`ranking_status`は常に`NOT_TESTED`。順位主張は両runがPASSでなければ拒否し、架空のPASSであっても実能力の順位としての主張は拒否する。P2-02: 操作時刻は重複しない実行区間のいずれか一つに完全包含される必要があり、対応不明・重複を拒否する。P2-03: `test_integrity.py`はコピー元とその配下を出力先に指定するとコピー前にexit 2で拒否する。これらは実測開始の承認ではなく、補訂後の別レビューが必要。

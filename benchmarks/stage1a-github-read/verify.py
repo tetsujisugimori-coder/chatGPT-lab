@@ -119,13 +119,23 @@ def check_attribution(r):
         require(r['comparison_id_status'] == 'CONFIRMED', 'ID_STATUS')
     sites = set()
     ids = set()
+    segment_windows = []
     for s in r['segments']:
         require(s['segment_id'] not in ids, 'DUPLICATE_SEGMENT')
         ids.add(s['segment_id'])
-        require(time(s['started_at']) <= time(s['ended_at']), 'SEGMENT_TIME')
+        begin, end = time(s['started_at']), time(s['ended_at'])
+        require(begin <= end, 'SEGMENT_TIME')
+        if segment_windows:
+            require(segment_windows[-1][1] <= begin, 'SEGMENT_OVERLAP_OR_OUT_OF_ORDER')
+        segment_windows.append((begin, end))
         if s['execution_site'] != 'UNKNOWN':
             require(s['site_evidence_basis'] == 'execution-log', 'CLIENT_IS_NOT_EXECUTION_EVIDENCE')
         sites.add(s['execution_site'])
+    for o in r['operations']:
+        begin, end = time(o['started_at']), time(o['ended_at'])
+        require(begin <= end, 'OP_TIME')
+        require(sum(a <= begin and end <= b for a, b in segment_windows) == 1,
+                'OP_OUTSIDE_OR_AMBIGUOUS_SEGMENT')
     site = r['execution_site']
     if site == 'mixed':
         require({'local', 'cloud'} <= sites, 'MIXED_NOT_OBSERVED')
@@ -283,7 +293,9 @@ def evaluate(packet):
         decision, reason = compare(packet, p)
         if packet['comparison']['ranking_claim']:
             require(decision == '比較可能' and profile['comparison_purpose'] == 'controlled-ranking', 'UNSUPPORTED_RANKING_CLAIM')
-        return {'record_validation':'PASS','experiment_outcome':'NOT_TESTED','synthetic_run_outcomes':outcomes,'comparison_decision':decision,'reason':reason,'scope':'synthetic record consistency only; not product/provenance verification'}
+            require(all(outcome == 'PASS' for outcome in outcomes), 'RANKING_REQUIRES_PASS_RUNS')
+            raise Invalid('SYNTHETIC_RANKING_NOT_AUTHORIZED')
+        return {'record_validation':'PASS','experiment_outcome':'NOT_TESTED','synthetic_run_outcomes':outcomes,'comparison_decision':decision,'reason':reason,'ranking_status':'NOT_TESTED','ranking_reason':'NO_REAL_EXECUTION_OR_INDEPENDENT_EVIDENCE','scope':'synthetic record consistency only; not product/provenance verification'}
     except (Invalid, KeyError, TypeError, ValueError) as e:
         return {'record_validation':'FAIL','protocol_validation':'REJECTED','experiment_outcome':'NOT_TESTED','comparison_decision':'比較不可','reason':str(e)}
 
