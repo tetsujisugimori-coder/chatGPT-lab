@@ -25,23 +25,23 @@
   },
   "fixtures/base.json": {
     "size": 41795,
-    "sha256": "19fec0388cb1c01bee330a21d4e3bf4a967ee6e08429cecadae5ebf432675f36"
+    "sha256": "b99ac48832100fccf90e6a7612bb87a1daa7b32f5caaa66534460c9160dc2dd5"
   },
   "fixtures/cases.json": {
-    "size": 87310,
-    "sha256": "77b5dd4f440f6b178293589eb77f0f32ef15f9f6d90d549a927f1119fb0d1ec8"
+    "size": 96132,
+    "sha256": "b9e884e23970845eadd28d9e388c4887e92e514c9b592ec6436d952a943f6322"
   },
   "input.schema.json": {
-    "size": 25645,
-    "sha256": "35284810186246523c8e0601d3ed85bf0bd73da0d5de3e7ef5cec720c9c521f9"
+    "size": 26937,
+    "sha256": "186fa40278d58e7b9a021237eb2044664ba070db3030cd79316ac9245b205386"
   },
   "protocol.json": {
-    "size": 3944,
-    "sha256": "3bcc5a0c7eacfabebc956d0f830f922b5a404dd697c530e124635dc4440ce25b"
+    "size": 4633,
+    "sha256": "4802bae4a87390e009fad83f3bee25f6ea24855d23667b17c8d374895b9908d7"
   },
   "protocol.lock.json": {
     "size": 909,
-    "sha256": "599cf1b8270bf5ea694a45ee9c2ec626438979786f73f65e64417d614a016970"
+    "sha256": "e1a2f6bcd7edca86dc7f34d0b67e514e60f0c31ae85c2f3234475141d3ec7167"
   },
   "results/002-regression-results.json": {
     "size": 5420,
@@ -92,8 +92,8 @@
     "sha256": "227833e3443a25f63aa1cb9f9bfdb285b08e5b0ea5dee6d8cdad8e7163cedc87"
   },
   "verify.py": {
-    "size": 17677,
-    "sha256": "f438d2d2b8067455cf8555f8a3d37208f73eb1bc9d3defd1399a0b504a2b2730"
+    "size": 18075,
+    "sha256": "783c2cdff8611eef78e28ae5f1d8ee6db13456d9de05b5aef14eee82d76c8db9"
   },
   "test_safety.py": {
     "size": 1083,

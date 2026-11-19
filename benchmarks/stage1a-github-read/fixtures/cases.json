@@ -2333,5 +2333,352 @@
       "comparison_decision": "比較不可",
       "reason_prefix": "OP_DEADLINE_EXCEEDED"
     }
+  },
+  {
+    "id": "N19",
+    "title": "UTC-equivalent +09:00 explicit offset accepted",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/started_at",
+        "value": "2000-01-01T09:00:00+09:00"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T09:00:01+09:00"
+      }
+    ],
+    "expected": {
+      "record_validation": "PASS",
+      "comparison_decision": "比較可能",
+      "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+    }
+  },
+  {
+    "id": "N20",
+    "title": "six decimal digits accepted without rounding",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/started_at",
+        "value": "2000-01-01T00:00:00.000000Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T00:00:01.000000Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "PASS",
+      "comparison_decision": "比較可能",
+      "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+    }
+  },
+  {
+    "id": "N21",
+    "title": "negative UTC offset equivalent accepted",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/started_at",
+        "value": "1999-12-31T19:00:00-05:00"
+      }
+    ],
+    "expected": {
+      "record_validation": "PASS",
+      "comparison_decision": "比較可能",
+      "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+    }
+  },
+  {
+    "id": "F41",
+    "title": "25.0000001-second operation over-precision rejected before deadline check",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/ended_at",
+        "value": "2000-01-01T00:01:00Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T00:00:25.0000001Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/started_at",
+        "value": "2000-01-01T00:00:27Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/ended_at",
+        "value": "2000-01-01T00:00:28Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/started_at",
+        "value": "2000-01-01T00:00:29Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/ended_at",
+        "value": "2000-01-01T00:00:30Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/started_at",
+        "value": "2000-01-01T00:00:31Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/ended_at",
+        "value": "2000-01-01T00:00:32Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F42",
+    "title": "segment end overrun by 100ns rejected before containment",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/ended_at",
+        "value": "2000-01-01T00:00:20.0000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F43",
+    "title": "overlap by 100ns rejected before operation comparison",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T00:00:02.0000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F44",
+    "title": "seven fractional zero digits rejected rather than normalized",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/ended_at",
+        "value": "2000-01-01T00:01:00Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/ended_at",
+        "value": "2000-01-01T00:00:25.0000000Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/started_at",
+        "value": "2000-01-01T00:00:27Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/1/ended_at",
+        "value": "2000-01-01T00:00:28Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/started_at",
+        "value": "2000-01-01T00:00:29Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/2/ended_at",
+        "value": "2000-01-01T00:00:30Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/started_at",
+        "value": "2000-01-01T00:00:31Z"
+      },
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/3/ended_at",
+        "value": "2000-01-01T00:00:32Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F45",
+    "title": "preregistered_at precision beyond six digits rejected",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/preregistered_at",
+        "value": "1999-12-31T23:00:00.0000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F46",
+    "title": "results_available_at precision beyond six digits rejected",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/results_available_at",
+        "value": "2000-01-01T01:00:00.0000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F47",
+    "title": "segment start precision beyond six digits rejected",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/started_at",
+        "value": "2000-01-01T00:00:00.0000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F48",
+    "title": "correction timestamp precision beyond six digits rejected",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/corrections",
+        "value": [
+          {
+            "old_value": "before",
+            "new_value": "after",
+            "reason": "synthetic-correction",
+            "actor": "synthetic-reviewer",
+            "at": "2000-01-01T00:00:05.0000001Z",
+            "evidence": [
+              "synthetic:correction"
+            ]
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F49",
+    "title": "operation start precision beyond six digits rejected",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/started_at",
+        "value": "2000-01-01T00:00:00.0000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F50",
+    "title": "segment end precision beyond six digits rejected",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/segments/0/ended_at",
+        "value": "2000-01-01T00:00:20.0000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F51",
+    "title": "timezone missing refused at input boundary",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/started_at",
+        "value": "2000-01-01T00:00:00"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F52",
+    "title": "invalid timezone offset refused",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/started_at",
+        "value": "2000-01-01T00:00:00+24:00"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
+  },
+  {
+    "id": "F53",
+    "title": "comma fractional delimiter refused",
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/runs/0/operations/0/started_at",
+        "value": "2000-01-01T00:00:00,000001Z"
+      }
+    ],
+    "expected": {
+      "record_validation": "FAIL",
+      "comparison_decision": "比較不可",
+      "reason_prefix": "SCHEMA_PATTERN"
+    }
   }
 ]

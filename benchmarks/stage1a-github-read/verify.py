@@ -12,6 +12,8 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent
+# Match input.schema.json; reject sub-microsecond digits before datetime truncates.
+TIMESTAMP_PATTERN = r'[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](?:\.[0-9]{1,6})?(?:Z|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])'
 
 class Invalid(ValueError):
     pass
@@ -75,6 +77,8 @@ def schema_check(value, schema, at='$'):
                 schema_check(item, additional, at + '/' + key)
 
 def time(value):
+    require(type(value) is str and re.fullmatch(TIMESTAMP_PATTERN, value) is not None,
+            'BAD_TIMESTAMP_FORMAT_OR_PRECISION')
     try:
         d = dt.datetime.fromisoformat(value.replace('Z', '+00:00'))
     except ValueError as e:
