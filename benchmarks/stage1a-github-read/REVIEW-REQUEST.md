@@ -1,3 +1,13 @@
+# Stage 1-A v0.1.4 独立再審査条件（2026-11-20）
+
+**総合PARTIAL／P2-02・P2-04は同梱検査器限定CLOSED／新規P3は独立再審査待ち／計画受入HOLD／マージNO／実測NOT_TESTED・開始HOLD。**
+
+新固定HEADを独立取得し、公開Schemaの日時7項目に対するDraft 2020-12標準検証器の全文一致（余計な末尾文字・改行・秒付きオフセット・小数秒7桁以上の拒否）、正常日時とUTC同値オフセットの受理、同梱検査器の判定との一致を確認する。専用test_schema_standard.py（98対照）、既存合成85件、manifest5、コピー先2、002回帰25、正式CI、差分・lock・manifestを確認し、P3のCLOSED可否を判断する。
+
+旧v0.1.3のCI・評価は履歴として保持する。旧ZIPの探索・保存・再生成は今回の対象外。Draft解除・マージ・実製品実測は実施しない。
+
+---
+
 # 最新独立再レビュー依頼（Stage 1-A v0.1.3 / 2026-11-19）
 
 **総合PARTIAL／P2-02・P2-04 OPEN／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD。** [v0.1.2独立再レビュー](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8#pullrequestreview-5969848402)は実施済みで、共通日時パーサーの小数秒7桁目以降の切捨てを指摘した。**v0.1.3の独立再レビューはNOT_TESTED**（既存レビューの流用禁止）。

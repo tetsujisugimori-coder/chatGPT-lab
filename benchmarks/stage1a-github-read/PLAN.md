@@ -1,6 +1,6 @@
-# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.3
+# Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.4
 
-状態: **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD**。v0.1.2独立再レビュー実施済み（P2-02/P2-04はOPEN）、v0.1.3独立再レビューNOT_TESTED。旧ZIP保存BLOCKED、再取得NOT_TESTED。
+状態: **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD**。v0.1.3の独立再審査ではP2-02/P2-04を検査器限定CLOSEDと報告。新規P3（公開Schemaの全文一致）はv0.1.4修正・独立再審査待ち。旧ZIP保存BLOCKED・再取得NOT_TESTED。
 関連 [Issue #7](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/7)、Stage 0 [Issue #5](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/5)、merged [PR #6](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6)。
 
 ## 正本と開始時確認（2026-11-18 UTC）
@@ -89,3 +89,11 @@ P2-04: started_atとended_atの差をtimezone-aware timedeltaとして正確に�
 - 合成反例F41～F53（13件）、正常N19～N21（3件）を追加。旧69件を履歴として保持し、新総数85件。25.0000001秒、区間末尾+100ns、操作重複100nsはSCHEMA_PATTERNで拒否。25.000000秒正常、25.000001秒超過、UTC等値の別オフセットは維持。
 - これは**合成入力の記録整合性**のみで、OS上の期限強制・実プロセス停止・原票真正性・実製品実測を証明しない。
 - 新HEADでの自己試験・正式CI・別担当の独立再レビューは提出後の実績で判定する。P2-02/P2-04は独立再レビューまでOPEN、計画受入HOLD、マージNO。旧ZIP所在UNKNOWN・保存BLOCKED、外部再取得NOT_TESTEDは変わらない。
+
+## v0.1.4 公開Draft 2020-12 Schemaの局所補訂（2026-11-20）
+
+- 日時7項目のpatternを先頭アンカーと終端の残余文字拒否によって全文一致とする。単純な$終端だけでは末尾改行を許す場合があるため使用しない。
+- 時刻小数最大6桁、明示的タイムゾーン、同梱verify.pyの判定条件は変更しない。
+- 標準Draft202012Validator（検査用jsonschema==4.26.0）で7項目×14入力＝98対照（正常5・故障9）をtest_schema_standard.pyへ固定。CIで既存合成85件、manifest5、コピー先2、002回帰25も実施する。
+- v0.1.3のCI run 44477613986と旧評価は歴史的記録。v0.1.4のCI・独立再審査・受入・マージは別々に判断する。
+- 旧ZIPの探索・保存・再生成は対象外。現行の所在UNKNOWN、保存BLOCKED、独立再取得NOT_TESTEDを維持する。

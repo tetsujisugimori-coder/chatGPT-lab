@@ -1,3 +1,14 @@
+# 現行判定（Stage 1-A v0.1.4／2026-11-20）
+
+**総合PARTIAL。P2-02/P2-04は同梱検査器の範囲でCLOSED、新規P3（公開Schema全文一致）は局所修正後の独立再審査待ち。計画限定受入HOLD、限定マージ推奨NO。Draft維持、実製品実測・第3実験NOT_TESTED、開始HOLD。**
+
+- v0.1.3固定HEAD `3fa3517006e31ed4c2c6c3fda28586307f2b67f5` に対する八兵衛の独立再審査報告ではP2-02/P2-04を検査器限定CLOSEDとし、公開Draft 2020-12 Schemaの部分一致問題を新規P3として指摘した。この独立再審査結果は当時GitHubへ未投稿。
+- **旧v0.1.3正式CIは確認済み**：[run 44477613986](https://github.com/tetsujisugimori-coder/chatGPT-lab/actions/runs/44477613986) は合成85/85、manifest 5/5、コピー先2/2、002回帰25/25、artifact integrity PASS。下方の「CI提出後確認」「独立再審査NOT_TESTED」は各旧版を作成した時点の履歴であり、最新判定ではない。
+- v0.1.4は公開Schemaの日時7項目に全文一致を適用し、標準Draft 2020-12検証器による98対照を追加。旧85合成は改変しない。新HEADのCIとGitHub読戻し結果は提出後に別記録で確定する。
+- 旧ZIPの所在UNKNOWN・保存BLOCKED・独立再取得NOT_TESTED、新原票の永続保存未成立は維持。今回のSchema補訂で旧ZIPの探索・保存を追加しない。
+
+---
+
 # 現行判定（2026-11-19 / Stage 1-A v0.1.3 補訂）
 
 **総合PARTIAL／P2-02・P2-04 OPEN／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD。**
