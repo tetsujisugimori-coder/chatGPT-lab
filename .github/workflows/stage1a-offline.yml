@@ -1,0 +1,33 @@
+name: Stage 1-A offline regression
+on:
+  pull_request:
+    paths:
+      - 'benchmarks/stage1a-github-read/**'
+      - '.github/workflows/stage1a-offline.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Checkout fixed PR contents
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Artifact integrity
+        run: python -B benchmarks/stage1a-github-read/check_artifacts.py
+      - name: Synthetic cases
+        run: |
+          python -B benchmarks/stage1a-github-read/test_verify.py "$RUNNER_TEMP/stage1a-synthetic-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+      - name: Draft 2020-12 public Schema regression
+        run: |
+          python -m pip install --disable-pip-version-check 'jsonschema==4.26.0'
+          python -B benchmarks/stage1a-github-read/test_schema_standard.py
+      - name: Manifest mutation cases
+        run: |
+          python -B benchmarks/stage1a-github-read/test_integrity.py "$RUNNER_TEMP/stage1a-integrity-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+      - name: Unsafe copy destinations
+        run: python -B benchmarks/stage1a-github-read/test_safety.py
+      - name: Existing 002 offline regression
+        run: |
+          python -B experiments/002-github-missing-path/test_verify.py "$RUNNER_TEMP/stage1a-002-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"

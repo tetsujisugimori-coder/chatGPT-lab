@@ -39,3 +39,7 @@ ChatGPTを中心に、モデル、接続アプリ、MCP、外部AI・ソフト�
 v0.1は当時の独立レビューで**総合PARTIAL・文書受入NO・マージNO**。v0.2でP2-01（未知の開始時ID）、P2-02（目的別比較可否）、P3-01（レビューと受入・実測開始のゲート分離）を補訂し、[独立再審査](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6#pullrequestreview-5947211731)で**元40分類/40 PASS・10変異/10 PASS（文書規則のみ）**、旧P2 2件・P3 1件CLOSED、追加13件は12 PASS・1 FAILを確認した。新P3-02（C32/C39の入力説明逆転）は非blockingで、本版に訂正を反映。v0.1の36/40・9/10をv0.2の結果として流用していない。v0.2証拠ZIPはLibraryに保存し、別担当による実物再取得・全byte/SHA-256/CRC/manifest一致がレビュー上報告された。同一基盤・共有workspace・履歴継承の独立性制約、ACL全体・長期保持保証UNKNOWN、レビュー投稿後の読戻し記録が当該ZIPに含まれない点を維持する。
 
 **文書限定受入YES・総合PARTIAL**。Stage 1正式移行・実測開始はHOLDであり、今回の文書限定マージ承認は製品機能や自動分類器の実測開始を許可しない。旧実験001/002は変更しておらず、動的Chat/Work/Codex/dot比較と当該文書のCIはNOT_TESTED。C25/C26の元入力の目的欠落による`REJECTED`と、目的を追加した説明用の仮想シナリオを区別する。
+
+## Stage 1-A：共通読取ベンチマーク（計画・オフライン基盤 / Draft）
+
+[計画書](benchmarks/stage1a-github-read/PLAN.md)・[自己検証結果](benchmarks/stage1a-github-read/RESULTS.md)・[独立レビュー依頼資料](benchmarks/stage1a-github-read/REVIEW-REQUEST.md)。関連 [Issue #7](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/7)。Stage 0のmerged PR #6を正本とし、10比較ID/UNKNOWN、公開固定READMEと不存在path、目的別比較規則の合成検査を用意した。**計画限定の正式受入PENDING、独立レビューNOT_TESTED、実製品比較の開始HOLD**。今回の合成試験はChat/Work/Codex/dotの能力実測でも第3実験でもなく、旧001/002の原票を変更しない。

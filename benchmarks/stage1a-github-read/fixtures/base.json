@@ -1,0 +1,471 @@
+{
+  "record_kind": "SYNTHETIC",
+  "protocol_id": "stage1a-github-read",
+  "protocol_version": "0.1.4",
+  "protocol_sha256": "3447c6ec567dcb249fdd00111142be8ac2c807339e493e1e45826c0c58082d94",
+  "plan_commit": "0000000000000000000000000000000000000000",
+  "preregistered_at": "1999-12-31T23:00:00Z",
+  "results_available_at": "2000-01-01T01:00:00Z",
+  "profile": {
+    "metric": "correct-read-and-explicit-missing",
+    "condition_names": [
+      "fixture",
+      "permissions",
+      "agents",
+      "route",
+      "network",
+      "retry",
+      "timeout",
+      "measurement_boundary",
+      "model"
+    ],
+    "stop_conditions": [
+      "missing-evidence",
+      "unknown-impact",
+      "target-changed",
+      "protocol-changed"
+    ],
+    "id_required": true,
+    "comparison_purpose": "descriptive",
+    "required_equivalences": [
+      "fixture",
+      "permissions"
+    ],
+    "allowed_deviations": {
+      "timeout": {
+        "absolute_max_difference": 5
+      }
+    },
+    "descriptive_differences": [
+      "agents",
+      "route",
+      "network",
+      "retry",
+      "timeout",
+      "measurement_boundary",
+      "model"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "synthetic-run-A",
+      "comparison_id": "CHAT-DESKTOP",
+      "comparison_id_status": "CONFIRMED",
+      "comparison_id_reason": "",
+      "comparison_id_candidates": [
+        "CHAT-DESKTOP"
+      ],
+      "comparison_id_evidence": [
+        "synthetic:start-ui"
+      ],
+      "initial_client_surface": "desktop",
+      "current_client_surface": "desktop",
+      "selected_experience": "Chat",
+      "experience_variant": "NA",
+      "os_version": "SYNTHETIC OS",
+      "app_version": "SYNTHETIC app",
+      "execution_site": "cloud",
+      "executor": "synthetic-cloud-executor",
+      "segments": [
+        {
+          "segment_id": "segment-1",
+          "started_at": "2000-01-01T00:00:00Z",
+          "ended_at": "2000-01-01T00:00:20Z",
+          "client_surface": "desktop",
+          "execution_site": "cloud",
+          "executor": "synthetic-cloud-executor",
+          "site_evidence_basis": "execution-log",
+          "evidence": [
+            "synthetic:cloud-execution-log"
+          ]
+        }
+      ],
+      "model_display": "illustrative-label-not-verified",
+      "model_verified": "UNKNOWN",
+      "model_evidence_basis": "display-only",
+      "model_evidence": [
+        "synthetic:model-display"
+      ],
+      "delegate_chain": [],
+      "delegate_evidence": [],
+      "attribution": "executor-only",
+      "corrections": [],
+      "operations": [
+        {
+          "case_id": "A-N",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "README.md",
+          "route": "A",
+          "tool": "synthetic:github.fetch_file",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/README.md?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:00Z",
+          "ended_at": "2000-01-01T00:00:01Z",
+          "attempt": 1,
+          "observation": "success",
+          "raw_response": "SYNTHETIC success body in separate base64 field",
+          "file_body_base64": "IyBjaGF0R1BULWxhYgoKQ2hhdEdQVOOCkuS4reW/g+OBq+OAgeODouODh+ODq+OAgeaOpee2muOCouODl+ODquOAgU1DUOOAgeWklumDqEFJ44O744K944OV44OI44Go44Gu5o6l57aa44Go5a6f6KGM6IO95Yqb44KS44CB5LqL5YmN6KiI55S744Go6Kaz5ris6KiY6Yyy44Gn56CU56m244GX44G+44GZ44CC5YWs5byP44Gq5YaF6YOo5a6f6KOF44KS6Kej5piO44GX44Gf44Go5Li75by144GZ44KL56CU56m244Gn44Gv44GC44KK44G+44Gb44KT44CCCgojIyDliJ3lm57jgavliIbjgYvjgaPjgZ/jgZPjgagKCjIwMjYtMTEtMTfjgIHlhavlhbXooZvjga7mi4XlvZPjgqjjg7zjgrjjgqfjg7Pjg4jjgYxHaXRIdWLmjqXntprjg4Tjg7zjg6vjgafjgIHlm7rlrppjb21taXTjga5SRUFETUXjg7vml6LlrZhJc3N1ZeODu+aXouWtmFBS44KS5a6f6Zqb44Gr5Y+W5b6X44GX44G+44GX44Gf44CC5Yil44GuSFRUUFPlj5blvpfntYzot6/jgajjga7nhaflkIjjga9HMDHjgJxHMDPjgZnjgbnjgaZQQVNT44CC44Gf44Gg44GXSXNzdWXmr5TovIPjga7liJ3lm57jga/jgr/jgqTjg6DjgqLjgqbjg4jjgZfjgIEx5Zue44Gu5YaN5Y+W5b6X44Gn5LiA6Ie044GX44G+44GX44Gf44CC5aSx5pWX5bGl5q2044Gv5L+d5oyB44GX44Gm44GE44G+44GZ44CCCgrjgZPjgozjga/lvZPoqbLlhazplovlr77osaHjg7vlvZPoqbLmmYLliLvjg7vlvZPoqbLlrp/ooYzkuLvkvZPjga7oqq3lj5bjgavpmZDjgorjgb7jgZnjgILjg6Ljg4fjg6vlkI3jga9VTktOT1dO44CC5YWo44Oi44OH44Or44CB6Z2e5YWs6ZaL44Oq44Od44K444OI44Oq44Gu5qip6ZmQ5aKD55WM44CB5Lu75oSP44GuTUNQL+WklumDqOODhOODvOODq+OAgeabuOi+vOS4gOiIrOOAgeW8lee2meOBjuOBrueLrOeri+aAp+OBr+acquaknOiovOOBp+OBmeOAggoKLSBb56CU56m244Oe44OD44OXXShkb2NzL3Jlc2VhcmNoLW1hcC5tZCkKLSBbMDAxIOS6i+WJjeioiOeUu10oZXhwZXJpbWVudHMvMDAxLWdpdGh1Yi1yZWFkL1BMQU4ubWQpCi0gWzAwMSDlrp/muKzntZDmnpzjgajpmZDnlYxdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKQotIFvmnIDlsI/lrp/ooYzoqLzmi6BdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9vYnNlcnZhdGlvbnMuanNvbikKLSBbSXNzdWUgIzFdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzEpCgojIyDlrp/pqJPjga7ov73liqDmlrnms5UKCjEuIGBleHBlcmltZW50cy9OTk4tbmFtZS9QTEFOLm1kYOOBq+WvvuixoeODu+S4u+S9k+ODu+eSsOWig+ODu+aXpeaZguODu+acn+W+heWApOODu+WBnOatouadoeS7tuODu+aoqemZkOOCkuWFiOOBq+WbuuWumuOBmeOCi+OAggoyLiDlrp/muKzjgajlkIjmiJDoqabpqJPjgIHmjqXntprlhYjjga7lrZjlnKjjg7voqq3lj5bjg7vmm7jovrzjgpLliIbjgZHjgovjgIIKMy4gYFJFU1VMVFMubWRg44GrUEFTUyAvIEZBSUwgLyBCTE9DS0VEIC8gTk9UX1RFU1RFRCAvIFVOS05PV07jgpLmoLnmi6DjgajjgajjgoLjgavoqJjpjLLjgZnjgovjgIIKNC4g56eY5a+G5YCk44KS5ZCr44G+44Gq44GE5pyA5bCP6Ki85oug44GoaGFzaOOCkuS/neWtmOOBl+OAgeWIpee1jOi3r+avlOi8g+OBruWPr+WQpuOCkuaYjuiomOOBmeOCi+OAggo1LiDlsILnlKhicmFuY2jjgahEcmFmdCBQUuOBp+aPkOWHuuOBmeOCi+OAgm1haW7nm7TmjqXlpInmm7Tjg7vjg57jg7zjgrjjg7vlpJbpg6jpgJrnn6Xjg7voqK3lrprlpInmm7Tjg7vmnInmlplBUEnkvb/nlKjjga/liKXmib/oqo3jgIIKCuS7iuWbnkNJ44KE5L6d5a2Y44KS6L+95Yqg44GX44Gm44GE44G+44Gb44KT44CC5o+Q5Ye65L2c5qWt44Gu5oiQ5Yqf44Gv44CB5LqL5YmN6KiI55S744Gu44Gq44GE5pu46L686IO95Yqb5a6f6aiT44GuUEFTU+OBqOOBr+aJseOBhOOBvuOBm+OCk+OAggoKIyMgUDLkv67mraPov73oo5wKClvmpJzmn7vlmajjga7kv67mraPjgagxMTDjga7jgqrjg5Xjg6njgqTjg7Plr77nhaddKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKeOCkui/veiomOOAguWOn+ims+a4rOOBqOS6i+WJjeioiOeUu+OBr+e2reaMgeOAguS/ruato+aLheW9k+OBq+OCiOOCi+iHquW3seaknOiovOOBp+OBguOCiuOAgeeLrOeri+WGjeODrOODk+ODpeODvOOBr05PVF9URVNURUTjgILnt4/lkIhQQVJUSUFM44O76ZmQ5a6a44Oe44O844K4Tk/jg7tEcmFmdOe2reaMgeOAggoKIyMg56ysMuWun+mok++8iDIwMjYtMTEtMTfvvIkKWzAwMiDkuI3lrZjlnKjjg5XjgqHjgqTjg6voqq3lj5ZdKGV4cGVyaW1lbnRzLzAwMi1naXRodWItbWlzc2luZy1wYXRoL1JFU1VMVFMubWQp44Gv5Zu65a6a5YWs6ZaLY29tbWl044GuUkVBRE1F5q2j5bi45a++54Wn44Go5LiN5a2Y5ZyocGF0aOiyoOWvvueFp+OBq+mZkOOCilBBU1PjgIJmZXRjaF9maWxl44Gu5piO56S6Tk9UX0ZPVU5E44Go6KqN6Ki844Gq44GXSFRUUFPjga40MDTjgpLljLrliKXjgZfjgIHmraPluLjmnKzmlocyMjM3IGJ5dGVz44KS5Yil57WM6Lev54Wn5ZCI44GX44Gf44CC57eP5ZCIUEFSVElBTOOAgemAmuW4uENoYXRHUFTlhajoiKzjg7vjg6Ljg4fjg6vmr5TovIPjg7vpnZ7lhazplovlooPnlYzjg7tNQ1DlhajoiKzjgbjkuIDoiKzljJbjgZfjgarjgYTjgIIK5YmN5bel56iLUFIgIzLjga/lvozjga7lho3jg6zjg5Pjg6Xjg7zjgpLntYzjgaZtZXJnZea4iOOBv+OAguS4iuiomOaXp1Ay5L+u5q2j6L+96KOc44GuTk8vTk9UX1RFU1RFROOBr+W9k+aZguOBruWxpeattOOBp+OBguOCiuOAgeWOn+iomOmMsuOCkuS/neaMgeOBmeOCi+OAguS7iuWbnuOBruaPkOWHui/kv53lhagv54us56uL44Os44OT44Ol44O844GvMDAy44GoUFLjga7ntZDmnpzjgpLlj4LnhafjgIIKCiMjIFN0YWdlIDDvvJpDaGF0R1BU44Gu5a6a576p44Go5q+U6LyD5Yy65YiG77yIdjAuMiDmlofmm7jpmZDlrprlj5flhaXvvIkKClvnoJTnqbblr77osaHjg7vlrp/ooYznkrDlooPjg7vog73lipvluLDlsZ7jga7lrprnvqldKGRvY3MvY2hhdGdwdC1yZXNlYXJjaC1kZWZpbml0aW9uLm1kKeOBq+OAgUNoYXQvV29yayBDbG91ZC9Xb3JrIExvY2FsL0NvZGV4IExvY2FsL0NvZGV4IENsb3VkL+WFq+WFteihm++8iGRvdO+8ieOBruavlOi8g+WMuuWIhuOBqOOAgei1t+WLlemdouODu+Wun+ihjOWgtOaJgOODu+WnlOS7u+OCkuWIhuOBkeOCi+imj+e0hOOCkuiomOi8ieOBl+OBpuOBhOOBvuOBmeOAgumWoumAoyBbSXNzdWUgIzVdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzUp44O7W0RyYWZ0IFBSICM2XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNinjgIIKCnYwLjHjga/lvZPmmYLjga7ni6znq4vjg6zjg5Pjg6Xjg7zjgacqKue3j+WQiFBBUlRJQUzjg7vmlofmm7jlj5flhaVOT+ODu+ODnuODvOOCuE5PKirjgIJ2MC4y44GnUDItMDHvvIjmnKrnn6Xjga7plovlp4vmmYJJRO+8ieOAgVAyLTAy77yI55uu55qE5Yil5q+U6LyD5Y+v5ZCm77yJ44CBUDMtMDHvvIjjg6zjg5Pjg6Xjg7zjgajlj5flhaXjg7vlrp/muKzplovlp4vjga7jgrLjg7zjg4jliIbpm6LvvInjgpLoo5zoqILjgZfjgIFb54us56uL5YaN5a+p5p+7XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNiNwdWxscmVxdWVzdHJldmlldy01OTQ3MjExNzMxKeOBpyoq5YWDNDDliIbpoZ4vNDAgUEFTU+ODuzEw5aSJ55WwLzEwIFBBU1PvvIjmlofmm7jopo/liYfjga7jgb/vvIkqKuOAgeaXp1AyIDLku7bjg7tQMyAx5Lu2Q0xPU0VE44CB6L+95YqgMTPku7bjga8xMiBQQVNT44O7MSBGQUlM44KS56K66KqN44GX44Gf44CC5pawUDMtMDLvvIhDMzIvQzM544Gu5YWl5Yqb6Kqs5piO6YCG6Lui77yJ44Gv6Z2eYmxvY2tpbmfjgafjgIHmnKzniYjjgavoqILmraPjgpLlj43mmKDjgIJ2MC4x44GuMzYvNDDjg7s5LzEw44KSdjAuMuOBrue1kOaenOOBqOOBl+OBpua1geeUqOOBl+OBpuOBhOOBquOBhOOAgnYwLjLoqLzmi6BaSVDjga9MaWJyYXJ544Gr5L+d5a2Y44GX44CB5Yil5ouF5b2T44Gr44KI44KL5a6f54mp5YaN5Y+W5b6X44O75YWoYnl0ZS9TSEEtMjU2L0NSQy9tYW5pZmVzdOS4gOiHtOOBjOODrOODk+ODpeODvOS4iuWgseWRiuOBleOCjOOBn+OAguWQjOS4gOWfuuebpOODu+WFseaciXdvcmtzcGFjZeODu+WxpeattOe2meaJv+OBrueLrOeri+aAp+WItue0hOOAgUFDTOWFqOS9k+ODu+mVt+acn+S/neaMgeS/neiovFVOS05PV07jgIHjg6zjg5Pjg6Xjg7zmipXnqL/lvozjga7oqq3miLvjgZfoqJjpjLLjgYzlvZPoqbJaSVDjgavlkKvjgb7jgozjgarjgYTngrnjgpLntq3mjIHjgZnjgovjgIIKCioq5paH5pu46ZmQ5a6a5Y+X5YWlWUVT44O757eP5ZCIUEFSVElBTCoq44CCU3RhZ2UgMeato+W8j+enu+ihjOODu+Wun+a4rOmWi+Wni+OBr0hPTETjgafjgYLjgorjgIHku4rlm57jga7mlofmm7jpmZDlrprjg57jg7zjgrjmib/oqo3jga/oo73lk4HmqZ/og73jgoToh6rli5XliIbpoZ7lmajjga7lrp/muKzplovlp4vjgpLoqLHlj6/jgZfjgarjgYTjgILml6flrp/pqJMwMDEvMDAy44Gv5aSJ5pu044GX44Gm44GK44KJ44Ga44CB5YuV55qEQ2hhdC9Xb3JrL0NvZGV4L2RvdOavlOi8g+OBqOW9k+ipsuaWh+abuOOBrkNJ44GvTk9UX1RFU1RFROOAgkMyNS9DMjbjga7lhYPlhaXlipvjga7nm67nmoTmrKDokL3jgavjgojjgotgUkVKRUNURURg44Go44CB55uu55qE44KS6L+95Yqg44GX44Gf6Kqs5piO55So44Gu5Luu5oOz44K344OK44Oq44Kq44KS5Yy65Yil44GZ44KL44CCCg==",
+          "http_status": null,
+          "http_status_direct": false,
+          "exit_code": null,
+          "evidence": [
+            "synthetic:raw-A-N"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        },
+        {
+          "case_id": "A-M",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "__stage1a_intentionally_absent__/negative-control.txt",
+          "route": "A",
+          "tool": "synthetic:github.fetch_file",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/__stage1a_intentionally_absent__/negative-control.txt?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:02Z",
+          "ended_at": "2000-01-01T00:00:03Z",
+          "attempt": 1,
+          "observation": "explicit_missing",
+          "raw_response": "SYNTHETIC NOT_FOUND for __stage1a_intentionally_absent__/negative-control.txt",
+          "file_body_base64": null,
+          "http_status": null,
+          "http_status_direct": false,
+          "exit_code": null,
+          "evidence": [
+            "synthetic:raw-A-M"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        },
+        {
+          "case_id": "B-N",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "README.md",
+          "route": "B",
+          "tool": "synthetic:unauthenticated-https-get",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/README.md?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:04Z",
+          "ended_at": "2000-01-01T00:00:05Z",
+          "attempt": 1,
+          "observation": "success",
+          "raw_response": "SYNTHETIC success body in separate base64 field",
+          "file_body_base64": "IyBjaGF0R1BULWxhYgoKQ2hhdEdQVOOCkuS4reW/g+OBq+OAgeODouODh+ODq+OAgeaOpee2muOCouODl+ODquOAgU1DUOOAgeWklumDqEFJ44O744K944OV44OI44Go44Gu5o6l57aa44Go5a6f6KGM6IO95Yqb44KS44CB5LqL5YmN6KiI55S744Go6Kaz5ris6KiY6Yyy44Gn56CU56m244GX44G+44GZ44CC5YWs5byP44Gq5YaF6YOo5a6f6KOF44KS6Kej5piO44GX44Gf44Go5Li75by144GZ44KL56CU56m244Gn44Gv44GC44KK44G+44Gb44KT44CCCgojIyDliJ3lm57jgavliIbjgYvjgaPjgZ/jgZPjgagKCjIwMjYtMTEtMTfjgIHlhavlhbXooZvjga7mi4XlvZPjgqjjg7zjgrjjgqfjg7Pjg4jjgYxHaXRIdWLmjqXntprjg4Tjg7zjg6vjgafjgIHlm7rlrppjb21taXTjga5SRUFETUXjg7vml6LlrZhJc3N1ZeODu+aXouWtmFBS44KS5a6f6Zqb44Gr5Y+W5b6X44GX44G+44GX44Gf44CC5Yil44GuSFRUUFPlj5blvpfntYzot6/jgajjga7nhaflkIjjga9HMDHjgJxHMDPjgZnjgbnjgaZQQVNT44CC44Gf44Gg44GXSXNzdWXmr5TovIPjga7liJ3lm57jga/jgr/jgqTjg6DjgqLjgqbjg4jjgZfjgIEx5Zue44Gu5YaN5Y+W5b6X44Gn5LiA6Ie044GX44G+44GX44Gf44CC5aSx5pWX5bGl5q2044Gv5L+d5oyB44GX44Gm44GE44G+44GZ44CCCgrjgZPjgozjga/lvZPoqbLlhazplovlr77osaHjg7vlvZPoqbLmmYLliLvjg7vlvZPoqbLlrp/ooYzkuLvkvZPjga7oqq3lj5bjgavpmZDjgorjgb7jgZnjgILjg6Ljg4fjg6vlkI3jga9VTktOT1dO44CC5YWo44Oi44OH44Or44CB6Z2e5YWs6ZaL44Oq44Od44K444OI44Oq44Gu5qip6ZmQ5aKD55WM44CB5Lu75oSP44GuTUNQL+WklumDqOODhOODvOODq+OAgeabuOi+vOS4gOiIrOOAgeW8lee2meOBjuOBrueLrOeri+aAp+OBr+acquaknOiovOOBp+OBmeOAggoKLSBb56CU56m244Oe44OD44OXXShkb2NzL3Jlc2VhcmNoLW1hcC5tZCkKLSBbMDAxIOS6i+WJjeioiOeUu10oZXhwZXJpbWVudHMvMDAxLWdpdGh1Yi1yZWFkL1BMQU4ubWQpCi0gWzAwMSDlrp/muKzntZDmnpzjgajpmZDnlYxdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKQotIFvmnIDlsI/lrp/ooYzoqLzmi6BdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9vYnNlcnZhdGlvbnMuanNvbikKLSBbSXNzdWUgIzFdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzEpCgojIyDlrp/pqJPjga7ov73liqDmlrnms5UKCjEuIGBleHBlcmltZW50cy9OTk4tbmFtZS9QTEFOLm1kYOOBq+WvvuixoeODu+S4u+S9k+ODu+eSsOWig+ODu+aXpeaZguODu+acn+W+heWApOODu+WBnOatouadoeS7tuODu+aoqemZkOOCkuWFiOOBq+WbuuWumuOBmeOCi+OAggoyLiDlrp/muKzjgajlkIjmiJDoqabpqJPjgIHmjqXntprlhYjjga7lrZjlnKjjg7voqq3lj5bjg7vmm7jovrzjgpLliIbjgZHjgovjgIIKMy4gYFJFU1VMVFMubWRg44GrUEFTUyAvIEZBSUwgLyBCTE9DS0VEIC8gTk9UX1RFU1RFRCAvIFVOS05PV07jgpLmoLnmi6DjgajjgajjgoLjgavoqJjpjLLjgZnjgovjgIIKNC4g56eY5a+G5YCk44KS5ZCr44G+44Gq44GE5pyA5bCP6Ki85oug44GoaGFzaOOCkuS/neWtmOOBl+OAgeWIpee1jOi3r+avlOi8g+OBruWPr+WQpuOCkuaYjuiomOOBmeOCi+OAggo1LiDlsILnlKhicmFuY2jjgahEcmFmdCBQUuOBp+aPkOWHuuOBmeOCi+OAgm1haW7nm7TmjqXlpInmm7Tjg7vjg57jg7zjgrjjg7vlpJbpg6jpgJrnn6Xjg7voqK3lrprlpInmm7Tjg7vmnInmlplBUEnkvb/nlKjjga/liKXmib/oqo3jgIIKCuS7iuWbnkNJ44KE5L6d5a2Y44KS6L+95Yqg44GX44Gm44GE44G+44Gb44KT44CC5o+Q5Ye65L2c5qWt44Gu5oiQ5Yqf44Gv44CB5LqL5YmN6KiI55S744Gu44Gq44GE5pu46L686IO95Yqb5a6f6aiT44GuUEFTU+OBqOOBr+aJseOBhOOBvuOBm+OCk+OAggoKIyMgUDLkv67mraPov73oo5wKClvmpJzmn7vlmajjga7kv67mraPjgagxMTDjga7jgqrjg5Xjg6njgqTjg7Plr77nhaddKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKeOCkui/veiomOOAguWOn+ims+a4rOOBqOS6i+WJjeioiOeUu+OBr+e2reaMgeOAguS/ruato+aLheW9k+OBq+OCiOOCi+iHquW3seaknOiovOOBp+OBguOCiuOAgeeLrOeri+WGjeODrOODk+ODpeODvOOBr05PVF9URVNURUTjgILnt4/lkIhQQVJUSUFM44O76ZmQ5a6a44Oe44O844K4Tk/jg7tEcmFmdOe2reaMgeOAggoKIyMg56ysMuWun+mok++8iDIwMjYtMTEtMTfvvIkKWzAwMiDkuI3lrZjlnKjjg5XjgqHjgqTjg6voqq3lj5ZdKGV4cGVyaW1lbnRzLzAwMi1naXRodWItbWlzc2luZy1wYXRoL1JFU1VMVFMubWQp44Gv5Zu65a6a5YWs6ZaLY29tbWl044GuUkVBRE1F5q2j5bi45a++54Wn44Go5LiN5a2Y5ZyocGF0aOiyoOWvvueFp+OBq+mZkOOCilBBU1PjgIJmZXRjaF9maWxl44Gu5piO56S6Tk9UX0ZPVU5E44Go6KqN6Ki844Gq44GXSFRUUFPjga40MDTjgpLljLrliKXjgZfjgIHmraPluLjmnKzmlocyMjM3IGJ5dGVz44KS5Yil57WM6Lev54Wn5ZCI44GX44Gf44CC57eP5ZCIUEFSVElBTOOAgemAmuW4uENoYXRHUFTlhajoiKzjg7vjg6Ljg4fjg6vmr5TovIPjg7vpnZ7lhazplovlooPnlYzjg7tNQ1DlhajoiKzjgbjkuIDoiKzljJbjgZfjgarjgYTjgIIK5YmN5bel56iLUFIgIzLjga/lvozjga7lho3jg6zjg5Pjg6Xjg7zjgpLntYzjgaZtZXJnZea4iOOBv+OAguS4iuiomOaXp1Ay5L+u5q2j6L+96KOc44GuTk8vTk9UX1RFU1RFROOBr+W9k+aZguOBruWxpeattOOBp+OBguOCiuOAgeWOn+iomOmMsuOCkuS/neaMgeOBmeOCi+OAguS7iuWbnuOBruaPkOWHui/kv53lhagv54us56uL44Os44OT44Ol44O844GvMDAy44GoUFLjga7ntZDmnpzjgpLlj4LnhafjgIIKCiMjIFN0YWdlIDDvvJpDaGF0R1BU44Gu5a6a576p44Go5q+U6LyD5Yy65YiG77yIdjAuMiDmlofmm7jpmZDlrprlj5flhaXvvIkKClvnoJTnqbblr77osaHjg7vlrp/ooYznkrDlooPjg7vog73lipvluLDlsZ7jga7lrprnvqldKGRvY3MvY2hhdGdwdC1yZXNlYXJjaC1kZWZpbml0aW9uLm1kKeOBq+OAgUNoYXQvV29yayBDbG91ZC9Xb3JrIExvY2FsL0NvZGV4IExvY2FsL0NvZGV4IENsb3VkL+WFq+WFteihm++8iGRvdO+8ieOBruavlOi8g+WMuuWIhuOBqOOAgei1t+WLlemdouODu+Wun+ihjOWgtOaJgOODu+WnlOS7u+OCkuWIhuOBkeOCi+imj+e0hOOCkuiomOi8ieOBl+OBpuOBhOOBvuOBmeOAgumWoumAoyBbSXNzdWUgIzVdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzUp44O7W0RyYWZ0IFBSICM2XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNinjgIIKCnYwLjHjga/lvZPmmYLjga7ni6znq4vjg6zjg5Pjg6Xjg7zjgacqKue3j+WQiFBBUlRJQUzjg7vmlofmm7jlj5flhaVOT+ODu+ODnuODvOOCuE5PKirjgIJ2MC4y44GnUDItMDHvvIjmnKrnn6Xjga7plovlp4vmmYJJRO+8ieOAgVAyLTAy77yI55uu55qE5Yil5q+U6LyD5Y+v5ZCm77yJ44CBUDMtMDHvvIjjg6zjg5Pjg6Xjg7zjgajlj5flhaXjg7vlrp/muKzplovlp4vjga7jgrLjg7zjg4jliIbpm6LvvInjgpLoo5zoqILjgZfjgIFb54us56uL5YaN5a+p5p+7XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNiNwdWxscmVxdWVzdHJldmlldy01OTQ3MjExNzMxKeOBpyoq5YWDNDDliIbpoZ4vNDAgUEFTU+ODuzEw5aSJ55WwLzEwIFBBU1PvvIjmlofmm7jopo/liYfjga7jgb/vvIkqKuOAgeaXp1AyIDLku7bjg7tQMyAx5Lu2Q0xPU0VE44CB6L+95YqgMTPku7bjga8xMiBQQVNT44O7MSBGQUlM44KS56K66KqN44GX44Gf44CC5pawUDMtMDLvvIhDMzIvQzM544Gu5YWl5Yqb6Kqs5piO6YCG6Lui77yJ44Gv6Z2eYmxvY2tpbmfjgafjgIHmnKzniYjjgavoqILmraPjgpLlj43mmKDjgIJ2MC4x44GuMzYvNDDjg7s5LzEw44KSdjAuMuOBrue1kOaenOOBqOOBl+OBpua1geeUqOOBl+OBpuOBhOOBquOBhOOAgnYwLjLoqLzmi6BaSVDjga9MaWJyYXJ544Gr5L+d5a2Y44GX44CB5Yil5ouF5b2T44Gr44KI44KL5a6f54mp5YaN5Y+W5b6X44O75YWoYnl0ZS9TSEEtMjU2L0NSQy9tYW5pZmVzdOS4gOiHtOOBjOODrOODk+ODpeODvOS4iuWgseWRiuOBleOCjOOBn+OAguWQjOS4gOWfuuebpOODu+WFseaciXdvcmtzcGFjZeODu+WxpeattOe2meaJv+OBrueLrOeri+aAp+WItue0hOOAgUFDTOWFqOS9k+ODu+mVt+acn+S/neaMgeS/neiovFVOS05PV07jgIHjg6zjg5Pjg6Xjg7zmipXnqL/lvozjga7oqq3miLvjgZfoqJjpjLLjgYzlvZPoqbJaSVDjgavlkKvjgb7jgozjgarjgYTngrnjgpLntq3mjIHjgZnjgovjgIIKCioq5paH5pu46ZmQ5a6a5Y+X5YWlWUVT44O757eP5ZCIUEFSVElBTCoq44CCU3RhZ2UgMeato+W8j+enu+ihjOODu+Wun+a4rOmWi+Wni+OBr0hPTETjgafjgYLjgorjgIHku4rlm57jga7mlofmm7jpmZDlrprjg57jg7zjgrjmib/oqo3jga/oo73lk4HmqZ/og73jgoToh6rli5XliIbpoZ7lmajjga7lrp/muKzplovlp4vjgpLoqLHlj6/jgZfjgarjgYTjgILml6flrp/pqJMwMDEvMDAy44Gv5aSJ5pu044GX44Gm44GK44KJ44Ga44CB5YuV55qEQ2hhdC9Xb3JrL0NvZGV4L2RvdOavlOi8g+OBqOW9k+ipsuaWh+abuOOBrkNJ44GvTk9UX1RFU1RFROOAgkMyNS9DMjbjga7lhYPlhaXlipvjga7nm67nmoTmrKDokL3jgavjgojjgotgUkVKRUNURURg44Go44CB55uu55qE44KS6L+95Yqg44GX44Gf6Kqs5piO55So44Gu5Luu5oOz44K344OK44Oq44Kq44KS5Yy65Yil44GZ44KL44CCCg==",
+          "http_status": 200,
+          "http_status_direct": true,
+          "exit_code": 0,
+          "evidence": [
+            "synthetic:raw-B-N"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        },
+        {
+          "case_id": "B-M",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "__stage1a_intentionally_absent__/negative-control.txt",
+          "route": "B",
+          "tool": "synthetic:unauthenticated-https-get",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/__stage1a_intentionally_absent__/negative-control.txt?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:06Z",
+          "ended_at": "2000-01-01T00:00:07Z",
+          "attempt": 1,
+          "observation": "explicit_missing",
+          "raw_response": "SYNTHETIC NOT_FOUND for __stage1a_intentionally_absent__/negative-control.txt",
+          "file_body_base64": null,
+          "http_status": 404,
+          "http_status_direct": true,
+          "exit_code": 0,
+          "evidence": [
+            "synthetic:raw-B-M"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        }
+      ],
+      "conditions": {
+        "fixture": {
+          "value": "1842fc8a0db72608dab8942e4fef44d74b4588d11c3171e58dfeca4c2be61bd7",
+          "evidence": [
+            "synthetic:condition-fixture"
+          ]
+        },
+        "permissions": {
+          "value": "public-fixed-commit-read-only",
+          "evidence": [
+            "synthetic:condition-permissions"
+          ]
+        },
+        "agents": {
+          "value": "none-at-target",
+          "evidence": [
+            "synthetic:condition-agents"
+          ]
+        },
+        "route": {
+          "value": "synthetic:github.fetch_file",
+          "evidence": [
+            "synthetic:condition-route"
+          ]
+        },
+        "network": {
+          "value": "synthetic-net-A",
+          "evidence": [
+            "synthetic:condition-network"
+          ]
+        },
+        "retry": {
+          "value": 1,
+          "evidence": [
+            "synthetic:condition-retry"
+          ]
+        },
+        "timeout": {
+          "value": 25,
+          "evidence": [
+            "synthetic:condition-timeout"
+          ]
+        },
+        "measurement_boundary": {
+          "value": "synthetic:transport-not-inference",
+          "evidence": [
+            "synthetic:condition-measurement_boundary"
+          ]
+        },
+        "model": {
+          "value": "not-a-model-comparison",
+          "evidence": [
+            "synthetic:condition-model"
+          ]
+        }
+      },
+      "claimed_outcome": "PASS"
+    },
+    {
+      "run_id": "synthetic-run-B",
+      "comparison_id": "CHAT-DESKTOP",
+      "comparison_id_status": "CONFIRMED",
+      "comparison_id_reason": "",
+      "comparison_id_candidates": [
+        "CHAT-DESKTOP"
+      ],
+      "comparison_id_evidence": [
+        "synthetic:start-ui"
+      ],
+      "initial_client_surface": "desktop",
+      "current_client_surface": "desktop",
+      "selected_experience": "Chat",
+      "experience_variant": "NA",
+      "os_version": "SYNTHETIC OS",
+      "app_version": "SYNTHETIC app",
+      "execution_site": "cloud",
+      "executor": "synthetic-cloud-executor",
+      "segments": [
+        {
+          "segment_id": "segment-1",
+          "started_at": "2000-01-01T00:00:00Z",
+          "ended_at": "2000-01-01T00:00:20Z",
+          "client_surface": "desktop",
+          "execution_site": "cloud",
+          "executor": "synthetic-cloud-executor",
+          "site_evidence_basis": "execution-log",
+          "evidence": [
+            "synthetic:cloud-execution-log"
+          ]
+        }
+      ],
+      "model_display": "illustrative-label-not-verified",
+      "model_verified": "UNKNOWN",
+      "model_evidence_basis": "display-only",
+      "model_evidence": [
+        "synthetic:model-display"
+      ],
+      "delegate_chain": [],
+      "delegate_evidence": [],
+      "attribution": "executor-only",
+      "corrections": [],
+      "operations": [
+        {
+          "case_id": "A-N",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "README.md",
+          "route": "A",
+          "tool": "synthetic:github.fetch_file",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/README.md?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:00Z",
+          "ended_at": "2000-01-01T00:00:01Z",
+          "attempt": 1,
+          "observation": "success",
+          "raw_response": "SYNTHETIC success body in separate base64 field",
+          "file_body_base64": "IyBjaGF0R1BULWxhYgoKQ2hhdEdQVOOCkuS4reW/g+OBq+OAgeODouODh+ODq+OAgeaOpee2muOCouODl+ODquOAgU1DUOOAgeWklumDqEFJ44O744K944OV44OI44Go44Gu5o6l57aa44Go5a6f6KGM6IO95Yqb44KS44CB5LqL5YmN6KiI55S744Go6Kaz5ris6KiY6Yyy44Gn56CU56m244GX44G+44GZ44CC5YWs5byP44Gq5YaF6YOo5a6f6KOF44KS6Kej5piO44GX44Gf44Go5Li75by144GZ44KL56CU56m244Gn44Gv44GC44KK44G+44Gb44KT44CCCgojIyDliJ3lm57jgavliIbjgYvjgaPjgZ/jgZPjgagKCjIwMjYtMTEtMTfjgIHlhavlhbXooZvjga7mi4XlvZPjgqjjg7zjgrjjgqfjg7Pjg4jjgYxHaXRIdWLmjqXntprjg4Tjg7zjg6vjgafjgIHlm7rlrppjb21taXTjga5SRUFETUXjg7vml6LlrZhJc3N1ZeODu+aXouWtmFBS44KS5a6f6Zqb44Gr5Y+W5b6X44GX44G+44GX44Gf44CC5Yil44GuSFRUUFPlj5blvpfntYzot6/jgajjga7nhaflkIjjga9HMDHjgJxHMDPjgZnjgbnjgaZQQVNT44CC44Gf44Gg44GXSXNzdWXmr5TovIPjga7liJ3lm57jga/jgr/jgqTjg6DjgqLjgqbjg4jjgZfjgIEx5Zue44Gu5YaN5Y+W5b6X44Gn5LiA6Ie044GX44G+44GX44Gf44CC5aSx5pWX5bGl5q2044Gv5L+d5oyB44GX44Gm44GE44G+44GZ44CCCgrjgZPjgozjga/lvZPoqbLlhazplovlr77osaHjg7vlvZPoqbLmmYLliLvjg7vlvZPoqbLlrp/ooYzkuLvkvZPjga7oqq3lj5bjgavpmZDjgorjgb7jgZnjgILjg6Ljg4fjg6vlkI3jga9VTktOT1dO44CC5YWo44Oi44OH44Or44CB6Z2e5YWs6ZaL44Oq44Od44K444OI44Oq44Gu5qip6ZmQ5aKD55WM44CB5Lu75oSP44GuTUNQL+WklumDqOODhOODvOODq+OAgeabuOi+vOS4gOiIrOOAgeW8lee2meOBjuOBrueLrOeri+aAp+OBr+acquaknOiovOOBp+OBmeOAggoKLSBb56CU56m244Oe44OD44OXXShkb2NzL3Jlc2VhcmNoLW1hcC5tZCkKLSBbMDAxIOS6i+WJjeioiOeUu10oZXhwZXJpbWVudHMvMDAxLWdpdGh1Yi1yZWFkL1BMQU4ubWQpCi0gWzAwMSDlrp/muKzntZDmnpzjgajpmZDnlYxdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKQotIFvmnIDlsI/lrp/ooYzoqLzmi6BdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9vYnNlcnZhdGlvbnMuanNvbikKLSBbSXNzdWUgIzFdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzEpCgojIyDlrp/pqJPjga7ov73liqDmlrnms5UKCjEuIGBleHBlcmltZW50cy9OTk4tbmFtZS9QTEFOLm1kYOOBq+WvvuixoeODu+S4u+S9k+ODu+eSsOWig+ODu+aXpeaZguODu+acn+W+heWApOODu+WBnOatouadoeS7tuODu+aoqemZkOOCkuWFiOOBq+WbuuWumuOBmeOCi+OAggoyLiDlrp/muKzjgajlkIjmiJDoqabpqJPjgIHmjqXntprlhYjjga7lrZjlnKjjg7voqq3lj5bjg7vmm7jovrzjgpLliIbjgZHjgovjgIIKMy4gYFJFU1VMVFMubWRg44GrUEFTUyAvIEZBSUwgLyBCTE9DS0VEIC8gTk9UX1RFU1RFRCAvIFVOS05PV07jgpLmoLnmi6DjgajjgajjgoLjgavoqJjpjLLjgZnjgovjgIIKNC4g56eY5a+G5YCk44KS5ZCr44G+44Gq44GE5pyA5bCP6Ki85oug44GoaGFzaOOCkuS/neWtmOOBl+OAgeWIpee1jOi3r+avlOi8g+OBruWPr+WQpuOCkuaYjuiomOOBmeOCi+OAggo1LiDlsILnlKhicmFuY2jjgahEcmFmdCBQUuOBp+aPkOWHuuOBmeOCi+OAgm1haW7nm7TmjqXlpInmm7Tjg7vjg57jg7zjgrjjg7vlpJbpg6jpgJrnn6Xjg7voqK3lrprlpInmm7Tjg7vmnInmlplBUEnkvb/nlKjjga/liKXmib/oqo3jgIIKCuS7iuWbnkNJ44KE5L6d5a2Y44KS6L+95Yqg44GX44Gm44GE44G+44Gb44KT44CC5o+Q5Ye65L2c5qWt44Gu5oiQ5Yqf44Gv44CB5LqL5YmN6KiI55S744Gu44Gq44GE5pu46L686IO95Yqb5a6f6aiT44GuUEFTU+OBqOOBr+aJseOBhOOBvuOBm+OCk+OAggoKIyMgUDLkv67mraPov73oo5wKClvmpJzmn7vlmajjga7kv67mraPjgagxMTDjga7jgqrjg5Xjg6njgqTjg7Plr77nhaddKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKeOCkui/veiomOOAguWOn+ims+a4rOOBqOS6i+WJjeioiOeUu+OBr+e2reaMgeOAguS/ruato+aLheW9k+OBq+OCiOOCi+iHquW3seaknOiovOOBp+OBguOCiuOAgeeLrOeri+WGjeODrOODk+ODpeODvOOBr05PVF9URVNURUTjgILnt4/lkIhQQVJUSUFM44O76ZmQ5a6a44Oe44O844K4Tk/jg7tEcmFmdOe2reaMgeOAggoKIyMg56ysMuWun+mok++8iDIwMjYtMTEtMTfvvIkKWzAwMiDkuI3lrZjlnKjjg5XjgqHjgqTjg6voqq3lj5ZdKGV4cGVyaW1lbnRzLzAwMi1naXRodWItbWlzc2luZy1wYXRoL1JFU1VMVFMubWQp44Gv5Zu65a6a5YWs6ZaLY29tbWl044GuUkVBRE1F5q2j5bi45a++54Wn44Go5LiN5a2Y5ZyocGF0aOiyoOWvvueFp+OBq+mZkOOCilBBU1PjgIJmZXRjaF9maWxl44Gu5piO56S6Tk9UX0ZPVU5E44Go6KqN6Ki844Gq44GXSFRUUFPjga40MDTjgpLljLrliKXjgZfjgIHmraPluLjmnKzmlocyMjM3IGJ5dGVz44KS5Yil57WM6Lev54Wn5ZCI44GX44Gf44CC57eP5ZCIUEFSVElBTOOAgemAmuW4uENoYXRHUFTlhajoiKzjg7vjg6Ljg4fjg6vmr5TovIPjg7vpnZ7lhazplovlooPnlYzjg7tNQ1DlhajoiKzjgbjkuIDoiKzljJbjgZfjgarjgYTjgIIK5YmN5bel56iLUFIgIzLjga/lvozjga7lho3jg6zjg5Pjg6Xjg7zjgpLntYzjgaZtZXJnZea4iOOBv+OAguS4iuiomOaXp1Ay5L+u5q2j6L+96KOc44GuTk8vTk9UX1RFU1RFROOBr+W9k+aZguOBruWxpeattOOBp+OBguOCiuOAgeWOn+iomOmMsuOCkuS/neaMgeOBmeOCi+OAguS7iuWbnuOBruaPkOWHui/kv53lhagv54us56uL44Os44OT44Ol44O844GvMDAy44GoUFLjga7ntZDmnpzjgpLlj4LnhafjgIIKCiMjIFN0YWdlIDDvvJpDaGF0R1BU44Gu5a6a576p44Go5q+U6LyD5Yy65YiG77yIdjAuMiDmlofmm7jpmZDlrprlj5flhaXvvIkKClvnoJTnqbblr77osaHjg7vlrp/ooYznkrDlooPjg7vog73lipvluLDlsZ7jga7lrprnvqldKGRvY3MvY2hhdGdwdC1yZXNlYXJjaC1kZWZpbml0aW9uLm1kKeOBq+OAgUNoYXQvV29yayBDbG91ZC9Xb3JrIExvY2FsL0NvZGV4IExvY2FsL0NvZGV4IENsb3VkL+WFq+WFteihm++8iGRvdO+8ieOBruavlOi8g+WMuuWIhuOBqOOAgei1t+WLlemdouODu+Wun+ihjOWgtOaJgOODu+WnlOS7u+OCkuWIhuOBkeOCi+imj+e0hOOCkuiomOi8ieOBl+OBpuOBhOOBvuOBmeOAgumWoumAoyBbSXNzdWUgIzVdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzUp44O7W0RyYWZ0IFBSICM2XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNinjgIIKCnYwLjHjga/lvZPmmYLjga7ni6znq4vjg6zjg5Pjg6Xjg7zjgacqKue3j+WQiFBBUlRJQUzjg7vmlofmm7jlj5flhaVOT+ODu+ODnuODvOOCuE5PKirjgIJ2MC4y44GnUDItMDHvvIjmnKrnn6Xjga7plovlp4vmmYJJRO+8ieOAgVAyLTAy77yI55uu55qE5Yil5q+U6LyD5Y+v5ZCm77yJ44CBUDMtMDHvvIjjg6zjg5Pjg6Xjg7zjgajlj5flhaXjg7vlrp/muKzplovlp4vjga7jgrLjg7zjg4jliIbpm6LvvInjgpLoo5zoqILjgZfjgIFb54us56uL5YaN5a+p5p+7XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNiNwdWxscmVxdWVzdHJldmlldy01OTQ3MjExNzMxKeOBpyoq5YWDNDDliIbpoZ4vNDAgUEFTU+ODuzEw5aSJ55WwLzEwIFBBU1PvvIjmlofmm7jopo/liYfjga7jgb/vvIkqKuOAgeaXp1AyIDLku7bjg7tQMyAx5Lu2Q0xPU0VE44CB6L+95YqgMTPku7bjga8xMiBQQVNT44O7MSBGQUlM44KS56K66KqN44GX44Gf44CC5pawUDMtMDLvvIhDMzIvQzM544Gu5YWl5Yqb6Kqs5piO6YCG6Lui77yJ44Gv6Z2eYmxvY2tpbmfjgafjgIHmnKzniYjjgavoqILmraPjgpLlj43mmKDjgIJ2MC4x44GuMzYvNDDjg7s5LzEw44KSdjAuMuOBrue1kOaenOOBqOOBl+OBpua1geeUqOOBl+OBpuOBhOOBquOBhOOAgnYwLjLoqLzmi6BaSVDjga9MaWJyYXJ544Gr5L+d5a2Y44GX44CB5Yil5ouF5b2T44Gr44KI44KL5a6f54mp5YaN5Y+W5b6X44O75YWoYnl0ZS9TSEEtMjU2L0NSQy9tYW5pZmVzdOS4gOiHtOOBjOODrOODk+ODpeODvOS4iuWgseWRiuOBleOCjOOBn+OAguWQjOS4gOWfuuebpOODu+WFseaciXdvcmtzcGFjZeODu+WxpeattOe2meaJv+OBrueLrOeri+aAp+WItue0hOOAgUFDTOWFqOS9k+ODu+mVt+acn+S/neaMgeS/neiovFVOS05PV07jgIHjg6zjg5Pjg6Xjg7zmipXnqL/lvozjga7oqq3miLvjgZfoqJjpjLLjgYzlvZPoqbJaSVDjgavlkKvjgb7jgozjgarjgYTngrnjgpLntq3mjIHjgZnjgovjgIIKCioq5paH5pu46ZmQ5a6a5Y+X5YWlWUVT44O757eP5ZCIUEFSVElBTCoq44CCU3RhZ2UgMeato+W8j+enu+ihjOODu+Wun+a4rOmWi+Wni+OBr0hPTETjgafjgYLjgorjgIHku4rlm57jga7mlofmm7jpmZDlrprjg57jg7zjgrjmib/oqo3jga/oo73lk4HmqZ/og73jgoToh6rli5XliIbpoZ7lmajjga7lrp/muKzplovlp4vjgpLoqLHlj6/jgZfjgarjgYTjgILml6flrp/pqJMwMDEvMDAy44Gv5aSJ5pu044GX44Gm44GK44KJ44Ga44CB5YuV55qEQ2hhdC9Xb3JrL0NvZGV4L2RvdOavlOi8g+OBqOW9k+ipsuaWh+abuOOBrkNJ44GvTk9UX1RFU1RFROOAgkMyNS9DMjbjga7lhYPlhaXlipvjga7nm67nmoTmrKDokL3jgavjgojjgotgUkVKRUNURURg44Go44CB55uu55qE44KS6L+95Yqg44GX44Gf6Kqs5piO55So44Gu5Luu5oOz44K344OK44Oq44Kq44KS5Yy65Yil44GZ44KL44CCCg==",
+          "http_status": null,
+          "http_status_direct": false,
+          "exit_code": null,
+          "evidence": [
+            "synthetic:raw-A-N"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        },
+        {
+          "case_id": "A-M",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "__stage1a_intentionally_absent__/negative-control.txt",
+          "route": "A",
+          "tool": "synthetic:github.fetch_file",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/__stage1a_intentionally_absent__/negative-control.txt?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:02Z",
+          "ended_at": "2000-01-01T00:00:03Z",
+          "attempt": 1,
+          "observation": "explicit_missing",
+          "raw_response": "SYNTHETIC NOT_FOUND for __stage1a_intentionally_absent__/negative-control.txt",
+          "file_body_base64": null,
+          "http_status": null,
+          "http_status_direct": false,
+          "exit_code": null,
+          "evidence": [
+            "synthetic:raw-A-M"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        },
+        {
+          "case_id": "B-N",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "README.md",
+          "route": "B",
+          "tool": "synthetic:unauthenticated-https-get",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/README.md?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:04Z",
+          "ended_at": "2000-01-01T00:00:05Z",
+          "attempt": 1,
+          "observation": "success",
+          "raw_response": "SYNTHETIC success body in separate base64 field",
+          "file_body_base64": "IyBjaGF0R1BULWxhYgoKQ2hhdEdQVOOCkuS4reW/g+OBq+OAgeODouODh+ODq+OAgeaOpee2muOCouODl+ODquOAgU1DUOOAgeWklumDqEFJ44O744K944OV44OI44Go44Gu5o6l57aa44Go5a6f6KGM6IO95Yqb44KS44CB5LqL5YmN6KiI55S744Go6Kaz5ris6KiY6Yyy44Gn56CU56m244GX44G+44GZ44CC5YWs5byP44Gq5YaF6YOo5a6f6KOF44KS6Kej5piO44GX44Gf44Go5Li75by144GZ44KL56CU56m244Gn44Gv44GC44KK44G+44Gb44KT44CCCgojIyDliJ3lm57jgavliIbjgYvjgaPjgZ/jgZPjgagKCjIwMjYtMTEtMTfjgIHlhavlhbXooZvjga7mi4XlvZPjgqjjg7zjgrjjgqfjg7Pjg4jjgYxHaXRIdWLmjqXntprjg4Tjg7zjg6vjgafjgIHlm7rlrppjb21taXTjga5SRUFETUXjg7vml6LlrZhJc3N1ZeODu+aXouWtmFBS44KS5a6f6Zqb44Gr5Y+W5b6X44GX44G+44GX44Gf44CC5Yil44GuSFRUUFPlj5blvpfntYzot6/jgajjga7nhaflkIjjga9HMDHjgJxHMDPjgZnjgbnjgaZQQVNT44CC44Gf44Gg44GXSXNzdWXmr5TovIPjga7liJ3lm57jga/jgr/jgqTjg6DjgqLjgqbjg4jjgZfjgIEx5Zue44Gu5YaN5Y+W5b6X44Gn5LiA6Ie044GX44G+44GX44Gf44CC5aSx5pWX5bGl5q2044Gv5L+d5oyB44GX44Gm44GE44G+44GZ44CCCgrjgZPjgozjga/lvZPoqbLlhazplovlr77osaHjg7vlvZPoqbLmmYLliLvjg7vlvZPoqbLlrp/ooYzkuLvkvZPjga7oqq3lj5bjgavpmZDjgorjgb7jgZnjgILjg6Ljg4fjg6vlkI3jga9VTktOT1dO44CC5YWo44Oi44OH44Or44CB6Z2e5YWs6ZaL44Oq44Od44K444OI44Oq44Gu5qip6ZmQ5aKD55WM44CB5Lu75oSP44GuTUNQL+WklumDqOODhOODvOODq+OAgeabuOi+vOS4gOiIrOOAgeW8lee2meOBjuOBrueLrOeri+aAp+OBr+acquaknOiovOOBp+OBmeOAggoKLSBb56CU56m244Oe44OD44OXXShkb2NzL3Jlc2VhcmNoLW1hcC5tZCkKLSBbMDAxIOS6i+WJjeioiOeUu10oZXhwZXJpbWVudHMvMDAxLWdpdGh1Yi1yZWFkL1BMQU4ubWQpCi0gWzAwMSDlrp/muKzntZDmnpzjgajpmZDnlYxdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKQotIFvmnIDlsI/lrp/ooYzoqLzmi6BdKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9vYnNlcnZhdGlvbnMuanNvbikKLSBbSXNzdWUgIzFdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzEpCgojIyDlrp/pqJPjga7ov73liqDmlrnms5UKCjEuIGBleHBlcmltZW50cy9OTk4tbmFtZS9QTEFOLm1kYOOBq+WvvuixoeODu+S4u+S9k+ODu+eSsOWig+ODu+aXpeaZguODu+acn+W+heWApOODu+WBnOatouadoeS7tuODu+aoqemZkOOCkuWFiOOBq+WbuuWumuOBmeOCi+OAggoyLiDlrp/muKzjgajlkIjmiJDoqabpqJPjgIHmjqXntprlhYjjga7lrZjlnKjjg7voqq3lj5bjg7vmm7jovrzjgpLliIbjgZHjgovjgIIKMy4gYFJFU1VMVFMubWRg44GrUEFTUyAvIEZBSUwgLyBCTE9DS0VEIC8gTk9UX1RFU1RFRCAvIFVOS05PV07jgpLmoLnmi6DjgajjgajjgoLjgavoqJjpjLLjgZnjgovjgIIKNC4g56eY5a+G5YCk44KS5ZCr44G+44Gq44GE5pyA5bCP6Ki85oug44GoaGFzaOOCkuS/neWtmOOBl+OAgeWIpee1jOi3r+avlOi8g+OBruWPr+WQpuOCkuaYjuiomOOBmeOCi+OAggo1LiDlsILnlKhicmFuY2jjgahEcmFmdCBQUuOBp+aPkOWHuuOBmeOCi+OAgm1haW7nm7TmjqXlpInmm7Tjg7vjg57jg7zjgrjjg7vlpJbpg6jpgJrnn6Xjg7voqK3lrprlpInmm7Tjg7vmnInmlplBUEnkvb/nlKjjga/liKXmib/oqo3jgIIKCuS7iuWbnkNJ44KE5L6d5a2Y44KS6L+95Yqg44GX44Gm44GE44G+44Gb44KT44CC5o+Q5Ye65L2c5qWt44Gu5oiQ5Yqf44Gv44CB5LqL5YmN6KiI55S744Gu44Gq44GE5pu46L686IO95Yqb5a6f6aiT44GuUEFTU+OBqOOBr+aJseOBhOOBvuOBm+OCk+OAggoKIyMgUDLkv67mraPov73oo5wKClvmpJzmn7vlmajjga7kv67mraPjgagxMTDjga7jgqrjg5Xjg6njgqTjg7Plr77nhaddKGV4cGVyaW1lbnRzLzAwMS1naXRodWItcmVhZC9SRVNVTFRTLm1kKeOCkui/veiomOOAguWOn+ims+a4rOOBqOS6i+WJjeioiOeUu+OBr+e2reaMgeOAguS/ruato+aLheW9k+OBq+OCiOOCi+iHquW3seaknOiovOOBp+OBguOCiuOAgeeLrOeri+WGjeODrOODk+ODpeODvOOBr05PVF9URVNURUTjgILnt4/lkIhQQVJUSUFM44O76ZmQ5a6a44Oe44O844K4Tk/jg7tEcmFmdOe2reaMgeOAggoKIyMg56ysMuWun+mok++8iDIwMjYtMTEtMTfvvIkKWzAwMiDkuI3lrZjlnKjjg5XjgqHjgqTjg6voqq3lj5ZdKGV4cGVyaW1lbnRzLzAwMi1naXRodWItbWlzc2luZy1wYXRoL1JFU1VMVFMubWQp44Gv5Zu65a6a5YWs6ZaLY29tbWl044GuUkVBRE1F5q2j5bi45a++54Wn44Go5LiN5a2Y5ZyocGF0aOiyoOWvvueFp+OBq+mZkOOCilBBU1PjgIJmZXRjaF9maWxl44Gu5piO56S6Tk9UX0ZPVU5E44Go6KqN6Ki844Gq44GXSFRUUFPjga40MDTjgpLljLrliKXjgZfjgIHmraPluLjmnKzmlocyMjM3IGJ5dGVz44KS5Yil57WM6Lev54Wn5ZCI44GX44Gf44CC57eP5ZCIUEFSVElBTOOAgemAmuW4uENoYXRHUFTlhajoiKzjg7vjg6Ljg4fjg6vmr5TovIPjg7vpnZ7lhazplovlooPnlYzjg7tNQ1DlhajoiKzjgbjkuIDoiKzljJbjgZfjgarjgYTjgIIK5YmN5bel56iLUFIgIzLjga/lvozjga7lho3jg6zjg5Pjg6Xjg7zjgpLntYzjgaZtZXJnZea4iOOBv+OAguS4iuiomOaXp1Ay5L+u5q2j6L+96KOc44GuTk8vTk9UX1RFU1RFROOBr+W9k+aZguOBruWxpeattOOBp+OBguOCiuOAgeWOn+iomOmMsuOCkuS/neaMgeOBmeOCi+OAguS7iuWbnuOBruaPkOWHui/kv53lhagv54us56uL44Os44OT44Ol44O844GvMDAy44GoUFLjga7ntZDmnpzjgpLlj4LnhafjgIIKCiMjIFN0YWdlIDDvvJpDaGF0R1BU44Gu5a6a576p44Go5q+U6LyD5Yy65YiG77yIdjAuMiDmlofmm7jpmZDlrprlj5flhaXvvIkKClvnoJTnqbblr77osaHjg7vlrp/ooYznkrDlooPjg7vog73lipvluLDlsZ7jga7lrprnvqldKGRvY3MvY2hhdGdwdC1yZXNlYXJjaC1kZWZpbml0aW9uLm1kKeOBq+OAgUNoYXQvV29yayBDbG91ZC9Xb3JrIExvY2FsL0NvZGV4IExvY2FsL0NvZGV4IENsb3VkL+WFq+WFteihm++8iGRvdO+8ieOBruavlOi8g+WMuuWIhuOBqOOAgei1t+WLlemdouODu+Wun+ihjOWgtOaJgOODu+WnlOS7u+OCkuWIhuOBkeOCi+imj+e0hOOCkuiomOi8ieOBl+OBpuOBhOOBvuOBmeOAgumWoumAoyBbSXNzdWUgIzVdKGh0dHBzOi8vZ2l0aHViLmNvbS90ZXRzdWppc3VnaW1vcmktY29kZXIvY2hhdEdQVC1sYWIvaXNzdWVzLzUp44O7W0RyYWZ0IFBSICM2XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNinjgIIKCnYwLjHjga/lvZPmmYLjga7ni6znq4vjg6zjg5Pjg6Xjg7zjgacqKue3j+WQiFBBUlRJQUzjg7vmlofmm7jlj5flhaVOT+ODu+ODnuODvOOCuE5PKirjgIJ2MC4y44GnUDItMDHvvIjmnKrnn6Xjga7plovlp4vmmYJJRO+8ieOAgVAyLTAy77yI55uu55qE5Yil5q+U6LyD5Y+v5ZCm77yJ44CBUDMtMDHvvIjjg6zjg5Pjg6Xjg7zjgajlj5flhaXjg7vlrp/muKzplovlp4vjga7jgrLjg7zjg4jliIbpm6LvvInjgpLoo5zoqILjgZfjgIFb54us56uL5YaN5a+p5p+7XShodHRwczovL2dpdGh1Yi5jb20vdGV0c3VqaXN1Z2ltb3JpLWNvZGVyL2NoYXRHUFQtbGFiL3B1bGwvNiNwdWxscmVxdWVzdHJldmlldy01OTQ3MjExNzMxKeOBpyoq5YWDNDDliIbpoZ4vNDAgUEFTU+ODuzEw5aSJ55WwLzEwIFBBU1PvvIjmlofmm7jopo/liYfjga7jgb/vvIkqKuOAgeaXp1AyIDLku7bjg7tQMyAx5Lu2Q0xPU0VE44CB6L+95YqgMTPku7bjga8xMiBQQVNT44O7MSBGQUlM44KS56K66KqN44GX44Gf44CC5pawUDMtMDLvvIhDMzIvQzM544Gu5YWl5Yqb6Kqs5piO6YCG6Lui77yJ44Gv6Z2eYmxvY2tpbmfjgafjgIHmnKzniYjjgavoqILmraPjgpLlj43mmKDjgIJ2MC4x44GuMzYvNDDjg7s5LzEw44KSdjAuMuOBrue1kOaenOOBqOOBl+OBpua1geeUqOOBl+OBpuOBhOOBquOBhOOAgnYwLjLoqLzmi6BaSVDjga9MaWJyYXJ544Gr5L+d5a2Y44GX44CB5Yil5ouF5b2T44Gr44KI44KL5a6f54mp5YaN5Y+W5b6X44O75YWoYnl0ZS9TSEEtMjU2L0NSQy9tYW5pZmVzdOS4gOiHtOOBjOODrOODk+ODpeODvOS4iuWgseWRiuOBleOCjOOBn+OAguWQjOS4gOWfuuebpOODu+WFseaciXdvcmtzcGFjZeODu+WxpeattOe2meaJv+OBrueLrOeri+aAp+WItue0hOOAgUFDTOWFqOS9k+ODu+mVt+acn+S/neaMgeS/neiovFVOS05PV07jgIHjg6zjg5Pjg6Xjg7zmipXnqL/lvozjga7oqq3miLvjgZfoqJjpjLLjgYzlvZPoqbJaSVDjgavlkKvjgb7jgozjgarjgYTngrnjgpLntq3mjIHjgZnjgovjgIIKCioq5paH5pu46ZmQ5a6a5Y+X5YWlWUVT44O757eP5ZCIUEFSVElBTCoq44CCU3RhZ2UgMeato+W8j+enu+ihjOODu+Wun+a4rOmWi+Wni+OBr0hPTETjgafjgYLjgorjgIHku4rlm57jga7mlofmm7jpmZDlrprjg57jg7zjgrjmib/oqo3jga/oo73lk4HmqZ/og73jgoToh6rli5XliIbpoZ7lmajjga7lrp/muKzplovlp4vjgpLoqLHlj6/jgZfjgarjgYTjgILml6flrp/pqJMwMDEvMDAy44Gv5aSJ5pu044GX44Gm44GK44KJ44Ga44CB5YuV55qEQ2hhdC9Xb3JrL0NvZGV4L2RvdOavlOi8g+OBqOW9k+ipsuaWh+abuOOBrkNJ44GvTk9UX1RFU1RFROOAgkMyNS9DMjbjga7lhYPlhaXlipvjga7nm67nmoTmrKDokL3jgavjgojjgotgUkVKRUNURURg44Go44CB55uu55qE44KS6L+95Yqg44GX44Gf6Kqs5piO55So44Gu5Luu5oOz44K344OK44Oq44Kq44KS5Yy65Yil44GZ44KL44CCCg==",
+          "http_status": 200,
+          "http_status_direct": true,
+          "exit_code": 0,
+          "evidence": [
+            "synthetic:raw-B-N"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        },
+        {
+          "case_id": "B-M",
+          "repository": "tetsujisugimori-coder/chatGPT-lab",
+          "commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "path": "__stage1a_intentionally_absent__/negative-control.txt",
+          "route": "B",
+          "tool": "synthetic:unauthenticated-https-get",
+          "source": "https://api.github.com/repos/tetsujisugimori-coder/chatGPT-lab/contents/__stage1a_intentionally_absent__/negative-control.txt?ref=560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+          "started_at": "2000-01-01T00:00:06Z",
+          "ended_at": "2000-01-01T00:00:07Z",
+          "attempt": 1,
+          "observation": "explicit_missing",
+          "raw_response": "SYNTHETIC NOT_FOUND for __stage1a_intentionally_absent__/negative-control.txt",
+          "file_body_base64": null,
+          "http_status": 404,
+          "http_status_direct": true,
+          "exit_code": 0,
+          "evidence": [
+            "synthetic:raw-B-M"
+          ],
+          "method": "GET",
+          "timeout_seconds": 25,
+          "timeout_enforced": true,
+          "permission_scope": "public-fixed-commit-read-only"
+        }
+      ],
+      "conditions": {
+        "fixture": {
+          "value": "1842fc8a0db72608dab8942e4fef44d74b4588d11c3171e58dfeca4c2be61bd7",
+          "evidence": [
+            "synthetic:condition-fixture"
+          ]
+        },
+        "permissions": {
+          "value": "public-fixed-commit-read-only",
+          "evidence": [
+            "synthetic:condition-permissions"
+          ]
+        },
+        "agents": {
+          "value": "none-at-target",
+          "evidence": [
+            "synthetic:condition-agents"
+          ]
+        },
+        "route": {
+          "value": "synthetic:github.fetch_file",
+          "evidence": [
+            "synthetic:condition-route"
+          ]
+        },
+        "network": {
+          "value": "synthetic-net-A",
+          "evidence": [
+            "synthetic:condition-network"
+          ]
+        },
+        "retry": {
+          "value": 1,
+          "evidence": [
+            "synthetic:condition-retry"
+          ]
+        },
+        "timeout": {
+          "value": 25,
+          "evidence": [
+            "synthetic:condition-timeout"
+          ]
+        },
+        "measurement_boundary": {
+          "value": "synthetic:transport-not-inference",
+          "evidence": [
+            "synthetic:condition-measurement_boundary"
+          ]
+        },
+        "model": {
+          "value": "not-a-model-comparison",
+          "evidence": [
+            "synthetic:condition-model"
+          ]
+        }
+      },
+      "claimed_outcome": "PASS"
+    }
+  ],
+  "comparison": {
+    "performed": true,
+    "difference_assessments": {},
+    "stop_triggered": false,
+    "ranking_claim": false
+  },
+  "custody": {
+    "saved": "NOT_TESTED",
+    "retrieved": "NOT_TESTED",
+    "byte_match": "NOT_TESTED",
+    "independent_audit": "NOT_TESTED",
+    "evidence": [],
+    "limitations": "SYNTHETIC references only; no real custody or independent audit"
+  }
+}
