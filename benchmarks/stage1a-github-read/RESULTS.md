@@ -1,11 +1,12 @@
 # 現行判定（Stage 1-A v0.1.4／2026-11-20）
 
-**総合PARTIAL。公開Schemaの日時全文一致P3はCLOSED、P2-02・P2-04は同梱検査器の範囲でCLOSED。計画・オフライン検査の技術審査は限定PASS。計画限定受入はHOLD（正式判断待ち）、限定マージ推奨NO、Draft維持。実製品実測と第3実験はNOT_TESTED、開始HOLD。**
+**総合PARTIAL。公開Schemaの日時全文一致P3はCLOSED、P2-02・P2-04は同梱検査器の範囲でCLOSED。計画・オフライン検査の技術審査は限定PASS。計画・オフライン基盤の正式受入はYES（Stage 1-Aの対象範囲に限定）、限定マージ推奨NO、Draft維持。実製品実測と第3実験はNOT_TESTED、開始HOLD。**
 
 - **独立再審査完了**：[固定HEADの独立COMMENTレビュー](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8#pullrequestreview-5990128452)は `18b216a791ae7d42aaa30c5a987321603c0584b8`（tree `5ca241f4bf9a757a27888847b3a4a78667cd5533`）を対象に、別セッション・別検証領域で実施した。
 - **Schemaと回帰の確認**：日時7項目の98対照で、旧Schemaは負対照42件を誤受理し、v0.1.4は98/98で期待どおり。追加70対照も同梱検査器と判定が一致した。合成85/85、manifest対照5/5、コピー先対照2/2、002回帰25/25、整合性検査はPASS。001のmanifest不一致は旧新で同じ。旧審査版からの変更10件はGitHubの別取得経路と全バイトが一致し、manifest 26件・lock 6件も整合した。
 - **審査対象版の正式CI**：[run 44638486790](https://github.com/tetsujisugimori-coder/chatGPT-lab/actions/runs/44638486790) の `offline-tests` は成功。CIのcheckout `8829b9ed6b41ee042681e0b77a2ce543918f44ed` は審査対象HEADと同一tree。[v0.1.3のCI](https://github.com/tetsujisugimori-coder/chatGPT-lab/actions/runs/44477613986) と下記の判定は履歴。
-- **正式受入の判断範囲**：共通読取プロトコル、公開Schema、合成fixture、オフライン検査器。上記の独立再審査と正式CIを根拠に判断する。実測開始は、各操作の25秒期限を強制できる読取経路と、実行・証拠保存の個別承認を要する。
+- **正式受入の判断根拠**：共通読取計画・プロトコル、公開Schema、合成fixture、オフライン検査器を受け入れる。P2-01・P2-03の既存限定CLOSEDとP2-02・P2-04の同梱検査器限定CLOSEDを確認した。独立再審査の対象は `18b216a791ae7d42aaa30c5a987321603c0584b8`。受入判断時の `f9e1de654cd2cfcc47edac8d44f0040efcef41d5` との差分は `RESULTS.md` とそのmanifest登録だけで、[判断時の正式CI](https://github.com/tetsujisugimori-coder/chatGPT-lab/actions/runs/44735881040)も成功した。
+- **実測開始HOLD**：各操作の25秒期限を強制できる読取経路の確認、実行・証拠保存の個別承認が必要。提出時の `PLAN.md` と `REVIEW-REQUEST.md` の判定は履歴として参照する。
 - **保全の状況**：旧ZIPは今回の反映対象外（所在UNKNOWN・保存BLOCKED・独立再取得NOT_TESTED）。今回の独立再審査の新規検証原票は永続保存未実施。
 
 ---
