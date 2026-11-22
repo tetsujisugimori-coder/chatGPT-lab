@@ -42,4 +42,10 @@ v0.1は当時の独立レビューで**総合PARTIAL・文書受入NO・マー�
 
 ## Stage 1-A：共通読取ベンチマーク（計画・オフライン基盤 / Draft）
 
+**現行判定（2026-11-22、Stage 1-A v0.1.4）：総合PARTIAL／計画・オフライン検査基盤の正式受入YES（本Stageの対象範囲限定）／独立再審査完了／P2-01〜04は検査器等の検証範囲でCLOSED・公開SchemaのP3 CLOSED／限定マージ推奨NO（別途再判定）／Draft・未マージ／実製品実測と第3実験はNOT_TESTED・開始HOLD。**
+**別ゲート：** 25秒期限の実強制、REAL adapter、実行権限、証拠保全方法の個別確認・承認は実測開始条件であり、計画・オフライン基盤の限定マージを自動的に妨げる条件ではない。旧ZIPは所在UNKNOWN／保存BLOCKED／独立再取得NOT_TESTED、新規独立再審査原票は永続保存未実施。
+[Stage 1-A v0.1.4独立再審査](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8#pullrequestreview-5990128452)、[計画の正式受入記録](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8)、[正式CI](https://github.com/tetsujisugimori-coder/chatGPT-lab/actions/runs/44740059379)を参照。
+
+**以下は2026-11-18の提出時点の履歴です。現行判定ではありません。**
+
 [計画書](benchmarks/stage1a-github-read/PLAN.md)・[自己検証結果](benchmarks/stage1a-github-read/RESULTS.md)・[独立レビュー依頼資料](benchmarks/stage1a-github-read/REVIEW-REQUEST.md)。関連 [Issue #7](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/7)。Stage 0のmerged PR #6を正本とし、10比較ID/UNKNOWN、公開固定READMEと不存在path、目的別比較規則の合成検査を用意した。**計画限定の正式受入PENDING、独立レビューNOT_TESTED、実製品比較の開始HOLD**。今回の合成試験はChat/Work/Codex/dotの能力実測でも第3実験でもなく、旧001/002の原票を変更しない。

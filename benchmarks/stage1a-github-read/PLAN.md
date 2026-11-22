@@ -1,5 +1,13 @@
 # Stage 1-A 共通GitHub読取ベンチマーク計画 v0.1.4
 
+## 現行判定（2026-11-22）
+
+**現行判定（2026-11-22、Stage 1-A v0.1.4）：総合PARTIAL／計画・オフライン検査基盤の正式受入YES（本Stageの対象範囲限定）／独立再審査完了／P2-01〜04は検査器等の検証範囲でCLOSED・公開SchemaのP3 CLOSED／限定マージ推奨NO（別途再判定）／Draft・未マージ／実製品実測と第3実験はNOT_TESTED・開始HOLD。**
+**別ゲート：** 25秒期限の実強制、REAL adapter、実行権限、証拠保全方法の個別確認・承認は実測開始条件であり、計画・オフライン基盤の限定マージを自動的に妨げる条件ではない。旧ZIPは所在UNKNOWN／保存BLOCKED／独立再取得NOT_TESTED、新規独立再審査原票は永続保存未実施。
+[Stage 1-A v0.1.4独立再審査](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8#pullrequestreview-5990128452)、[計画の正式受入記録](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/8)、[正式CI](https://github.com/tetsujisugimori-coder/chatGPT-lab/actions/runs/44740059379)を参照。
+
+## 提出当時の判定・計画（以下は履歴）
+
 状態: **総合PARTIAL／計画限定受入HOLD／限定マージ推奨NO／Draft・未マージ／実製品実測NOT_TESTED・開始HOLD**。v0.1.3の独立再審査ではP2-02/P2-04を検査器限定CLOSEDと報告。新規P3（公開Schemaの全文一致）はv0.1.4修正・独立再審査待ち。旧ZIP保存BLOCKED・再取得NOT_TESTED。
 関連 [Issue #7](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/7)、Stage 0 [Issue #5](https://github.com/tetsujisugimori-coder/chatGPT-lab/issues/5)、merged [PR #6](https://github.com/tetsujisugimori-coder/chatGPT-lab/pull/6)。
 
