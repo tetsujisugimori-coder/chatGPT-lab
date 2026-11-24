@@ -1,0 +1,147 @@
+{
+  "docs/chatgpt-research-definition.md": {
+    "size": 21899,
+    "sha256": "c682389c707a4aea812962e7c6f643b728326290726e99313613b4a44a5a538e",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/PLAN.md": {
+    "size": 5850,
+    "sha256": "4b1364c119a1155616487cc840290bf93327b0a7836e56979d7869e99d1b9e16",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/verify.py": {
+    "size": 10600,
+    "sha256": "1c662f8ff65d8280a47df90b4172c2f5a5c9454dd6418cbb4e2e299f3c5eb8f2",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/manifest.json": {
+    "size": 2606,
+    "sha256": "f5b5c9930aadc7fb6d6f7b85e2ba080a9e85e1309d9fef5da8b91615fa56ef1f",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/review-fixed-counterexamples.json": {
+    "size": 577,
+    "sha256": "58442af90e2b387ccac731d94ac45680ce56f4a5084ad6478b94322d2b750998",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/verification-results.json": {
+    "size": 5478,
+    "sha256": "1b8acd7c5e39a2b23da66d0b216931f0e697727d31b8baf14bcdc9f7939ae8c4",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/preregistration.json": {
+    "size": 564,
+    "sha256": "a546d4d8dd05635581a847016a2cc2fd56f6f91b4ee51e5151092fde7ad5c688",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/target-tree.json": {
+    "size": 3926,
+    "sha256": "db3348dc1467d65ee6f1b0f380d84a5902ad3e7e87824b4a113c608321be8eb8",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/RESULTS.md": {
+    "size": 6060,
+    "sha256": "b7929fb3beb694feff7ab2efb10ea23929bc7acae4b17f19a5cfd04b1b1a4eb2",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/compatibility-results.json": {
+    "size": 74772,
+    "sha256": "c7f84d2e8a8a13ddc18af1855d4a58a346dd739e36fce91e2f13b90b088300a3",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/INDEPENDENT-REVIEW.md": {
+    "size": 3454,
+    "sha256": "d0ddd45e5e5e11b5fe18b331e1911eeaee1f99b6025d61b5b494d92261431872",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/observations.json": {
+    "size": 6398,
+    "sha256": "2d106d9873a1596b4f22bf3902b86b89ad17f862f9465ced811d6e0dfa811cbf",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/review-initial-counterexamples.json": {
+    "size": 945,
+    "sha256": "1003f1b08d3ed8c1856f32a6f249b0b540bc897c5b94ebda51d2c97d8d6625c0",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/test_verify.py": {
+    "size": 4967,
+    "sha256": "1d1b567e5790ee4ab591918599cd893924f05bb396fec56f9a0cd34901bc367a",
+    "unchanged": true
+  },
+  "experiments/001-github-read/test_regressions.py": {
+    "size": 5271,
+    "sha256": "f8844717d411b86b164ea16327ecaf26de4857973c7a4932c73c8360ee58cfde",
+    "unchanged": true
+  },
+  "experiments/001-github-read/PLAN.md": {
+    "size": 2755,
+    "sha256": "15245071615c3af547d3eef50309208d25584044826763b153ec20a615098650",
+    "unchanged": true
+  },
+  "experiments/001-github-read/verify.py": {
+    "size": 5532,
+    "sha256": "cb1debc1bf0523290cacef10c9d2e919e4dcc1c4435de7446e2978f6840d439c",
+    "unchanged": true
+  },
+  "experiments/001-github-read/manifest.json": {
+    "size": 1194,
+    "sha256": "489802057999aaaa1b3821bd5929a510f02d729e02ab98eb06888c64037b8801",
+    "unchanged": true
+  },
+  "experiments/001-github-read/RESULTS.md": {
+    "size": 8561,
+    "sha256": "670f9ef052f5a41a92700e57b229a427b0b24cbeed978add98a1e1dab4fbb305",
+    "unchanged": true
+  },
+  "experiments/001-github-read/P2-regression-results.json": {
+    "size": 74772,
+    "sha256": "f7295dc0b06c04b682c6b6d09c4b2e846fbca59625be46ce96c66d138a3b1b42",
+    "unchanged": true
+  },
+  "experiments/001-github-read/observations.json": {
+    "size": 25421,
+    "sha256": "1be02523e31a23913b803ec38f15823d22e767de0b7d7106f5a2c5a7475850e5",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/A-M-1.json": {
+    "size": 1102,
+    "sha256": "00e81e2b071239f326184ee9c9e469d575389af7712b4e22aedc67ca848f9727",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/B-N-1.body": {
+    "size": 4208,
+    "sha256": "713df3448092285295e970a9210a73ae06dba6485ecda1c993ac370622dc2c99",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/A-N-1.file": {
+    "size": 2237,
+    "sha256": "fcc2ac0d4629d4b994f2bec8e80a815ee415d72dde7de4f8aa4073b099861ac5",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/B-N-1.json": {
+    "size": 1069,
+    "sha256": "e959d14dff55a97b8ffa73d45d9d8889ea7211132d91098c7825da3aa760534b",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/B-M-1.body": {
+    "size": 141,
+    "sha256": "0f74c8b9c1f03a2b9d2da1ebe4f7c027ecb616202d539401c259562157c5a216",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/A-N-1.json": {
+    "size": 3855,
+    "sha256": "ae210a44700a6ec53e0a33cd526d5982707ee63eb0bcebc793cd37515e6cc945",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/B-N-1.file": {
+    "size": 2237,
+    "sha256": "fcc2ac0d4629d4b994f2bec8e80a815ee415d72dde7de4f8aa4073b099861ac5",
+    "unchanged": true
+  },
+  "experiments/002-github-missing-path/raw/B-M-1.json": {
+    "size": 1260,
+    "sha256": "20bd46aaff6a9b6f7c8aa673bfc8efcc25d5f7cd9e3369ebddd95aae22904112",
+    "unchanged": true
+  }
+}

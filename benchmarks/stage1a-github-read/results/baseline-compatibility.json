@@ -1,0 +1,26 @@
+[
+  {
+    "stage": "001-github-read",
+    "baseline_commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+    "command": [
+      "python",
+      "-B",
+      "experiments/001-github-read/verify.py"
+    ],
+    "exit_code": 1,
+    "stdout": "FAIL: manifest: file set mismatch\n",
+    "stderr": ""
+  },
+  {
+    "stage": "002-github-missing-path",
+    "baseline_commit": "560f2030a5065a98fb4cd2df10b6b8fcba7c4dad",
+    "command": [
+      "python",
+      "-B",
+      "experiments/002-github-missing-path/verify.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"record_integrity\": \"PASS\", \"network_experiment\": \"PASS\", \"attempts\": 4, \"manifest_files\": 20}\n",
+    "stderr": ""
+  }
+]

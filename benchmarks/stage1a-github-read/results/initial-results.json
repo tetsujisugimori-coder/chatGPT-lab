@@ -1,0 +1,1428 @@
+{
+  "scope": "offline synthetic record validation, not product testing",
+  "started_from_lock_sha256": "34552f2390ac7271753211ba1c411e4a89af3b446da59867e40a2a50075a2ab6",
+  "fixtures_sha256": "97b77a752f0212d0f395331976894ef2dbf458768d09cb09e68bea1758b3d9cc",
+  "base_sha256": "e8475d11f7f9935634954e06d4ecc65c757dfcff30a7a7062c5f5a5a4441ccd4",
+  "finished_at": "2026-11-18T08:45:20.145865+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "os": "Linux",
+    "machine": "x86_64"
+  },
+  "total": 54,
+  "matched": 53,
+  "failed": 1,
+  "rows": [
+    {
+      "id": "N01",
+      "title": "normal synthetic record, unknown model remains unknown",
+      "synthetic": true,
+      "input_size": 41795,
+      "input_sha256": "e8475d11f7f9935634954e06d4ecc65c757dfcff30a7a7062c5f5a5a4441ccd4",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N02",
+      "title": "comparison not performed",
+      "synthetic": true,
+      "input_size": 41796,
+      "input_sha256": "f5cd63389797be74c2715f79a201ee0dfcb0d8326330657a24072b53ca3b1b80",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "NOT_TESTED",
+        "reason_prefix": "COMPARISON_NOT_PERFORMED"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "NOT_TESTED",
+        "reason": "COMPARISON_NOT_PERFORMED",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"NOT_TESTED\",\n  \"reason\": \"COMPARISON_NOT_PERFORMED\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N03",
+      "title": "unknown start ID retained",
+      "synthetic": true,
+      "input_size": 41807,
+      "input_sha256": "2f6ca64cd9983f72ae20492057e0f799c4b8de1d480f81c61e38bcfe63eac5cd",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "UNRESOLVED_ATTRIBUTION"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較不可",
+        "reason": "UNRESOLVED_ATTRIBUTION",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"UNRESOLVED_ATTRIBUTION\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N04",
+      "title": "known descriptive difference",
+      "synthetic": true,
+      "input_size": 41930,
+      "input_sha256": "8bf592d6b8cc36467bb5f64e6a359ebd86213098dfdb7fed10cff1873c8d1da4",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "条件差あり",
+        "reason_prefix": "OBSERVED_DESCRIPTIVE_DIFFERENCES"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "条件差あり",
+        "reason": "OBSERVED_DESCRIPTIVE_DIFFERENCES:network",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"条件差あり\",\n  \"reason\": \"OBSERVED_DESCRIPTIVE_DIFFERENCES:network\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N05",
+      "title": "same pair under ranking",
+      "synthetic": true,
+      "input_size": 41864,
+      "input_sha256": "79e0b485f22b4be634a7f886d8cd343eb25d67654eaa6d8b2d7b515a4bb0ac42",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "REQUIRED_EQUIVALENCE_MISMATCH"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較不可",
+        "reason": "REQUIRED_EQUIVALENCE_MISMATCH:network",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"REQUIRED_EQUIVALENCE_MISMATCH:network\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N06",
+      "title": "unknown impact",
+      "synthetic": true,
+      "input_size": 41927,
+      "input_sha256": "697875d59880a2ede7e2fc4a7cbf531b54d742a169b3ab958ead0c6ea0111e8a",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "UNKNOWN_DIFFERENCE_IMPACT"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較不可",
+        "reason": "UNKNOWN_DIFFERENCE_IMPACT:network",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"UNKNOWN_DIFFERENCE_IMPACT:network\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N07",
+      "title": "valid unexecuted record",
+      "synthetic": true,
+      "input_size": 24567,
+      "input_sha256": "aadfdff4a8e8412a786b97fb3b11e90ef9ae30e2960af7764049143a331d8e7b",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "synthetic_run_outcomes": [
+          "NOT_TESTED",
+          "PASS"
+        ]
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "NOT_TESTED",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"NOT_TESTED\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N08",
+      "title": "permission blocked record",
+      "synthetic": true,
+      "input_size": 35370,
+      "input_sha256": "2920c7b293917d98989fb3b927374b48cebac78ca17cc64077d85a7fe8b3f793",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "synthetic_run_outcomes": [
+          "BLOCKED",
+          "PASS"
+        ]
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "BLOCKED",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"BLOCKED\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N09",
+      "title": "timeout is unknown not nonexistent",
+      "synthetic": true,
+      "input_size": 41803,
+      "input_sha256": "a07c307250233eb8d153d37e7de0d2210edc3e7d6fbdcc09544609547c9430e6",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "synthetic_run_outcomes": [
+          "UNKNOWN",
+          "PASS"
+        ]
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "UNKNOWN",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"UNKNOWN\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N10",
+      "title": "negative success is FAIL",
+      "synthetic": true,
+      "input_size": 41786,
+      "input_sha256": "7f2fcffc13e67ad8039a3bbd11a24859d243947fa3111f7e8c090c38391b5008",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "synthetic_run_outcomes": [
+          "FAIL",
+          "PASS"
+        ]
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "FAIL",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"FAIL\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N11",
+      "title": "stop condition",
+      "synthetic": true,
+      "input_size": 41794,
+      "input_sha256": "4cb164298a7441228ff89a2c2f5d75adbd48ceeafb291d06215692f2ab27b527",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "STOP_CONDITION"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較不可",
+        "reason": "STOP_CONDITION",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"STOP_CONDITION\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N12",
+      "title": "explicit numeric tolerance",
+      "synthetic": true,
+      "input_size": 41930,
+      "input_sha256": "aa1acdb8525cc5a1b3c1043ba0a57a22cc24d73961e044f3b93afc3423a10614",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N13",
+      "title": "outside tolerance allowed only as descriptive difference",
+      "synthetic": true,
+      "input_size": 41930,
+      "input_sha256": "19950e698f05d21ac8b1b4e443408edd05909bf9109afb7ed8fa8463a5307612",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "条件差あり",
+        "reason_prefix": "OBSERVED_DESCRIPTIVE_DIFFERENCES"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "条件差あり",
+        "reason": "OBSERVED_DESCRIPTIVE_DIFFERENCES:timeout",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"条件差あり\",\n  \"reason\": \"OBSERVED_DESCRIPTIVE_DIFFERENCES:timeout\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N14",
+      "title": "unknown condition",
+      "synthetic": true,
+      "input_size": 41787,
+      "input_sha256": "2b4eb89c647b520b36a85cad239ff586d6ba57d3d8c70579f9c9a2591d5a0468",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "IMPORTANT_EVIDENCE_UNKNOWN"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較不可",
+        "reason": "IMPORTANT_EVIDENCE_UNKNOWN:network",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"IMPORTANT_EVIDENCE_UNKNOWN:network\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N15",
+      "title": "dot delegation separately attributed",
+      "synthetic": true,
+      "input_size": 41863,
+      "input_sha256": "dd7e24911a87e250572f87686c4d04058ff339b0f79124912f9cb96758ee5d23",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F01",
+      "title": "Desktop falsely treated as local",
+      "synthetic": true,
+      "input_size": 41793,
+      "input_sha256": "392984faf05361fbb5f9e28a124617344c0afa1356cdb60473584ee6f75660cf",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "CLIENT_IS_NOT_EXECUTION_EVIDENCE"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "CLIENT_IS_NOT_EXECUTION_EVIDENCE"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"CLIENT_IS_NOT_EXECUTION_EVIDENCE\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F02",
+      "title": "display alone proves actual model",
+      "synthetic": true,
+      "input_size": 41819,
+      "input_sha256": "3d15c5d09936fb34ba4a76e12f94ab064e52197ce21bfde6e0b8e2db8611d297",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "DISPLAY_IS_NOT_MODEL_EVIDENCE"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "DISPLAY_IS_NOT_MODEL_EVIDENCE"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"DISPLAY_IS_NOT_MODEL_EVIDENCE\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F03",
+      "title": "UNKNOWN promoted to PASS",
+      "synthetic": true,
+      "input_size": 41800,
+      "input_sha256": "408d5c998b8ae4eb69f193aae3657f5a070218946ed4b87f0e006833c405a679",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "FALSE_OUTCOME_CLAIM:UNKNOWN"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "FALSE_OUTCOME_CLAIM:UNKNOWN"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"FALSE_OUTCOME_CLAIM:UNKNOWN\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F04",
+      "title": "missing purpose",
+      "synthetic": true,
+      "input_size": 41754,
+      "input_sha256": "3392e2491adc77ad3a5658234e3f0f5aac81923abec5f000323cc570d812090f",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "MISSING_PREDECLARED_FIELD"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "MISSING_PREDECLARED_FIELD"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"MISSING_PREDECLARED_FIELD\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F05",
+      "title": "PASS without evidence",
+      "synthetic": true,
+      "input_size": 41752,
+      "input_sha256": "b234f09666eb884a68815a49581970097efc70ec3867fdc5b2fdd1ec9bcf87e8",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "SCHEMA_LENGTH"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "SCHEMA_LENGTH:$/runs/0/operations/0/evidence"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"SCHEMA_LENGTH:$/runs/0/operations/0/evidence\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F06",
+      "title": "hidden difference ranked",
+      "synthetic": true,
+      "input_size": 41728,
+      "input_sha256": "61369741eb295115686bc4f7ba6ad4bc11024cf3ea7df0a04607b7c3a7d17be7",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "DIFFERENCE_LEDGER_MISMATCH"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "DIFFERENCE_LEDGER_MISMATCH"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"DIFFERENCE_LEDGER_MISMATCH\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F07",
+      "title": "dot delegate success treated as solo",
+      "synthetic": true,
+      "input_size": 41862,
+      "input_sha256": "79cf06dedd71286051554508497556724c9fa8bfd13c5d21d8d6268b987a436b",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "DELEGATE_NOT_SOLO"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "DELEGATE_NOT_SOLO"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"DELEGATE_NOT_SOLO\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F08",
+      "title": "posthoc rule",
+      "synthetic": true,
+      "input_size": 41795,
+      "input_sha256": "0871eb3baacd28b9922fce61a9d976c032560205c0d7cc95265a0484847e8720",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "POSTHOC_PROTOCOL"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "POSTHOC_PROTOCOL"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"POSTHOC_PROTOCOL\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F09",
+      "title": "wrong target",
+      "synthetic": true,
+      "input_size": 41795,
+      "input_sha256": "0c42279e707c47a8aa099c842b237a82661e4ea7422cbddbf0bac5affe232ec1",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "TARGET_CHANGED"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "TARGET_CHANGED"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"TARGET_CHANGED\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F10",
+      "title": "both bodies absent",
+      "synthetic": true,
+      "input_size": 28911,
+      "input_sha256": "6d5317678f5992c53991720cb315fa60f08fb4b5b6030216ed0887995729191a",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "SUCCESS_WITHOUT_BYTES"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "SUCCESS_WITHOUT_BYTES"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"SUCCESS_WITHOUT_BYTES\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F11",
+      "title": "wrong bytes but PASS",
+      "synthetic": true,
+      "input_size": 35359,
+      "input_sha256": "7df3fa08f3f660fcbc6dcd890ea5e39b4049b16ac7c7c7f4efb6d21e7c2e6430",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "FALSE_OUTCOME_CLAIM:FAIL"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "FALSE_OUTCOME_CLAIM:FAIL"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"FALSE_OUTCOME_CLAIM:FAIL\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F12",
+      "title": "guessed HTTP status",
+      "synthetic": true,
+      "input_size": 41794,
+      "input_sha256": "9ea44cad7cd8d08955c1ce0bad8712fdf29d6b5523c5b3d0f1513d421ffaa452",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "HTTP_STATUS_NOT_DIRECT"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "HTTP_STATUS_NOT_DIRECT"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"HTTP_STATUS_NOT_DIRECT\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F13",
+      "title": "error as file body",
+      "synthetic": true,
+      "input_size": 41801,
+      "input_sha256": "7705a7515259ebdf4eb64192b0ecdea0e46207f172fcb0bd9d7f39a30a67b335",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "ERROR_AS_FILE_BODY"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "ERROR_AS_FILE_BODY"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"ERROR_AS_FILE_BODY\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F14",
+      "title": "empty runs",
+      "synthetic": true,
+      "input_size": 1553,
+      "input_sha256": "c558c41ef4cb9ea2e7e62be82cae58fd3d12f3227f043932ba0369584ef14ece",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "SCHEMA_LENGTH"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "SCHEMA_LENGTH:$/runs"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"SCHEMA_LENGTH:$/runs\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F15",
+      "title": "unknown comparison field auto-completion",
+      "synthetic": true,
+      "input_size": 41744,
+      "input_sha256": "20c36171e54ff259c546fc901002ececdfed17bfacb4719fbd0446d8870f7019",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "MISSING_PREDECLARED_FIELD"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "MISSING_PREDECLARED_FIELD"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"MISSING_PREDECLARED_FIELD\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F16",
+      "title": "mixed without both sites",
+      "synthetic": true,
+      "input_size": 41795,
+      "input_sha256": "406cde7f43e241f3d106362c66bb21cb1484af55517d1e08654348b6665a8f57",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "MIXED_NOT_OBSERVED"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "MIXED_NOT_OBSERVED"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"MIXED_NOT_OBSERVED\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F17",
+      "title": "unconfirmed ID called confirmed",
+      "synthetic": true,
+      "input_size": 41793,
+      "input_sha256": "f0ebe89ce951042df1ddccbe6b4697afe0ec793a45cbc46483ccfde3cd03f4a0",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "UNKNOWN_ID_NOT_PRESERVED"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "UNKNOWN_ID_NOT_PRESERVED"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"UNKNOWN_ID_NOT_PRESERVED\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F18",
+      "title": "tool replacement",
+      "synthetic": true,
+      "input_size": 41778,
+      "input_sha256": "c531c86b9219b3d745898d3afda8c6396ef67d4ac56d326bf099add878e7e884",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "UNREGISTERED_SYNTHETIC_TOOL"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "UNREGISTERED_SYNTHETIC_TOOL"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"UNREGISTERED_SYNTHETIC_TOOL\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F19",
+      "title": "false custody PASS",
+      "synthetic": true,
+      "input_size": 41789,
+      "input_sha256": "71c3d1b418d02199686d990fc94a4c5d4f9d4003fef21d7ca6f0933bf21f08bb",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "CUSTODY_WITHOUT_EVIDENCE"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "CUSTODY_WITHOUT_EVIDENCE"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"CUSTODY_WITHOUT_EVIDENCE\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F20",
+      "title": "independent review gate bypass",
+      "synthetic": true,
+      "input_size": 41827,
+      "input_sha256": "e325f292d8c91323072860a28ecc47b9dbd15f9a4b832f137f28974b6977dc14",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "INDEPENDENT_REVIEW_IS_SEPARATE_GATE"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "INDEPENDENT_REVIEW_IS_SEPARATE_GATE"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"INDEPENDENT_REVIEW_IS_SEPARATE_GATE\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F21",
+      "title": "deadline not enforceable",
+      "synthetic": true,
+      "input_size": 41796,
+      "input_sha256": "fce0f7a18659c2479ec24ef41eb5a499dd94dfa6d25b80b3fb075cc2d6d984ef",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "DEADLINE_UNENFORCED"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "DEADLINE_UNENFORCED"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"DEADLINE_UNENFORCED\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F22",
+      "title": "wrong source",
+      "synthetic": true,
+      "input_size": 41692,
+      "input_sha256": "f7dfa6b024c40ac10db05d52526fca5bcae2bc96eafa35b1f23e7395da81b0ff",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "SOURCE_MISMATCH"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "SOURCE_MISMATCH"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"SOURCE_MISMATCH\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F23",
+      "title": "boolean attempt",
+      "synthetic": true,
+      "input_size": 41798,
+      "input_sha256": "de575c5dfece6056215fdd00e42e0da7b76efdfb88d515e05daa10937b61cd74",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "SCHEMA_TYPE"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "SCHEMA_TYPE:$/runs/0/operations/0/attempt"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"SCHEMA_TYPE:$/runs/0/operations/0/attempt\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F24",
+      "title": "posthoc tolerance",
+      "synthetic": true,
+      "input_size": 41796,
+      "input_sha256": "ca1ff835136beddbc45a49ba9c4f840b2d9b8a37dea190c4462a63c665952d7c",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "PREDECLARED_PROFILE_CHANGED"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "PREDECLARED_PROFILE_CHANGED"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"PREDECLARED_PROFILE_CHANGED\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F25",
+      "title": "required evidence absent on both sides",
+      "synthetic": true,
+      "input_size": 41689,
+      "input_sha256": "9c884ea4c8dcc3d916b2e9308150dda582d4ebad52e3923a270ee51e7f74cdda",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "SCHEMA_LENGTH"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "SCHEMA_LENGTH:$/runs/0/conditions/fixture/evidence"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"SCHEMA_LENGTH:$/runs/0/conditions/fixture/evidence\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F26",
+      "title": "descriptive difference used for ranking",
+      "synthetic": true,
+      "input_size": 41929,
+      "input_sha256": "c1ec83aabe7789ec80b5e9ffd39c009eeffe4183b7f3be698ae0f6951fa5e922",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "UNSUPPORTED_RANKING_CLAIM"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "UNSUPPORTED_RANKING_CLAIM"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"UNSUPPORTED_RANKING_CLAIM\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "B01",
+      "title": "real execution adapter blocked",
+      "synthetic": true,
+      "input_size": 41790,
+      "input_sha256": "43ea72ff3a07518e0629f1001044951e8163e3987d31d3e7663d7d138bdaab2a",
+      "expected": {
+        "record_validation": "BLOCKED",
+        "comparison_decision": "NOT_TESTED",
+        "reason_prefix": "LIVE_ADAPTER_NOT_IMPLEMENTED_OR_AUTHORIZED"
+      },
+      "actual": {
+        "record_validation": "BLOCKED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "NOT_TESTED",
+        "reason": "LIVE_ADAPTER_NOT_IMPLEMENTED_OR_AUTHORIZED"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 2,
+      "stdout": "{\n  \"record_validation\": \"BLOCKED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"NOT_TESTED\",\n  \"reason\": \"LIVE_ADAPTER_NOT_IMPLEMENTED_OR_AUTHORIZED\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I01",
+      "title": "start ID CHAT-WEB does not assert execution site",
+      "synthetic": true,
+      "input_size": 41783,
+      "input_sha256": "8772eed9817a24e8d7acd2e474ed80c938d0c15f4efea0668b799891fd9649ff",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I02",
+      "title": "start ID CHAT-DESKTOP does not assert execution site",
+      "synthetic": true,
+      "input_size": 41795,
+      "input_sha256": "e8475d11f7f9935634954e06d4ecc65c757dfcff30a7a7062c5f5a5a4441ccd4",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I03",
+      "title": "start ID CHAT-MOBILE does not assert execution site",
+      "synthetic": true,
+      "input_size": 41789,
+      "input_sha256": "b294e44c6cf58f8d53c0c2ad63ebd82c1c0c002f47313382cf8fc2225da8601a",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I04",
+      "title": "start ID WORK-CLOUD-WEB does not assert execution site",
+      "synthetic": true,
+      "input_size": 41798,
+      "input_sha256": "29682aa97babaf08cd91f7adf9e8b5825ee616c03f55f7813f6e1fb3fa29459f",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I05",
+      "title": "start ID WORK-CLOUD-DESKTOP does not assert execution site",
+      "synthetic": true,
+      "input_size": 41810,
+      "input_sha256": "957eb9f1b8244301762354db4bd0e980c9c942c95d5463535f1d99be21dfdf29",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I06",
+      "title": "start ID WORK-CLOUD-MOBILE does not assert execution site",
+      "synthetic": true,
+      "input_size": 41808,
+      "input_sha256": "243b9d873a2a48d9d6256a23bcc48ec86494d29efa33c5752294960c9506ac51",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I07",
+      "title": "start ID WORK-LOCAL does not assert execution site",
+      "synthetic": true,
+      "input_size": 41794,
+      "input_sha256": "cfae509af3ef1d125aa224b9389a5bc141a42bad95bf002f761c34713d9f6e1d",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I08",
+      "title": "start ID CODEX-LOCAL does not assert execution site",
+      "synthetic": true,
+      "input_size": 41793,
+      "input_sha256": "9298f76c0009d67f882753c7b0466c2e364ec7b262dccf7ea74cd7e8b588c602",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I09",
+      "title": "start ID CODEX-CLOUD does not assert execution site",
+      "synthetic": true,
+      "input_size": 41793,
+      "input_sha256": "64b3dccac5c0cdec4416fe9c7818adba7c6c74a1559767df354fbedcb2769aa7",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "I10",
+      "title": "start ID DOT does not assert execution site",
+      "synthetic": true,
+      "input_size": 41772,
+      "input_sha256": "63af62af7cc8c6fd05e5ca4cb299084675b6f6ff3b92de1929ec05832afdc784",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "PASS",
+        "experiment_outcome": "NOT_TESTED",
+        "synthetic_run_outcomes": [
+          "PASS",
+          "PASS"
+        ],
+        "comparison_decision": "比較可能",
+        "reason": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE",
+        "scope": "synthetic record consistency only; not product/provenance verification"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 0,
+      "stdout": "{\n  \"record_validation\": \"PASS\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"synthetic_run_outcomes\": [\n    \"PASS\",\n    \"PASS\"\n  ],\n  \"comparison_decision\": \"比較可能\",\n  \"reason\": \"EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE\",\n  \"scope\": \"synthetic record consistency only; not product/provenance verification\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "N16",
+      "title": "one communication retry retained",
+      "synthetic": true,
+      "input_size": 42825,
+      "input_sha256": "927556a4ba271b5a011ce24fed0729c5e477bc1f7f75b0ac2d0360890b33fb5d",
+      "expected": {
+        "record_validation": "PASS",
+        "comparison_decision": "比較可能",
+        "reason_prefix": "EQUIVALENT_WITHIN_PREDECLARED_TOLERANCE"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "RETRY_NOT_COMMUNICATION_FAILURE"
+      },
+      "matches_expectation": false,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"RETRY_NOT_COMMUNICATION_FAILURE\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "F27",
+      "title": "definitive missing may not be retried",
+      "synthetic": true,
+      "input_size": 42825,
+      "input_sha256": "927556a4ba271b5a011ce24fed0729c5e477bc1f7f75b0ac2d0360890b33fb5d",
+      "expected": {
+        "record_validation": "FAIL",
+        "comparison_decision": "比較不可",
+        "reason_prefix": "RETRY_NOT_COMMUNICATION_FAILURE"
+      },
+      "actual": {
+        "record_validation": "FAIL",
+        "protocol_validation": "REJECTED",
+        "experiment_outcome": "NOT_TESTED",
+        "comparison_decision": "比較不可",
+        "reason": "RETRY_NOT_COMMUNICATION_FAILURE"
+      },
+      "matches_expectation": true,
+      "command": "python -B verify.py <case-input.json>",
+      "exit_code": 1,
+      "stdout": "{\n  \"record_validation\": \"FAIL\",\n  \"protocol_validation\": \"REJECTED\",\n  \"experiment_outcome\": \"NOT_TESTED\",\n  \"comparison_decision\": \"比較不可\",\n  \"reason\": \"RETRY_NOT_COMMUNICATION_FAILURE\"\n}\n",
+      "stderr": ""
+    }
+  ]
+}
