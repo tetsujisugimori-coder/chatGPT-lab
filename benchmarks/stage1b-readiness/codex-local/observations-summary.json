@@ -1,0 +1,549 @@
+{
+  "schema_version": 1,
+  "run_id": "ipc-full-20261126",
+  "source_files": {
+    "observations.json": {
+      "bytes": 57103,
+      "sha256": "ca908a9c69d7c95275811c5007cafc2f8b6adbc1e104607265943233b4b94812"
+    },
+    "stop-recovery.jsonl": {
+      "bytes": 37734,
+      "sha256": "3f8c46712e5f88332ad4e55d0ceac384929f0c36d60edc1ee2e77c443e1563da"
+    },
+    "run-lock.json": {
+      "bytes": 2623,
+      "sha256": "3c3ffe3e61d4eff4874eed197e9a654f677b527767c8a3f39d059b62dcef534f"
+    }
+  },
+  "plan_lock": {
+    "run_id": "ipc-full-20261126",
+    "locked_at": {
+      "mono_ns": 626240787204700,
+      "utc": "2026-11-25T16:15:29.609362+00:00"
+    },
+    "clock": {
+      "implementation": "QueryPerformanceCounter()",
+      "monotonic": true,
+      "adjustable": false,
+      "resolution": 1e-07
+    },
+    "sha256": {
+      "probe.py": "d8d825bb302955cbf77a5dd45d89c8da6788e821c1bd0e885789870837678732",
+      "PLAN.md": "f38d544cec6e5bc12763545d25851e5e79611ad43cb96fb558a8b5a4eae7fd56"
+    },
+    "cases": [
+      {
+        "name": "normal",
+        "fixture": "normal",
+        "connect_s": 10,
+        "stop_s": 24.5,
+        "force_s": 24.75,
+        "limit_s": 25,
+        "mode": "cooperate",
+        "expected": "complete"
+      },
+      {
+        "name": "missing",
+        "fixture": "missing",
+        "connect_s": 10,
+        "stop_s": 24.5,
+        "force_s": 24.75,
+        "limit_s": 25,
+        "mode": "cooperate",
+        "expected": "missing"
+      },
+      {
+        "name": "connect-short",
+        "fixture": "connect",
+        "connect_s": 1,
+        "stop_s": 1,
+        "force_s": 1.25,
+        "limit_s": 2,
+        "mode": "cooperate",
+        "expected": "connect_deadline"
+      },
+      {
+        "name": "body-short",
+        "fixture": "body",
+        "connect_s": 1,
+        "stop_s": 1,
+        "force_s": 1.25,
+        "limit_s": 2,
+        "mode": "cooperate",
+        "expected": "total_stop"
+      },
+      {
+        "name": "connect-10",
+        "fixture": "connect",
+        "connect_s": 10,
+        "stop_s": 10,
+        "force_s": 10.25,
+        "limit_s": 25,
+        "mode": "cooperate",
+        "expected": "connect_deadline"
+      },
+      {
+        "name": "body-25-reserve",
+        "fixture": "body",
+        "connect_s": 10,
+        "stop_s": 24.5,
+        "force_s": 24.75,
+        "limit_s": 25,
+        "mode": "cooperate",
+        "expected": "total_stop"
+      },
+      {
+        "name": "ignore-stop",
+        "fixture": "body",
+        "connect_s": 10,
+        "stop_s": 24.5,
+        "force_s": 24.75,
+        "limit_s": 25,
+        "mode": "ignore",
+        "expected": "forced"
+      },
+      {
+        "name": "process-tree",
+        "fixture": "body",
+        "connect_s": 10,
+        "stop_s": 24.5,
+        "force_s": 24.75,
+        "limit_s": 25,
+        "mode": "tree",
+        "expected": "forced"
+      },
+      {
+        "name": "near-before",
+        "fixture": "near-before",
+        "connect_s": 10,
+        "stop_s": 24.5,
+        "force_s": 24.75,
+        "limit_s": 25,
+        "mode": "cooperate",
+        "expected": "complete"
+      },
+      {
+        "name": "boundary-25",
+        "fixture": "boundary-25",
+        "connect_s": 10,
+        "stop_s": 25,
+        "force_s": 25.25,
+        "limit_s": 25,
+        "mode": "cooperate",
+        "expected": "total_stop"
+      }
+    ]
+  },
+  "trials": [
+    {
+      "case": "normal",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:15:29.611511+00:00",
+      "end_utc": "2026-11-25T16:15:29.801940+00:00",
+      "deadline_fired_ns": [],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [],
+      "stop_published_ns": [],
+      "stop_received_ns": [],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        188251000
+      ],
+      "job_empty_ns": [
+        188263900
+      ],
+      "recovery_ns": 190430300,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        0
+      ],
+      "exit_reason": "complete",
+      "direct_synthetic_http_status": 200,
+      "response": {
+        "bytes": 20,
+        "sha256": "f1fb770d7bbf67064f85622049274d7ced6c408654ecc76eee2228144296f1d7"
+      },
+      "accepted_as_complete": true,
+      "observation_fingerprint": {
+        "bytes": 4225,
+        "sha256": "51f80de908808ede7d7432da4521ffeceeed870e43cc91f99fda2b9cd9226f54"
+      }
+    },
+    {
+      "case": "missing",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:15:29.803050+00:00",
+      "end_utc": "2026-11-25T16:15:29.995450+00:00",
+      "deadline_fired_ns": [],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [],
+      "stop_published_ns": [],
+      "stop_received_ns": [],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        191915200
+      ],
+      "job_empty_ns": [
+        191928400
+      ],
+      "recovery_ns": 192400300,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        4
+      ],
+      "exit_reason": "missing",
+      "direct_synthetic_http_status": 404,
+      "response": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 3914,
+        "sha256": "a1a86d612ed0bdcda248ec2c628a2372fed6af0296b4a34c2c9ac053b6307cb2"
+      }
+    },
+    {
+      "case": "connect-short",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:15:29.996419+00:00",
+      "end_utc": "2026-11-25T16:15:31.011172+00:00",
+      "deadline_fired_ns": [
+        1001430300
+      ],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [
+        1001460700
+      ],
+      "stop_published_ns": [
+        1001696400
+      ],
+      "stop_received_ns": [],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        1014490200
+      ],
+      "job_empty_ns": [
+        1014501600
+      ],
+      "recovery_ns": 1014753300,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        20
+      ],
+      "exit_reason": "connect_deadline",
+      "direct_synthetic_http_status": null,
+      "response": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 4214,
+        "sha256": "969721f7496e4dd09200f8a69a05e0463fe1e9882856c90a9b3d386bee8c396b"
+      }
+    },
+    {
+      "case": "body-short",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:15:31.012021+00:00",
+      "end_utc": "2026-11-25T16:15:32.030569+00:00",
+      "deadline_fired_ns": [
+        1000098800
+      ],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [
+        1000133800
+      ],
+      "stop_published_ns": [
+        1000356700
+      ],
+      "stop_received_ns": [
+        1003139800
+      ],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        1017916500
+      ],
+      "job_empty_ns": [
+        1017929100
+      ],
+      "recovery_ns": 1018547200,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        21
+      ],
+      "exit_reason": "total_stop",
+      "direct_synthetic_http_status": 200,
+      "response": {
+        "bytes": 9,
+        "sha256": "f49f566e7d0ad1a685f19aa283fd5112f52ebe5c250caffa21f74dcc1b2fa6fb"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 4878,
+        "sha256": "34f090cfc63b8ab1f77c8af631e2e9499c9400d9e314d33d1762d67bd75dc330"
+      }
+    },
+    {
+      "case": "connect-10",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:15:32.031707+00:00",
+      "end_utc": "2026-11-25T16:15:42.048303+00:00",
+      "deadline_fired_ns": [
+        10002098400
+      ],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [
+        10002128100
+      ],
+      "stop_published_ns": [
+        10002433300
+      ],
+      "stop_received_ns": [],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        10016297400
+      ],
+      "job_empty_ns": [
+        10016307700
+      ],
+      "recovery_ns": 10016596300,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        20
+      ],
+      "exit_reason": "connect_deadline",
+      "direct_synthetic_http_status": null,
+      "response": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 4206,
+        "sha256": "46698ffaeed1cc45a34cf24336435b9d44f751566efedc7d9b7cb70b5b6eedb6"
+      }
+    },
+    {
+      "case": "body-25-reserve",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:15:42.049160+00:00",
+      "end_utc": "2026-11-25T16:16:06.568570+00:00",
+      "deadline_fired_ns": [
+        24501234300
+      ],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [
+        24501271200
+      ],
+      "stop_published_ns": [
+        24501573600
+      ],
+      "stop_received_ns": [
+        24503220200
+      ],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        24518867300
+      ],
+      "job_empty_ns": [
+        24518877700
+      ],
+      "recovery_ns": 24519410600,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        21
+      ],
+      "exit_reason": "total_stop",
+      "direct_synthetic_http_status": 200,
+      "response": {
+        "bytes": 9,
+        "sha256": "f49f566e7d0ad1a685f19aa283fd5112f52ebe5c250caffa21f74dcc1b2fa6fb"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 4890,
+        "sha256": "6e0f99b25e0daf281a26f23c7628fdf786b20e5aa8533c29f90bbcbae8797b66"
+      }
+    },
+    {
+      "case": "ignore-stop",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:16:06.569610+00:00",
+      "end_utc": "2026-11-25T16:16:31.326116+00:00",
+      "deadline_fired_ns": [
+        24501224200
+      ],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [
+        24501255200
+      ],
+      "stop_published_ns": [
+        24501534300
+      ],
+      "stop_received_ns": [
+        24502359100
+      ],
+      "force_request_ns": [
+        24750436700
+      ],
+      "exit_observations_ns": [
+        24755965600
+      ],
+      "job_empty_ns": [
+        24755972800
+      ],
+      "recovery_ns": 24756506000,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        77
+      ],
+      "exit_reason": "forced",
+      "direct_synthetic_http_status": 200,
+      "response": {
+        "bytes": 9,
+        "sha256": "f49f566e7d0ad1a685f19aa283fd5112f52ebe5c250caffa21f74dcc1b2fa6fb"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 4978,
+        "sha256": "717b61148284ddd1713ffb8392e8a801eb0138e325dc39305ecb164b5ff09316"
+      }
+    },
+    {
+      "case": "process-tree",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:16:31.327495+00:00",
+      "end_utc": "2026-11-25T16:16:56.085693+00:00",
+      "deadline_fired_ns": [
+        24500113900
+      ],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [
+        24500158800
+      ],
+      "stop_published_ns": [
+        24508382400
+      ],
+      "stop_received_ns": [
+        24508520600
+      ],
+      "force_request_ns": [
+        24751464100
+      ],
+      "exit_observations_ns": [
+        24757409500,
+        24757420500
+      ],
+      "job_empty_ns": [
+        24757424900
+      ],
+      "recovery_ns": 24758198500,
+      "process_count": 2,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        77,
+        77
+      ],
+      "exit_reason": "forced",
+      "direct_synthetic_http_status": 200,
+      "response": {
+        "bytes": 9,
+        "sha256": "f49f566e7d0ad1a685f19aa283fd5112f52ebe5c250caffa21f74dcc1b2fa6fb"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 5839,
+        "sha256": "8a74b92ecdcd2f65283c364ade4aa60a3ee33f50017df3820501367a1fbbea58"
+      }
+    },
+    {
+      "case": "near-before",
+      "verdict": "PASS",
+      "start_utc": "2026-11-25T16:16:56.086867+00:00",
+      "end_utc": "2026-11-25T16:17:20.308312+00:00",
+      "deadline_fired_ns": [],
+      "hard_deadline_observed_ns": [],
+      "stop_request_ns": [],
+      "stop_published_ns": [],
+      "stop_received_ns": [],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        24216125100
+      ],
+      "job_empty_ns": [
+        24219907900
+      ],
+      "recovery_ns": 24221445100,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        0
+      ],
+      "exit_reason": "complete",
+      "direct_synthetic_http_status": 200,
+      "response": {
+        "bytes": 20,
+        "sha256": "f1fb770d7bbf67064f85622049274d7ced6c408654ecc76eee2228144296f1d7"
+      },
+      "accepted_as_complete": true,
+      "observation_fingerprint": {
+        "bytes": 4226,
+        "sha256": "ab7a891e503124356953a6a6450796b0fff0d3ad03669d23bb8bd30214a64119"
+      }
+    },
+    {
+      "case": "boundary-25",
+      "verdict": "FAIL",
+      "start_utc": "2026-11-25T16:17:20.309494+00:00",
+      "end_utc": "2026-11-25T16:17:45.325501+00:00",
+      "deadline_fired_ns": [
+        25001855000
+      ],
+      "hard_deadline_observed_ns": [
+        25001843800
+      ],
+      "stop_request_ns": [
+        25001878700
+      ],
+      "stop_published_ns": [
+        25002293400
+      ],
+      "stop_received_ns": [
+        25002398500
+      ],
+      "force_request_ns": [],
+      "exit_observations_ns": [
+        25015539300
+      ],
+      "job_empty_ns": [
+        25015552600
+      ],
+      "recovery_ns": 25016007700,
+      "process_count": 1,
+      "active_at_recovery": 0,
+      "exit_codes": [
+        21
+      ],
+      "exit_reason": "total_stop",
+      "direct_synthetic_http_status": 200,
+      "response": {
+        "bytes": 9,
+        "sha256": "f49f566e7d0ad1a685f19aa283fd5112f52ebe5c250caffa21f74dcc1b2fa6fb"
+      },
+      "accepted_as_complete": false,
+      "observation_fingerprint": {
+        "bytes": 5106,
+        "sha256": "42cbbdf2d171826ff88218cdb303c0c0b67fddd57bc63e10079ceeaad420e9af"
+      }
+    }
+  ]
+}
