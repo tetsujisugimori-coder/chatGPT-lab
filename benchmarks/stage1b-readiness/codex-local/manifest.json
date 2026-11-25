@@ -1,0 +1,29 @@
+{
+  "scope": "public Stage 1-B Codex Local deliverables",
+  "entries": {
+    "PLAN.md": {
+      "bytes": 4928,
+      "sha256": "f38d544cec6e5bc12763545d25851e5e79611ad43cb96fb558a8b5a4eae7fd56"
+    },
+    "RESULTS.md": {
+      "bytes": 7241,
+      "sha256": "8a7e288ead1319f6277f3781e7b1ada2a6105cc2f54ab9672b148a7b115339ed"
+    },
+    "REVIEW-REQUEST.md": {
+      "bytes": 2466,
+      "sha256": "a7863ed7816f92892c0db727a85c0452b3d293ac52391f29d1d18a7e235be337"
+    },
+    "observations-summary.json": {
+      "bytes": 14293,
+      "sha256": "4df912b0597f34138557b21389b06ed8e2cc8f292e1c17145140afbc2b4583a0"
+    },
+    "probe.py": {
+      "bytes": 28769,
+      "sha256": "d8d825bb302955cbf77a5dd45d89c8da6788e821c1bd0e885789870837678732"
+    },
+    "verify_evidence.py": {
+      "bytes": 7221,
+      "sha256": "08afddb2278e11f355db348fe9bdc0af6a755f091868045bc9c674ed95a71c3b"
+    }
+  }
+}
